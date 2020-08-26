@@ -1,0 +1,549 @@
+\chapter{\href{https://ieeexplore.ieee.org/abstract/document/9116004}{\color{blue}Structure}}
+
+\textbf{Appeared as:}\\
+S.~Kriegman et al.,
+Scalable sim-to-real transfer of soft robot designs,
+\textit{Proceedings of the IEEE International Conference on Soft Robotics (RoboSoft)} (2020).
+
+
+\chapter{\href{https://dl.acm.org/doi/abs/10.1145/3071178.3071296}{\color{blue}Shape}}
+
+\textbf{Appeared as:}\\
+S.~Kriegman, et al., A minimal developmental model can increase evolvability in soft robots. \textit{Proceedings of the Genetic and Evolutionary Computation Conference} (2017).
+
+
+\chapter{\href{https://www.nature.com/articles/s41598-018-31868-7}{\color{blue}Shape and Configuration}}
+
+\textbf{Appeared as:}\\
+S.~Kriegman, et al., How morphological development can guide evolution. \textit{Scientific reports} \textbf{8}, 13934 (2018).
+
+
+\chapter{\href{https://arxiv.org/abs/1804.02257}{\color{blue}Structure, Configuration, Material}}
+
+\textbf{Appeared as:}\\
+S.~Kriegman et al., Interoceptive robustness through environment-mediated morphological development. \textit{Proceedings of the Genetic and Evolutionary Computation Conference} (2018).
+
+
+\chapter{\href{http://www.roboticsproceedings.org/rss15/p28.html}{\color{blue}Configuration, Structure, Shape}}
+
+\textbf{Appeared as:}\\
+S.~Kriegman et al., Automated shapeshifting for function recovery in damaged robots. \textit{Proceedings of Robotics: Science and Systems} (2019).
+
+
+\chapter{\href{https://www.pnas.org/content/117/4/1853}{\color{blue}Living Protean Machines}}
+
+\textbf{Appeared as:}\\
+S.~Kriegman et al., A scalable pipeline for designing reconfigurable organisms. 
+\textit{Proceedings of the National Academy of Sciences (PNAS)} (2020).
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\chapter{Argument}
+
+
+\section{Overview}
+
+
+The following sections summarize each of the preceding chapters in turn.
+
+
+\section{Soft Robot Blocks}
+
+\begin{itemize}
+    \item \textit{Phylogenic change}: structure.
+    \item \textit{Ontogenic change}: configuration.
+\end{itemize}
+
+\noindent
+In chapter 2,
+I introduced a method for 
+designing modular soft robots in silico,
+and
+building them out of hollow silicone voxels, layer by layer.
+
+Two building blocks: passive and active material.
+The active block expanded in volume according to a sine wave but only contracted back to cube, 
+it did not compress because compression caused chaotic buckling and quasistatic motion has been
+shown to facilitate successful simulation to reality transfer \cite{lipson2000automatic}.
+
+\subsection*{Related Work}
+
+% \citet{lipson2000automatic} did the same with rigid bodies.
+
+\citet{hiller2011automatic} 
+evolved the overall geometry and distribution of actuating (orange) and passive (white) material in a voxel-based simulator, and transferred the best design to a pressure and vacuum chamber.
+Layers of open-cell (white) and closed-cell (orange) foam rubbers were stacked, pinned and glued together to fabricate the simulated design.
+The orange foam is pneumatically isolated from the changing external pressure, resulting in volumetric expansion and contraction.
+The white foam retains a constant volume because it quickly equalizes to the external pressure.
+
+% In this paper, we introduced a low cost, open source platform for designing and rapidly building soft robots, and used it to transfer 
+% 108 different morphologies (voxels on a cartesian grid) from simulation to reality.
+% We then measured the reality gap as function of the robot's design (geometry and distribution of passive and actuating voxels) by tracking the behavior of nine transferred morphologies.
+% Under one measure (net displacement) the reality gap appeared rather small, but under another (velocity) the gap was much wider, likely due to oversimplified tribological contacts between the simulated ground plane and the robot's ventral surface \cite{majidi2013influence}.
+
+% Although most of the transferred designs (99 out of the 108) were not actuated in reality, they nevertheless served an important function:
+% they were \textit{sketches}.
+% Sketches let us think more clearly about the behavior or properties (e.g., stability) of a design without investing the additional time and resources required to fully build and examine the design itself.
+% Sketches, in other words, greatly increase the breadth of exploration in design space.
+% All sim2real methods embrace this utility of simplifying sketches.
+% Simulation, after all, is also a sketch.
+
+% However, there is a tacit assumption in robotics about Depth First.
+% A typical sim2real experiment begins by sending a
+% complicated robot design across the reality gap,
+% and then endeavors to learn transferable policies that control the morphology in all its complexity.
+% But this is not how most design proceeds.
+% An architect first roughly sketches a structure, say, a bridge, on the back of a napkin.
+% A diversity of designs are then generated, tweaked, discarded or provisionally accepted|at this shallow level of napkin realism|before more detailed blueprints are drawn under more stringent constraints.
+% Blueprints, too, undergo this breadthwise evolution, before the most promising are realized physically, first as scale models (built from matchsticks and glue instead of concrete and steel), then, finally, at full scale and cost.
+% This incrementally weeds out nontransferable features and adds mechanical complexity only when and where it is necessary to do so, rather than globally from the outset.
+
+% The assumption that the reality gap can be bridged by policy search alone, with a single robot design, is groundless. 
+% The desired behavior of a robot is typically much more complicated than that of architecture.
+% This suggests the necessity of more, not less, sketches.
+% Soft robots are more complicated still.
+% This makes their automated design that much more appealing, but implies the need for even greater breadth of sketches, at more intermediate levels of realism.
+% Though not every experiment will need to start from a blank slate.
+% Instead, designers (whether human or AI) could leverage prior knowledge to reject truly awful designs before sketching them in the first place.
+% The designs transferred here add to a growing database (prior probabilities) about which and how well different soft robot designs and behaviors can be realized physically.
+% Our construction kit has the potential to further increase this data by lowering not only cost and build times but also the barrier of entry to soft robotics for non-experts.
+
+
+% The generality of such data beyond robotics is currently not known, but it could also have important implications for developmental biology and regenerative medicine.
+% The bioelectric and genetic control policies that orchestrate adaptive remodeling of growth and form in organisms are not yet understood, but could, in future, be reverse-engineered by machine learning, and then controlled externally to induce regeneration in otherwise non-regenerative organisms (such as adult humans), or to reprogram otherwise unbounded cancerous growth toward functional organogenesis \cite{levin2013reprogramming}.
+% However, such advances in regenerative medicine and synthetic morphology will only be possible if hypotheses generated in simulation are transferable and testable in reality.
+
+
+
+\section{Ballistic Development}
+
+\begin{itemize}
+    \item \textit{Phylogenic change}: shape alternatives.
+    \item \textit{Ontogenic change}: shape, configuration.
+\end{itemize}
+
+\noindent
+In chapter 3,
+a 4-by-4-by-3 voxel
+structure was held fixed as
+the trajectories of its ballistic ontogenetic shape change
+were evolved.
+
+% In this chapter I introduced a minimal yet embodied model of development in order to isolate the effect of morphological change in ontogenetic time,
+% without the confounding effects of environmental mediation.
+% Even this simple developmental model naturally provides
+% a continuum in terms of the magnitude of mutational phenotypic impact,
+% from the very large (caused by early-in-life developmental mutations) 
+% to the very small (caused by late-in-life mutations). 
+% It was predicted that,
+% because of this, such a developmental system will be more evolvable than an equivalent non-developmental system because the latter lacks this inherent spectrum in the magnitude of mutational impacts.
+
+
+
+
+\section{Differential Canalization}
+
+\begin{itemize}
+    \item \textit{Phylogenic change}: shape alternatives, configuration alternatives.
+    \item \textit{Ontogenic change}: shape, configuration.
+\end{itemize}
+
+
+% gradients in morphospace
+\noindent
+The same
+a 4-by-4-by-3 voxel
+structure from chapter 3 was used endowed with more configuration plasticity in chapter 4.
+Instead of uniform expansion/contraction throughout the structure,
+phase-offsets were introduced to locally vary excitation relative to a central pattern generator.
+Both resting shape and the phase-offsets of configuration oscillations changed ballistically and the starting and ending points were evolved.
+
+% \noindent
+% In these experiments, the intersection of two time scales---slow linear development and rapid oscillatory actuation, as from a central pattern generator---generates positive and negative feedback in terms of instantaneous velocity: the robot speeds up and slows down during various points in its lifetime.
+% Prior to canalization, unless all of the phenotypes swept over by an individual in development keep the robot motionless, there will be intervals of relatively superior and inferior performance.
+% Evolution can thus improve overall fitness in a descendant by lengthening the time intervals containing superior phenotypes and reducing the intervals of inferior phenotypes. However, this is only possible if such mutations exist.
+
+% We have found here that such mutations do exist in cases where evolutionary changes
+% to one trait do not disrupt the successful behavior contributed
+% by other traits.
+% For example,
+% robots that exhibited the locally optimal trotting behavior 
+% exhibited a tight coupling between morphology and control, and thus evolution was 
+% unable to canalize development in either one, since mutations to one subsystem 
+% tended to disrupt the other.
+% Brief ontogenetic periods of rolling behavior, 
+% on the other hand, could be temporally extended by evolution through canalization of the morphology alone, 
+% since these morphologies are generally robust to the pattern of actuation.
+% The key observation here is that only phenotypic traits that render the agent robust to changes in other traits become assimilated, a phenomenon we term differential canalization. 
+
+% This insight was exposed by modeling the development of simulated robots as they interacted with a physically realistic environment.
+% Differential canalization may be possible in disembodied agents as well, 
+% if they conform to appropriate conditions described in the chapter.
+
+% This finding of differential canalization has important implications for the evolutionary design of artificial and embodied agents such as robots.
+% Computational and engineered systems generally maintain a fixed form as they behave and are evaluated.
+% However, these systems are also extremely brittle when confronted with slight changes in their internal structure, such as damage, 
+% or in their external environment such as moving onto a new terrain
+% \cite{french1999catastrophic,
+% carlson2005ugvs,
+% bongard2006resilient}.
+% Indeed, a perennial problem in robotics and AI is finding general solutions which perform well in novel environments 
+% \cite{koos2013transferability,
+% nguyen2015deep
+% }.
+% Our results demonstrate how incorporating morphological development in the optimization of robots can reveal, through differential canalization, characters which are robust to internal changes.
+% Robots that are robust to internal changes in their controllers may also be robust to external changes in their environment \cite{bongard2011morphological}.
+% Thus, allowing robots to change their structure as they behave might facilitate evolutionary improvement of their descendants, even if these robots will be deployed with static phenotypes or in relatively unchanging environments.
+
+% These results are particularly important for the nascent field of soft robotics in which engineers cannot as easily presuppose a robot's body plan and optimize controllers for it because designing such machines manually is unintuitive
+% \cite{lipson2014challenges, pfeifer2012challenges}.
+% Our approach addresses this challenge, because differential canalization provides a mechanism whereby static yet robust soft robot morphologies may be automatically discovered using evolutionary algorithms for a given task environment.
+% Furthermore, future soft robots could potentially alter their shape to best match the current task by selecting from previously trained and canalized forms.
+% This change might occur pneumatically, as in \citet{shepherd2011multigait}, or it could modulate other material properties such as stiffness (e.g.~using a muscular hydrostat).
+
+% We have shown that 
+% for canalization to occur in our developmental model, some form of paedomorphosis must also occur. However, there are at least two distinct methods by which such heterochrony can proceed: progenesis and neoteny.
+% Progenesis 
+% % |the acceleration of developmental processes such that adult traits of ancestors are realized earlier in juvenile stages of descendants| 
+% could occur through mutations which move initial parameter values $(\ell,\, \phi)$ toward their final values $(\ell^*,\, \phi^*)$.
+% Neoteny 
+% % |the retention of juvenile traits into the adult form as a result of retardation of development| 
+% could instead occur through mutations which move final values $(\ell^*,\, \phi^*)$ toward their initial values $(\ell,\, \phi)$.
+% Although a superior phenotype can materialize anywhere along the ontogenetic timeline, late onset mutations are less likely to be deleterious than early onset mutations.
+% This is because our developmental model is linear in terms of process, and interfering with any step affects all temporally-downstream steps. 
+% Since the probability of a mutation being beneficial is inversely proportional to its phenotypic magnitude, mutational changes in the terminal stages of development require the smallest change to the developmental program.
+% Hence, late-onset discoveries of superior traits are more likely to occur without breaking functionality at other points in ontogeny, and these traits can become canalized by evolution through progenesis: mutations which reduce the amount of ontogenetic time prior to realizing the superior trait (by moving $\ell \rightarrow \ell^*$ and/or $\phi \rightarrow \phi^*$). 
+% Indeed progenesis was observed most often in our trials: late onset mutations which transform a walking robot into a rolling one are discovered by the evolutionary process, and are then moved back toward the birth of the robots'
+% descendants through subsequent mutations.
+
+% Finally, we would like to note the observed phenomenon of \textit{increased} 
+% % phenotypic 
+% % ballistic
+% plasticity prior to genetic assimilation.
+% Models of the Baldwin effect usually assume that phenotypic plasticity itself does not evolve, although it has been shown how major changes in the environment can select for increased plasticity in a character that is initially canalized \cite{lande2009adaptation}.
+% In our experiments however, there is no environmental change.
+% There is also a related concept known as `sensitive periods' of development in which an organism's phenotype is more responsive to experience 
+% \cite{bateson1979sensitive}.
+% Despite great interest in sensitive periods, the adaptive reasons why they have evolved are unclear \cite{Fawcett2015}.
+% In our model, increasing the amount of morphological development increases the chance of capturing an advantageous static phenotype, which can then be canalized, once found.
+% However, a phenotype will not realize the globally optimal solution by simply maximizing development.
+% This would merely lengthen the \textit{line} on which development unfolds in phenotypic hyperspace ($n$-dimensional real space).
+
+
+% The developmental model described herein is intentionally minimalistic in order to isolate the effect of morphological and neurological change in the evolutionary search for embodied agents.
+% The simplifying assumptions necessary to do so make it difficult to assess the biological implications.
+% For example, we model development as an open loop process 
+% and thus ignore environmental queues and sensory feedback 
+% \cite{Moczekrspb20110971,snell2013overview}.
+% We also disregard the costs and constraints of phenotypic plasticity 
+% \cite{snell2012selective,murren2015constraints}. 
+% By removing these confounding factors, we hope these results will help generate novel hypotheses about morphological development, heterochrony, modularity and evolvability in biological systems.
+
+
+
+
+\section{Environment-Mediated Development}
+
+\begin{itemize}
+    \item \textit{Phylogenic change}: structure; material alternatives, configuration alternatives.
+    \item \textit{Ontogenic change}: material, configuration.
+\end{itemize}
+
+\noindent
+The constraint in chapters 2 to 4 of well-specified material were lifted in chapter 5.
+As in chapter 2,
+structure is free to vary but shape was not.
+However, a much larger, 10-by-10-by-10 workspace was used.
+The contribution of this chapter is that,
+instead of no development (chapter 2) or ballistic development (chapters 3 and 4),
+development is driven by environmental signals (stress and pressure).
+
+
+
+% \noindent
+% % Initial exploration in closing the developmental feedback loop with as little additional machinery as possible to determine when and how such added complexity increases evolvability and robustness.
+% Building systems that are robust in the face of changing environmental conditions is a grand challenge in robotics and AI.
+% The brittleness of current systems is exemplified by the growing literature on adversarial examples
+% \citep{szegedy2013intriguing,
+% nguyen2015deep,
+% athalye2017synthesizing}, 
+% and the fact that almost all practical robots are confined to the perfectly flat floors they clean, or the hermetic factories built around their work.
+% Robustness is not unknown in human-engineered systems, but it is relatively rare; in nature it is everywhere, and one of the reasons is that in nature organisms develop: 
+% They constantly change not just their cognitive architectures but the morphologies that contain them and mediate with the external world.
+
+% It has been shown for rigid robots \citep{bongard2011morphological}
+% that morphological development can in some cases increase robustness since it exposes evolution to 
+% richer sensory information: the robot must maintain locomotion while changing its body. 
+% Soft robots have much greater potential in this domain:
+% If soft, there are more ways that morphology can change, so by definition the increase
+% in breadth in sensorimotor experiment induced by development will be even greater than that
+% for developing yet rigid machines.
+% Toward this goal, by allowing material stiffness to be plastic, we have here 
+% investigated a heretofore unexplored dimension of morphological change (stiffness) not available
+% to rigid robots.
+
+% Advances in materials science and 3D printing promise new engineered systems{\textemdash} protean machines{\textemdash}that may continuously morph in response to changing environmental signals.
+% Simply put, if a robot always changes its strategy along many morphological and neural modalities, 
+% it is more difficult to fool with a static adversarial example or a new task environment.
+% Little to no analysis has been conducted, however, into how such systems should respond to environmental stimuli in order to adapt their functions in the face of changing environmental conditions.
+
+% In initiating such a study here, we have shown that it is not just a matter of reacting to \textit{any} stimulus: different types of developmental feedback loops elicit different \textit{evolved} properties.
+% We observed that if one modality (stiffness) responds to one particular internal signal (engineering stress) but not another (pressure), robots evolved structure that  intrinsically buffered large deviations from their expected material properties.
+
+% % Pressure and stress have very different mechanical load signatures, and so too were the developmental reactions they stimulated.
+% Pressure and stress bear distinct mechanical load signatures which in turn stimulated very different developmental reactions.
+% Intriguingly, increased robustness was correlated with increased canalization: developmental reactions with stress were canalized to a greater degree than those with pressure.
+% Although developmental reactions with pressure did not afford the evolution of robustness here, it did increase evolutionary divergence: pressure-adaptive robots evolved more diverse 
+% (congenital) 
+% shapes than stress-adaptive robots.
+% % We focused the present investigation on robustness, but, in some domains, diversity might be a more desirable property. 
+% Our work here suggests
+% there may be other developmental feedback loops that could be made available to evolution
+% that would lead to more diverse and robust robots.
+
+
+% For our purposes,  `morphology' is a robot body,
+% but the concepts here could equally be applied to non-embodied systems, such as the architectures of deep 
+% neural networks \citep{miikkulainen2017evolving,zoph2016neural}.
+% One could define 
+% internal neural processes such as node sharpening \cite{french1994dynamically},
+% Hebbian learning,
+% or neurotransmitter diffusion \cite{husbands1998better, velez2017diffusion}
+% as interoceptive signals to which
+% the neural network developmentally responds in a structural manner,
+% such as adding or removing neurons.
+% Meanwhile, at a faster time scale, synaptic weights might be tuned in response to 
+% exteroceptive signals such as gradients of a loss function.
+% Finally, such a network could be placed inside a robot
+% which itself is experiencing morphological change.
+
+
+
+
+\section{Shapeshifting for Damage Recovery}
+
+\begin{itemize}
+    \item \textit{Phylogenic change}: configuration alternatives.
+    \item \textit{Slow ontogenic change} [damage]: structure.
+    \item \textit{Medium ontogenic change}: shape.
+    \item \textit{Fast ontogenic change}: configuration.
+\end{itemize}
+
+
+\noindent
+In chapters 2 and 3, 
+plastic deformation of a single structure were explored.
+In chapter 5, a control policy was optimized for a quadruped of 140 voxels.
+The controller was then frozen and the robot was deployed.
+The robot then was subjected to a series of nine mechanical damage scenarios of increasing severity.
+In each case, the robot needed to find a shape within the confines of the remnant structure that ``resonated'' with its control policy to regenerate locomotion.
+
+% \noindent
+% In this paper, a new approach to robot damage recovery has been proposed.
+% Instead of presenting the remnant shape of the damaged robot to optimization as 
+% fixed,
+% we enable optimization to change this shape as the essential part of the recovery process.
+% In doing so we realized a machine that recovered more function than an otherwise equivalent system that could adapt its controller but not deform its shape.
+
+% In future work we will improve the transferal of simulated morphing machines
+% to physical ones using existing sim2real methods~\cite{bharadhwaj2018data, bongard2006resilient, cully2015robots, hwangbo2019learning, kwiatkowski2019task, tan2018sim} adapted appropriately to meet the additional
+% transferal demands dictated by soft materials~\cite{matas2018sim}. 
+% We will also generalize our optimization method
+% such that control and shape readaptation can be combined as dictated by the form of damage, predamage structure of the robot, and its task environment.
+
+% \subsection{Biological regeneration.}
+
+% In past work, rigid-bodied robots have been venerated for their ability to ``adapt like animals''~\cite{bongard2006resilient,cully2015robots}.
+% These machines, which were constructed from undeformable metals and hard plastics, 
+% automatically learned to control their bodies in spite of missing or broken legs.
+% But when an animal loses one or more of its legs to injury, it does not adapt by merely searching for a new mental representation of behavior that successfully maps onto the damaged body. 
+% Rather, they often fundamentally deform their damaged ``hardware'' into something more controllable.
+
+
+% Evidence for this abounds.
+% A famous example is the congenitally two-legged goat described by Slijper~\cite{slijper1942biologic}: 
+% an otherwise normal goat which was born without forelegs adopted an upright posture and learned to walk on its hind legs alone.
+% In addition to enlarged 
+% hind legs, 
+% striking changes in morphology were documented, including
+% a greatly elongated gluteal tongue and 
+% an innovative arrangement of small tendons,
+% a narrowed pelvis,
+% an oval (rather than V-shaped) thoracic cross-sectional shape,
+% a curved spine, 
+% and an unusually large neck~\cite{west2005developmental}.
+% The animal's body resembled that of a kangaroo more closely than that of a normal goat.
+
+
+% Other animals can regenerate.
+% The planarian flatworm can be cut into many pieces (the record is 279) all of which grow back to a full organism, regenerating not just tail and head, but eyes and the complete nervous system~\cite{montgomery1974minimal}.
+% Vertebrates, such as 
+% frogs, also display the capability of regenerating limbs, 
+% jaws, eyes and a variety of internal structures~\cite{brockes1997amphibian}. 
+% Humans too (especially children) are sometimes capable of fingertip regeneration after distal phalange amputation~\cite{illingworth1974trapped}. 
+
+% \subsection{Mechanisms of biological regeneration.}
+
+% Several of the mechanisms by which organisms achieve these forms of 
+% self-editing of their own anatomy pose design
+% challenges and future research directions for robotics.
+
+% First is the ability to harness the behavior of low-level components (cells) towards a specific large-scale goal-state: salamanders can regenerate whole limbs, eyes, tails, ovaries, and other organs \cite{mccusker2011axolotl},
+% but growth and remodeling ceases when a correctly shaped and sized organ is complete \cite{pezzulo2016top}.
+% Second is the flexibility and robustness of systems under novel conditions. For example, tadpoles whose facial organs are experimentally placed in abnormal configurations will undergo novel rearrangements to still give rise to normal frog faces during metamorphosis \cite{vandenberg2012normalized}, 
+% showing that the genome encodes not a hardwired set of movements for each organ but rather specifies a machine that can remodel toward the same target morphology from a variety of unexpected starting states. 
+% Thus, it is critical to understand and exploit the ability of evolution to give rise to hardware that is well-adapted to the normal environment but also retains significant plasticity \cite{sullivan2016physiological}. 
+
+% Third is the fact that during regeneration, the tissues making growth and morphogenesis decisions are themselves being drastically rearranged: thus, the computational control circuitry \textit{is itself} the object of the deformation actuators, forming a closed loop in which information is reliably processed in a medium that is constantly changing \cite{pezzulo2015re}. 
+% Finally, the remarkable robustness of morphological computation extends to information learned within the lifetime of the organism \cite{blackiston2015stability}.
+% Butterflies, which result from a caterpillar brain that is almost completely dissolved during metamorphosis, still remember information learned during the caterpillar stage \cite{blackiston2008retention}. 
+% Flatworms, which regrow their entire heads, still remember information they learned prior to decapitation \cite{corning1967regeneration, shomrat2013automated}. 
+
+% Attempts to implement these capabilities in artificial systems (whether robotic or via synthetic biology) are likely to enrich not only engineering technology, but also to feed back to the biological sciences and biomedicine. 
+% The current understanding of computation in biological tissues has numerous gaps, which are only likely to be filled by attempts to build these capabilities from the ground up \cite{kamm2018perspective}. 
+
+
+% \subsection{Metamorphosing machines.}
+
+% It has been shown here that robots, too, are not only capable of regenerating limbs, but that such deformation can manifest by selecting for function recovery alone, instead of a target legged shape.
+
+
+% However, this ability largely depends on the material with which robots are made, for even if morphology is free to change in rigid bodies, the ways in which such change can occur are limited at best.
+% In~\cite{bongard2011morphological}, robots used a combination of rotary and linear actuators to slowly angle appendages downward and extrude them outward, thus simulating limb growth.
+% In softer machines, there are more ways for morphology to change: 
+% The soft robot used here was able to locally deform its geometry to bend, twist, compress or expand throughout its body.
+% Its also possible, although not investigated here, for soft robots to change their material properties, such as stiffness, 
+% through (e.g.) granular jamming~\cite{brown2010universal,kriegman2018interoceptive}. 
+% % narang2018transforming,steltz2009jsel}. 
+
+
+% The possibility of this latter change highlights the inadequacy of the name ``soft robot''.
+% When a granular jamming robot jams (removes excess internal air to become stiff) does it cease to be a soft robot?
+% What if it never unjams?
+% For the purposes of damage repair, the most important property of soft robots is not that they are soft \textit{per se}, but that they may easily change their structural and material properties (possibly including stiffness).
+% One can envisage future ``rigid'' nanobots capable of self-assembling into a protean metamachine that can rearrange so as to regrow a lost part; but that day seems far off, whereas soft robots, capable of continuous morphological change, are already becoming a reality.
+
+
+% The future of this line of work promises not just new robotic systems but also new science. Shapeshifting robots, recast as scientific tools, can shed new light on old biological questions about developmental plasticity, regeneration and homeostasis~\cite{kriegman2017minimal,kriegman2018morphological,lobo2012modeling}.
+% And, symmetrically, new theories about the mechanisms that lie at the heart of such questions can be physically instantiated and optimized in a new breed of useful, autonomous and adaptive machines.
+
+
+
+
+\section{Reconfigurable Organisms}
+
+% Cells: The Final Frontier?
+
+\begin{itemize}
+    \item \textit{Phylogenic change}: structure, material; configuration alternatives and variance.
+    \item \textit{Slow ontogenic change} [in vivo]: structure, material.
+    \item \textit{Fast ontogenic change}: configuration.
+\end{itemize}
+
+
+% \noindent
+% Although simulation and design of rigid structures and machines has been possible for some time, only recently has it become computationally tractable to simulate the combined behavior of arbitrary aggregates of soft components with differing material and actuation properties (22). As shown for the first time here, such fine-grained simulations can be embedded in evolutionary search methods to discover designs that can be instantiated in biological, rather than artificial materials. 
+
+% The resulting organisms embodied not only the structure (Fig. S8) of evolved in silico designs but also their behavior (Fig. 4), despite modeling cardiomyocyte temporal coordination as random noise. As a side effect of selection pressure for locomotion, derandomizing morphologies evolved: evolutionary improvement occurred through changes in overall shape, and distribution of the passive and contractile cells, to collectively derandomize the global movement produced by the random actuation. In biology, such robustness to random noise is ubiquitous; one example is the ability of many species to adapt to wide ranges of diversity in cell size and number as starting points in their embryogenesis (23).
+
+% The behavioral competence of individual cells, and the propensity of cells to cooperate in groups, facilitate functional morphogenesis in novel circumstances. The lifeforms presented here, despite lacking nervous systems, following novel developmental trajectories, and being composed of materials from different tissues, nevertheless possess these self-organizing properties. These properties synergize with and support the behavior they were designed to exhibit. For instance, although signaling between cardiomyocytes was not enforced, emergent spontaneous coordination among the cardiac muscle cells produced coherent, phase-matched contractions which aided locomotion in the physically-realized designs. Also, some of the designs, when combined, spontaneously and collectively aggregate detritus littered within their shared environment (Figs. 3F and S11). Finally, reconfigurable organisms not only self-maintain their externally-imposed configuration, but they also self-repair in the face of damage, such as automatically closing lacerations (Fig. S9). Such spontaneous behavior cannot be expected from machines built with artificial materials unless that behavior was explicitly selected for during the design process (24).
+
+% This approach admits future generalization and automation because the generator-and-filter architecture enables modular addition, removal, or reorganization of elements in the pipeline for rapid design and deployment of new living systems for new tasks in new domains. For instance, a filter could be added which pre-emptively steers the evolutionary algorithm away from portions of the design space known to contain designs that cannot be realized physically (25). Or, inspired by the hierarchical organization of deep neural networks (26), individual designs output by one generator could become the building blocks input to the next generator, thus enabling hierarchical design and re-use of cellular assemblies, and assemblies of assemblies.
+
+% Beyond the applications reported here, the generality of this approach is as of yet unknown. But, advances in machine learning, soft body simulation, and bioprinting are likely to broaden the potential applications to which it may be put in future. Applications could be numerous, given the ease of misexpressing novel proteins and synthetic biology pathways and computational circuits in Xenopus cells (27). Given their non-toxicity and self-limiting lifespan, they could serve as a novel vehicle for intelligent drug delivery (28) or internal surgery (29). If equipped to express signaling circuits and proteins for enzymatic, sensory (receptor), and mechanical deformation functions, they could seek out and digest toxic or waste products, or identify molecules of interest in environments physically inaccessible to robots. If equipped with reproductive systems (by exploiting endogenous regenerative mechanisms such as occurs in planarian fissioning), they may be capable of doing so at scale. In biomedical settings, one could envision such biobots (made from the patient's own cells) removing plaque from artery walls, identifying cancer, or settling down to differentiate or control events in locations of disease. A beneficial safety feature of such constructions is that in the absence of specific metabolic engineering, they have a naturally limited life-span. 
+
+% These methods, reagents, and data extend the breadth of model organisms available for study by designing living systems that are as orthogonal as possible to existing species, yet capable of being built from existing cell types. By enabling a computationally-guided interplay between emergent and designed processes, this platform facilitates studies of the relationship between genomes (in our case, wild-type Xenopus laevis), the resulting body-plan, and its behaviors in diverse environments. Thus, such reconfigurable organisms could serve as a unique model system facilitating work in the evolution of multicellularity, exobiology, artificial life, basal cognition, and regenerative medicine. If equipped with electrically-active cells and selected for cognitive or computational functions (30), such designed systems may similarly broaden our understanding of how intelligence can be instantiated in living as well as non-living systems.
+
+
+
+\subsection*{Friends to Cite}
+
+Bio-hybrids \cite{cvetkovic2014three,raman2016optogenetic,nawroth2012tissue,park2016phototactic,ricotti2017biohybrid}
+
+
+
+\subsection*{What}
+
+
+
+\subsection*{Why}
+
+Robots are made from building blocks which are themselves fabricated or harvested from naturally occurring materials.
+Why on earth would we not use the best building blocks available?
+On Earth, those are cells.
+
+
+\subsection*{Returning to a Robot's Roots}
+
+The first use of the word ``robot'' occurred in the Czech
+play \textit{R.U.R.}
+Rossum's Universal Robots.
+by Karel \v{C}apek
+Robot is the Czech word for ``laborer''.
+These machines were not made from steel
+and electronics
+but from flesh.
+
+\cite{ball2020living}
+
+inspired by the emerging technology of 
+in vitro (in vivo?) tissue culture,
+organs and other parts were made from vats of flesh-like dough and assembled into bodies
+
+
+
+
+
+\subsection*{Living Cybernetic Machines}
+
+Pask and Beer realized the limitations of 
+% electromagnetic and 
+electronic components 
+as analogue of organic ``fabric'' \cite{beer1960cybernetics}.
+% From the observation that living organisms grow, they wondered if a cybernetic machine could be physically grown. 
+And this caused Beer in particular to survey all matter of naturally occurring systems in search of materials to serve as cells for the construction of cybernetic machines.
+At first he tried his hand at a biological computer
+\cite{beer1960cybernetics}:
+\begin{quote}
+\small
+I had been drawn to the organic cell largely because the components were versatile and effectively self-repairing, which struck me as a huge advantage.
+\end{quote}
+
+
+
+\citet{beer1962progress}
+persuaded a small colony of \textit{Daphnia} (a tiny pond dwelling crustacean) to digest fragments of iron filings.
+The movement of the creatures could thus be influenced by 
+the direction and strength of applied magnetic fields.
+This would be the input and the response of the colony would be the regulator.
+Another system that reflects the density of the colony affects an instrument that provides the output of the system, which can be fed back to influence the input.
+This was a machine that could potentially exhibit homeostasis and seek stability.
+There were complications, however.
+Not all of the iron filings were ingested by the crustaceans and eventually the behavior of the colony was disrupted by an excess of magnets in the water.
+
+So beer moved to the protozoan \textit{Euglena}.
+These amoebae photosynthesize in water and are sensitive to light, their
+phototropism reversing when light levels reach a critical value. 
+If there is sufficient light they reproduce by binary fission; if there is a prolonged absence of light they lose chlorophyll and live off organic matter. 
+The amoebae interact with each other by competing for nutrients, blocking light and generating waste products.
+
+Pure cultures were difficult to handle.
+Beer then moved to full pond ecosystems in large tanks.
+
+Pask tried using the larva of the yellow fever mosquito, \textit{Aedes Aegypti} \cite{beer1962progress}.
+
+But made little progress getting these systems to work as regulators.
+There was certainly enough variety but the feedback to the environment was too ambiguous.
+Living systems self-regulate and self-proliferate but they are difficult to persuade steer into new directions contrary to their natural homeostatic tendencies.
+And this barrier to realizing a robot made entirely out of cells persisted for seven more decades after Beer's attempts, before Douglas Blackiston and I figured our how to build and program novel organisms.
+
+
+
+
+\section{Conclusion}
+
+
+

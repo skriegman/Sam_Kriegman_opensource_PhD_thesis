@@ -1,0 +1,93 @@
+\section{Discussion}
+\label{sec:discussion}
+
+
+In this paper, a new approach to robot damage recovery has been proposed.
+Instead of presenting the remnant shape of the damaged robot to optimization as 
+fixed,
+we enable optimization to change this shape as the essential part of the recovery process.
+In doing so we realized a machine that recovered more function than an otherwise equivalent system that could adapt its controller but not deform its shape.
+
+In future work we will improve the transferal of simulated morphing machines
+to physical ones using existing sim2real methods~\cite{bharadhwaj2018data, bongard2006resilient, cully2015robots, hwangbo2019learning, kwiatkowski2019task, tan2018sim} adapted appropriately to meet the additional
+transferal demands dictated by soft materials~\cite{matas2018sim}. 
+We will also generalize our optimization method
+such that control and shape readaptation can be combined as dictated by the form of damage, predamage structure of the robot, and its task environment.
+
+\subsection{Biological regeneration.}
+
+In past work, rigid-bodied robots have been venerated for their ability to ``adapt like animals''~\cite{bongard2006resilient,cully2015robots}.
+These machines, which were constructed from undeformable metals and hard plastics, 
+automatically learned to control their bodies in spite of missing or broken legs.
+But when an animal loses one or more of its legs to injury, it does not adapt by merely searching for a new mental representation of behavior that successfully maps onto the damaged body. 
+Rather, they often fundamentally deform their damaged ``hardware'' into something more controllable.
+
+
+Evidence for this abounds.
+A famous example is the congenitally two-legged goat described by Slijper~\cite{slijper1942biologic}: 
+an otherwise normal goat which was born without forelegs adopted an upright posture and learned to walk on its hind legs alone.
+In addition to enlarged 
+hind legs, 
+striking changes in morphology were documented, including
+a greatly elongated gluteal tongue and 
+an innovative arrangement of small tendons,
+a narrowed pelvis,
+an oval (rather than V-shaped) thoracic cross-sectional shape,
+a curved spine, 
+and an unusually large neck~\cite{west2005developmental}.
+The animal's body resembled that of a kangaroo more closely than that of a normal goat.
+
+
+Other animals can regenerate.
+The planarian flatworm can be cut into many pieces (the record is 279) all of which grow back to a full organism, regenerating not just tail and head, but eyes and the complete nervous system~\cite{montgomery1974minimal}.
+Vertebrates, such as 
+frogs, also display the capability of regenerating limbs, 
+jaws, eyes and a variety of internal structures~\cite{brockes1997amphibian}. 
+Humans too (especially children) are sometimes capable of fingertip regeneration after distal phalange amputation~\cite{illingworth1974trapped}. 
+
+\subsection{Mechanisms of biological regeneration.}
+
+Several of the mechanisms by which organisms achieve these forms of 
+self-editing of their own anatomy pose design
+challenges and future research directions for robotics.
+
+First is the ability to harness the behavior of low-level components (cells) towards a specific large-scale goal-state: salamanders can regenerate whole limbs, eyes, tails, ovaries, and other organs \cite{mccusker2011axolotl},
+but growth and remodeling ceases when a correctly shaped and sized organ is complete \cite{pezzulo2016top}.
+Second is the flexibility and robustness of systems under novel conditions. For example, tadpoles whose facial organs are experimentally placed in abnormal configurations will undergo novel rearrangements to still give rise to normal frog faces during metamorphosis \cite{vandenberg2012normalized}, 
+showing that the genome encodes not a hardwired set of movements for each organ but rather specifies a machine that can remodel toward the same target morphology from a variety of unexpected starting states. 
+Thus, it is critical to understand and exploit the ability of evolution to give rise to hardware that is well-adapted to the normal environment but also retains significant plasticity \cite{sullivan2016physiological}. 
+
+Third is the fact that during regeneration, the tissues making growth and morphogenesis decisions are themselves being drastically rearranged: thus, the computational control circuitry \textit{is itself} the object of the deformation actuators, forming a closed loop in which information is reliably processed in a medium that is constantly changing \cite{pezzulo2015re}. 
+Finally, the remarkable robustness of morphological computation extends to information learned within the lifetime of the organism \cite{blackiston2015stability}.
+Butterflies, which result from a caterpillar brain that is almost completely dissolved during metamorphosis, still remember information learned during the caterpillar stage \cite{blackiston2008retention}. 
+Flatworms, which regrow their entire heads, still remember information they learned prior to decapitation \cite{corning1967regeneration, shomrat2013automated}. 
+
+Attempts to implement these capabilities in artificial systems (whether robotic or via synthetic biology) are likely to enrich not only engineering technology, but also to feed back to the biological sciences and biomedicine. 
+The current understanding of computation in biological tissues has numerous gaps, which are only likely to be filled by attempts to build these capabilities from the ground up \cite{kamm2018perspective}. 
+
+
+\subsection{Metamorphosing machines.}
+
+It has been shown here that robots, too, are not only capable of regenerating limbs, but that such deformation can manifest by selecting for function recovery alone, instead of a target legged shape.
+
+
+However, this ability largely depends on the material with which robots are made, for even if morphology is free to change in rigid bodies, the ways in which such change can occur are limited at best.
+In~\cite{bongard2011morphological}, robots used a combination of rotary and linear actuators to slowly angle appendages downward and extrude them outward, thus simulating limb growth.
+In softer machines, there are more ways for morphology to change: 
+The soft robot used here was able to locally deform its geometry to bend, twist, compress or expand throughout its body.
+Its also possible, although not investigated here, for soft robots to change their material properties, such as stiffness, 
+through (e.g.) granular jamming~\cite{brown2010universal,kriegman2018interoceptive}. 
+% narang2018transforming,steltz2009jsel}. 
+
+
+The possibility of this latter change highlights the inadequacy of the name ``soft robot''.
+When a granular jamming robot jams (removes excess internal air to become stiff) does it cease to be a soft robot?
+What if it never unjams?
+For the purposes of damage repair, the most important property of soft robots is not that they are soft \textit{per se}, but that they may easily change their structural and material properties (possibly including stiffness).
+One can envisage future ``rigid'' nanobots capable of self-assembling into a protean metamachine that can rearrange so as to regrow a lost part; but that day seems far off, whereas soft robots, capable of continuous morphological change, are already becoming a reality.
+
+
+The future of this line of work promises not just new robotic systems but also new science. Shapeshifting robots, recast as scientific tools, can shed new light on old biological questions about developmental plasticity, regeneration and homeostasis~\cite{kriegman2017minimal,kriegman2018morphological,lobo2012modeling}.
+And, symmetrically, new theories about the mechanisms that lie at the heart of such questions can be physically instantiated and optimized in a new breed of useful, autonomous and adaptive machines.
+
+

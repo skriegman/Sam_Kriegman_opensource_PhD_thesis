@@ -1,0 +1,44 @@
+\subsection{The simulation.}
+
+We used the soft-body physics engine Voxelyze \cite{hiller2014dynamic} to simulate robots composed of actuating and/or passive, elastic voxels.
+The simulator models the distance between adjacent voxels as Euler-Bernoulli beams (critically damped; $\zeta=1$).
+Additionally, a collision detection system monitors the distance between the voxels on the surface of the robot at each timestep.
+If a pair of surface voxels are detected to collide (intersect), a temporary beam (underdamped; $\zeta=0.8$) is constructed between the two until the collision is resolved. 
+% (This temporary bond is deleted once the voxels no longer intersect.)
+
+Designs were simulated with a gravitational acceleration of -9.81 m/s$^2$, and initialized on top of an infinite surface plane at $z=0$.
+Coulomb friction is applied to voxels in contact with the surface plane.
+% Slow (global?) damping coefficient of 0.01 was used.
+Voxels were simulated to have 1 cm$^3$ resting volume (resting beam lengths), with Young's modulus $10^7$ Pa, Poisson's ratio 0.35, 
+% density $10^6$ kg/m$^3$, % todo: this cannot be right
+and coefficients of static and kinetic friction of 1 and 0.5, respectively.
+These hyperparameters were adopted from \cite{kriegman2019automated}.
+For more details about how the physics are actually modeled, see \cite{hiller2014dynamic}.
+
+Volumetric actuation was implemented by varying the rest length between voxels, in all three dimensions, when computing the elastic force between them.
+Volumetric expansion in simulation and reality are both roughly spherical
+(Fig.~\ref{fig:pressure}b), but compression in reality is more complex
+and difficult to simulate: 
+the voxels buckle (Fig.~\ref{fig:pressure}c).
+So volumetric actuation was here limited to expansion only ($+90\%$ rest volume).
+The active voxels expand in phase with each other 
+as dictated by
+a central pattern generator:
+a sine wave with frequency 4 Hz and amplitude 1.9 cm$^3$.
+When the sine wave is at or below zero, the active voxels remain at their resting volume (1 cm$^3$).
+This produced quasistatic dynamics.
+
+Each design was simulated for 8831 timesteps, with a stepsize of 0.000453 seconds, resulting in a total simulation time of 4 seconds.
+During the first 552 times steps (0.25 sec), the design was allowed to settle under gravity before actuation begins, ensuring that movement (if any) is a result of actuation, rather than passively falling forward.
+Just before actuation, the design's initial center of mass is recorded as $(x_0, y_0, z_0)$.
+The active voxels are then actuated for 3.75 sec at 4 Hz, or 15 actuation cycles.
+
+An exhaustive search of all 6561 designs (in batches of 50) took 58 CPU hours (1.8 wall-clock hours) on a single AMD Ryzen threadripper 1950X 16-core/32-thread processor.
+Fitness was taken to be the net displacement (away from the origin in any direction) of the design's center of mass, in terms of euclidean distance in the plane,
+where the origin is defined by the $x,y$ components of the design's initial center of mass $(x_0, y_0)$.
+Fitness is thus defined as:
+\begin{equation}
+    \label{eq:fitness}
+    F=\sqrt{(x_t-x_0)^2+(y_t-y_0)^2} \,,
+\end{equation}
+where $x_t,y_t$ are the final coordinates of the design at the end of the evaluation period.

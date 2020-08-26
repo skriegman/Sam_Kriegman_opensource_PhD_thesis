@@ -1,0 +1,108 @@
+
+\section{Methods}
+\label{sec:methods}
+
+
+\subsection{Ballistic development.}
+
+Ballistic development 
+$\mathcal{B}(t)$
+is simply a linear function from a starting value $a$ to a final value $b$, in ontogenetic time $t\in(0,\tau)$, thus: 
+\begin{equation}
+\label{eq:ballistic-devo}
+\mathcal{B}(t) = a + \frac{t(b-a)}{\tau}.
+\end{equation}
+For Evo robots, $a=b$, hence:
+\begin{equation}
+\label{eq:no-devo}
+\mathcal{B}(t) = a,
+\end{equation}
+which is just a constant value in ontogenetic time.
+
+Because $a$ and $b$ are constants set by the genotype and $\tau=10$ (sec) is a fixed hyperparameter, development is predetermined, monotonic and irreversible|in a word: ballistic.
+
+
+
+\subsection{Current length.} 
+
+For smaller voxels, it is necessary to implement damping into their actuation to avoid simulation instability. 
+Actuation amplitude is limited by a linear damping factor $\xi(x) = \min\{1,\, (4x-1)/3\}$, which only affects voxels with resting length less than one centimeter, and approaches zero (no actuation) as the resting length goes to its lower bound of 0.25 cm.
+% \begin{equation}
+% \xi(x) = \min \left(1,\quad \frac{4x-1}{3}\right) =
+% \begin{cases} 
+%       1 & 1 \leq x \leq \frac{7}{4}  \\
+% %       (4x-1)/3 & x < 1
+%       \frac{4x-1}{3} & \frac{1}{4} \leq x < 1
+%    \end{cases}
+% \end{equation}
+
+Actuation of the $k$-th voxel $\psi_k(t)$ therefore depends on the starting and final phase offsets $(\phi_k,\, \phi_k^*)$ for relative displacement, and on the starting and final resting lengths $(\ell_k,\, \ell_k^*)$ for amplitude. With maximum amplitude $A=0.14$ cm and a fixed frequency $f=4$ Hz, we have:
+\begin{equation}
+\label{eq-actuation}
+\psi_k(t) = A \cdot \sin\left[2\pi f t + \phi_k + \frac{t(\phi_k^*-\phi_k)}{\tau}\right] \cdot \xi\left[\ell_k + \frac{t(\ell_k^*-\ell_k)}{\tau}\right]
+\end{equation}
+The current length of the $k$-th voxel at time $t$, denoted by $\mathcal{L}_k(t)$, is the resting length plus the offset and damped signal $\psi_k(t)$.
+\begin{equation}
+\label{eq-curr-length}
+\mathcal{L}_k(t) = \ell_k + \frac{t(\ell_k^*-\ell_k)}{\tau} + \psi_k(t)
+\end{equation}
+Current length is broken down into its constituent parts for a single 
+% (undamped) 
+voxel, under each treatment, in Supplementary Fig. \hyperref[fig:S2]{S2}.
+
+
+
+\subsection{Evolutionary algorithm.}
+
+We employed a standard evolutionary algorithm, Age-Fitness-Pareto Optimization \cite{Schmidt2011}, which uses the concept of Pareto dominance and an objective of age (in addition to fitness) intended to promote diversity among candidate designs. 
+\textit{A single evolutionary trial maintains a population of thirty robots, for ten thousand generations.}
+Every generation, the population is first doubled by creating modified copies of each individual in the population.
+The age of each individual is then incremented by one.
+Next, an additional random individual (with age zero) is injected into the population (which now consists of 61 robots). 
+Finally, selection reduces the population down to its original size (30 robots) according to the two objectives of fitness (maximized) and age (minimized).
+
+We performed the above procedure thirty times to produce \textit{thirty independent evolutionary trials.}
+That the number of trials is the same as the population size within each trial is an admittedly confusing coincidence.
+
+The mutation rate is also evolved for each voxel, independently, and slightly modified every time a genotype is copied from parent to child.
+These 48 independent mutation rates are initialized such that only a single voxel is mutated on average.
+Mutations follow a normal distribution $(\sigma_{\ell}=0.75$ cm; $\sigma_{\phi}=\pi/2)$ and are applied by first selecting what parameter types to mutate $(\phi_k,\, \phi_k^*,\, \ell_k,\, \ell_k^*)$, and then choosing, for each parameter separately, which voxels to mutate. 
+In Supplemental Materials we provide exact derivations of the expected genotypic impact of mutations, in terms of the proportions of voxels and parameters modified, for a given fixed mutation rate $\lambda$.
+There is a negligible difference between Evo and Evo-Devo in terms of the expected number of parent voxels modified during mutation (Supplementary Fig. \hyperref[fig:S4]{S4}).
+% Empirically, there was not a statistically significant difference in the number of voxels mutated between Evo and Evo-Devo samples.
+
+
+\subsection{Developmental windows.}
+
+The amount of development in a particular voxel can range from zero (in the case that starting and final values are equal) to 1.5 cm for the morphology (which ranges from 0.25 cm to 1.75 cm) and $\pi$ for the controller (which ranges from $-\pi/2$ to $\pi/2$). 
+The morphological development window, $W_L$, is the sum of the absolute difference of starting and final resting lengths across the robot's 48 voxels, divided by the total amount of possible morphological development.
+\begin{equation}
+W_L = \frac{1}{48(1.5)} \sum_{k=1}^{48} |\ell^*_k-\ell_k|
+\label{eq-WL}
+\end{equation}
+The controller development window, $W_{\Phi}$, is the sum of the absolute difference of starting and final phase offsets across the robot's 48 voxels, divided by the total amount of possible controller development. 
+\begin{equation}
+W_{\Phi} = \frac{1}{48\pi} \sum_{k=1}^{48} |\phi^*_k-\phi_k|
+\label{eq-WPhi}
+\end{equation}
+
+
+\subsection{Statistical hypothesis testing.}
+
+We used the Mann-Whitney $U$ test to calculate the $p$-values reported in this paper.
+
+
+\subsection{Data availability.}
+
+\href{https://github.com/skriegman/how-devo-can-guide-evo}{\textbf{github.com/skriegman/how-devo-can-guide-evo}} contains the source code necessary for reproducing the results reported in this paper.
+
+
+% \begin{itemize}
+
+% \item[{\Large$\star$}]
+% \href{https://github.com/skriegman/how-devo-can-guide-evo}{\textbf{https://github.com/skriegman/how-devo-can-guide-evo}} contains the source code necessary for reproducing the results reported in this paper.
+
+% % \item 
+% % \href{https://github.com/skriegman/evosoro}{\textbf{https://github.com/skriegman/evosoro}} is a more general repository to fork which provides additional examples in different environments and with various evolutionary tool sets.
+
+% \end{itemize}

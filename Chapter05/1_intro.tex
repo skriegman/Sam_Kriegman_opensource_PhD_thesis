@@ -1,0 +1,65 @@
+\section{Introduction}
+\label{sec:intro}
+
+
+Certain remote, hazardous or otherwise inaccessible environments preclude human intervention when a robot fails or is damaged.
+It would thus be advantageous for systems operating in such environments to have some capacity for self -maintenance and -repair.
+
+
+Indeed, much work has investigated how,
+in the absence of external supervision,
+a robot can automatically learn new ways to control its body when damaged~\mbox{\cite{bongard2006resilient, chatzilygeroudis2018reset, cully2015robots, kano2017brittle, kwiatkowski2019task, mahdavi2003evolutionary, ren2015multiple}.}
+While a diverse set of recovery mechanisms have been proposed, they all  
+shared a common assumption: 
+The damaged mechanical structure could be 
+reconfigured, but not fundamentally deformed.
+
+
+This assumption is reasonable in classical robots, which are, generally, jointed collections of rigid links.
+But recent advances in materials science and 3D printing are enabling the construction of soft machines with theoretically infinite degrees of freedom and thus capable of deforming their
+structures so as to regenerate a lost part or embrace an entirely new geometry in the face of unanticipated insult. 
+The possibility of such change affords a completely novel mode of damage recovery:
+No robot built to date has altered its resting structure in order to recover function lost due to damage.
+
+
+Previous computational studies have demonstrated structural but non-functional change in discrete models.
+For example, cellular automata have been trained to grow a target structure from a single cell \cite{eggenberger1997evolving, miller2004evolving}.
+Similar growth rules could in principle be instantiated in self-assembling modular robots~\cite{white2005three,zykov2005robotics}.
+However, structural change would require access to additional modules in the environment, redundant modules on the body, or the ability to internally generate them.
+Moreover, it is unclear how or if such rules could dictate continuous geometric deformation in soft robots.
+
+The present work builds on two closely-related research projects in which injured robots automatically generate and test candidate control policies in order to find compensatory behaviors that work in spite of damage
+\cite{bongard2006resilient,cully2015robots}.
+
+
+
+In the first, \citet{bongard2006resilient} demonstrated how, under the right conditions, an autonomous robot could internally model its own geometry with minimal sensorimotor experiment.
+The benefit of this approach is that, once a sufficiently accurate self-model has been established, actions can be internally rehearsed, discarding those which are unsuccessful or dangerous, before attempting them in reality.
+If model accuracy drops, as from structural changes due to damage, modeling resumes and continues until the robot's current morphology is adequately reflected in the robot's model of self.
+
+The main drawback of this approach is that internal modeling requires additional computation, and there are circumstances in which the robot cannot afford|in terms of time, money, energy, stability, and the overall well-being of itself and others|to remain stationary for extended periods of time.
+
+To speed recovery, \citet{cully2015robots} proposed that robots should instead exploit the fact that resources prior to deployment are relatively cheap in terms of the factors listed above.
+A large, behavioral repertoire composed of mappings from behaviors (for the undamaged robot) to their predicted performances can therefore be modeled in simulation beforehand, and come preinstalled on the robot.
+Assuming damage is detected by an external mechanism, the authors showed how, under certain conditions, such a map can be rapidly updated and traversed to find successful behavior, 
+which is 
+implicitly robust to differences between the current and pre-deployment
+morphologies.
+
+
+
+The robots used in this past work consisted of rigid components attached together with a handful of mechanical degrees of freedom:
+The quadruped in \cite{bongard2006resilient} had 8 motors and 4 DOF; 
+the hexapod in \cite{cully2015robots} had 18 motors and 12 DOF.
+The control problem was greatly impacted by these mechanical details and their intrinsic dynamics, but they were taken as given, even when damaged, because these robots simply could not deform their resting structure.
+
+
+Instead of treating the body as just the problem domain, we here modify it as part of the computational loop.
+This is possible because our robot has many more (140) mechanical degrees of freedom, and the ability to change the volume, rather than just the relative displacement, of each component.
+This flexibility enables a heretofore unexplored mode of damage recovery: keep the existing controller but deform the resting structure.
+Existing approaches to controller adaptation could in principle (although this is not investigated here) be paired with such changes to morphology.
+However, in many cases, it would be desirable to retain a previously optimized and fine-tuned controller, especially if missing structure can simply be regenerated.
+
+We here show that, under a wide range of damage scenarios, automated shapeshifting can be advantageous, and that, in most of the cases tested, shapeshifting alone (holding the existing controller fixed) outperforms controller adaptation alone (holding the damaged shape fixed), in terms of recovered mobility.
+
+

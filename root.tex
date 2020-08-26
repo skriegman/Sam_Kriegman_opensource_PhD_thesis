@@ -1,0 +1,258 @@
+\documentclass[12pt]{report}
+
+\usepackage[latin2]{inputenc}
+\usepackage{amsmath}
+\usepackage[pdftex]{graphicx}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+%\usepackage{fancyhdr}
+\usepackage[left=1.5in]{geometry}
+\usepackage{geometry}
+%\pagestyle{fancyplain}
+\usepackage{wrapfig}
+\usepackage{setspace}
+\usepackage{epsfig}
+\usepackage{color}
+\usepackage[table]{xcolor}
+\usepackage{tikz}
+\usepackage{uvm}  % march 2016
+\usepackage{cancel}
+\usepackage{float}
+% \usepackage{floatrow}
+% \usepackage{cite}
+\usepackage{url}
+\usepackage{hyperref}
+
+\usepackage{algorithmicx}
+\usepackage[ruled]{algorithm}
+\usepackage{algpseudocode}
+
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{multicol}
+
+\usepackage{tcolorbox}
+
+\newtcolorbox[auto counter]{mybox}[2][]{float,title={\sf Box~\thetcbcounter: #2},#1}
+
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endchangemargin=\endlist 
+
+\usepackage{bibentry}
+
+\usepackage{pgfornament}
+
+\newcounter{squiggle}
+
+% \usepackage{etoolbox}
+% \makeatletter
+% \preto{\@verbatim}{\topsep=0pt \partopsep=0pt }
+% \makeatother
+
+\usepackage{titlesec}
+\titleformat{\chapter}[display]   
+{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}   
+\titlespacing*{\chapter}{0pt}{10pt}{40pt}
+
+% \titleformat{\chapter}[display]
+% {\normalfont\huge\bfseries}{\chaptertitlename~\thechapter}{20pt}{\Huge}
+% \titlespacing*{\chapter}{0pt}{50pt}{40pt}
+% \titlespacing*{name=\chapter,numberless}{0pt}{-30pt}{10pt}
+
+
+% ==================================
+% Set up title page
+% ==================================
+%\includeonly{Chapterfour}
+%\includeonly{Appendix}
+% \title{Design for a Protean Machine}
+\title{Design for an Increasingly Protean Machine}
+\author{Sam Kriegman}
+\defensedate{September 4th, 2020}  % deadline is august 26
+\dissertation                     %% or \thesis
+\doctorphilosophy               %% or \doctorphilosophy or \masterarts
+\cs                          %% this is the only speciality defined.
+% \gradyear{2020}        %%The year in which the degree will be conferred
+\octgrad                           %% \maygrad or \octgrad or \marchgrad
+\advisor{Josh Bongard, Ph.D.}
+\readerone{Nick Cheney, Ph.D.}
+\readertwo{Laurent H\'ebert-Dufresne, Ph.D.}
+\chair{Peter Spector, M.D.} % Jason Bates or Rachael Oldinski
+\dean{Cynthia J. Forehand, Ph.D.}
+
+\begin{document}
+
+\maketitle
+% \makeacceptance
+
+
+% \noindent
+% \textit{Proteus will seek to foil you by taking the shape of every creature that moves on earth, and of water and of portentous fire; but you must hold him unflinchingly and you must press the harder.
+% % \\
+% % He became in turn a bearded lion, a snake, a panther, a monstrous boar; then running water, then a towering and leafy tree; but we kept our hold, unflinching and undismayed, and in the end this master of dreaded secrets began to tire.
+% }\\[1em]
+% \hspace*{19.5em} ---Homer, Odyssey (C8th B.C.)   
+% % \hspace*{11.5em} ---Homer, Odyssey 4.~365 ff (trans.~Shewring) (C8th B.C.)
+% % %  Homer, Odyssey 4. 365 ff (trans. Shewring) (Greek epic C8th B.C.) :
+
+% % \vspace{3em}
+
+% % \noindent
+% % \textit{You are a perfect Proteus in the way you take on every kind of shape, twisting about this way and that, until at last you elude my grasp} \\[1em]
+% % \hspace*{19.5em} ---Plato, Ion (C4th B.C.)
+% % %  Plato, Ion 541e (trans. Lamb)
+
+% \vspace{3em}
+
+% \noindent
+% \textit{What the gears cannot do the computer might. The computer is the Proteus of machines. Its essence is its universality, its power to simulate. Because it can take on a thousand forms and can serve a thousand functions, it can appeal to a thousand tastes.} \\[1em]
+% \hspace*{19.5em} ---Seymour Papert, Mindstorms (1980)
+% % Seymour Papert’s book Mindstorms: Children, Computers, and Powerful Ideas (Basic Books, 1980).
+
+% \vspace{3em}
+
+% \noindent
+% \textit{Just as with men, we admire and respect books for their good qualities; but we can only love them for certain faults that they display.} \\[1em]
+% \hspace*{19.5em} ---Santiago Ram\'on y Cajal (1912)
+    
+
+% \newpage
+
+
+
+\begin{abstract}
+	
+\vspace{10mm}
+
+
+Data-driven, rather than hypothesis-driven, 
+approaches to design are becoming increasingly widespread, but they remain narrowly focused on tuning the parameters of software (neural network weights) inside an overwhelmingly static and presupposed body.
+Meanwhile, an efflorescence of new actuators and metamaterials continue to expand the ways and degrees in which machines are free to change, 
+but they have yet to be adopted by useful robots because 
+the design and control of 
+metamorphosing body plans 
+is extremely
+non-intuitive.
+This thesis unites these 
+converging yet previously 
+segregated
+disciplines
+by automating the design of robots with physically malleable hardware: protean machines.
+
+This thesis begins by proposing an ontology of embodied agents, their physical features, and their ability to purposefully change each one in space and time.
+A series of experiments are then documented in which increasingly more of these features (structure, shape, and material properties) were allowed to vary across increasingly more timescales (evolution, development, and physiology), and collectively optimized to facilitate robot-level behavior in a simulated physical environment.
+The utility of increasingly protean machines is demonstrated by a concomitant increase in both the performance and robustness of the final, optimized system.
+This holds true even if its ability to change is temporarily removed by fabricating the system in reality, or by ``canalization'': the tendency for plasticity to be supplanted by good static traits (an inductive bias) for the current environment.
+Further, if physical flexibility is retained rather than canalized, it is shown how protean machines can, under certain conditions, achieve a form of hyper-robustness: the ability to self-edit their own anatomy to ``undo'' large deviations from the environments in which their control policy was originally optimized.
+
+Some of the designs that evolved in simulation were manufactured in reality using hundreds of highly deformable silicone building blocks, yielding shapeshifting robots.
+Others were built entirely out of biological tissues, derived from pluripotent 
+\textit{Xenopus laevis} 
+stem cells, yielding computer-designed organisms (dubbed ``xenobots'').
+Overall, 
+the results 
+shed unique light on questions about
+the evolution of development,
+adaptive behavior,
+multicellularity,
+and the capacity for
+bioengineering new 
+organisms
+with useful functions.
+
+
+
+
+
+\end{abstract}
+
+
+\pagenumbering{arabic}
+
+% \begin{dedication}
+	
+% 	\flushright{ 
+% To Luna.
+% }
+	
+% \end{dedication}
+
+% \begin{acknowledgements}
+
+% % To the innovators: 
+% % Gordon Pask, 
+% % Karl Sims,
+% % Adrian Thompson, 
+% % Hod Lipson,
+% % and Josh Bongard.
+% % for attacking the academy's shibboleths head on, so that I may work in a less hostile and freer atmosphere.
+% % To my comrades in arms: 
+% % % Shawn Beaulieu, 
+% % % Nick Cheney,
+% % % Sida Liu,
+% % % David Matthews, 
+% % % Dylan Shah,
+% % Rebecca Kramer-Bottiglio,
+% % Doug Blackiston,
+% % Mike Levin,
+% % and Josh Bongard.
+% % Thank you for inspiring me to continue ``onward!'' after success and failure alike.
+% % This thesis is the culmination of many long and cold Vermont nights of coding and writing and pad thai.
+% % To my human subjects---I mean, niece and nephew, Charlotte and Jack Graham.
+% % To my family, of course.
+% % And to my sidekick, Luna
+% % for her dogged support through many long and cold Vermont nights of coding and writing and pad thai.
+
+% Any dissertation with the phrase ``design for a \ldots'' in the title must express its obvious debt to W.~Ross Ashby, author of ``Design for a Brain''.
+% He saw how adaptive behavior was the result of 
+% self-stabilizing, 
+% feedback control mechanisms
+% % (such as a Watt governor) 
+% with the ``requisite variety'' to absorb perturbations.
+% This thesis simply
+% allows the body to vary in addition to its control system.
+% % thus extending absorbency
+
+% \end{acknowledgements}
+
+
+\newpage
+
+\pagenumbering{roman}
+\setcounter{page}{2}
+
+\tableofcontents
+\newpage
+
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+% \listoffigures
+% \newpage
+
+% \listoftables
+% \newpage
+
+% \doublespacing
+
+\include{Chapter01}
+% \include{Chapter02}
+% \include{Chapter03}
+% \include{Chapter04}
+% \include{Chapter05}
+% \include{Chapter06}
+% \include{Chapter07}
+
+\include{Chapter08}
+
+\newpage
+
+\bibliographystyle{plainnat}
+\bibliography{root}
+
+
+
+
+\end{document} 

@@ -1,0 +1,41 @@
+\section{Discussion}
+\label{sec:discussion}
+
+
+In this paper, we introduced a low cost, open source platform for designing and rapidly building soft robots, and used it to transfer 
+108 different morphologies (voxels on a cartesian grid) from simulation to reality.
+We then measured the reality gap as function of the robot's design (geometry and distribution of passive and actuating voxels) by tracking the behavior of nine transferred morphologies.
+Under one measure (net displacement) the reality gap appeared rather small, but under another (velocity) the gap was much wider, likely due to oversimplified tribological contacts between the simulated ground plane and the robot's ventral surface \cite{majidi2013influence}.
+
+Although most of the transferred designs (99 out of the 108) were not actuated in reality, they nevertheless served an important function:
+they were \textit{sketches}.
+Sketches let us think more clearly about the behavior or properties (e.g., stability) of a design without investing the additional time and resources required to fully build and examine the design itself.
+Sketches, in other words, greatly increase the breadth of exploration in design space.
+All sim2real methods embrace this utility of simplifying sketches.
+Simulation, after all, is also a sketch.
+
+However, there is a tacit assumption in robotics about Depth First.
+A typical sim2real experiment begins by sending a
+complicated robot design across the reality gap,
+and then endeavors to learn transferable policies that control the morphology in all its complexity.
+But this is not how most design proceeds.
+An architect first roughly sketches a structure, say, a bridge, on the back of a napkin.
+A diversity of designs are then generated, tweaked, discarded or provisionally accepted|at this shallow level of napkin realism|before more detailed blueprints are drawn under more stringent constraints.
+Blueprints, too, undergo this breadthwise evolution, before the most promising are realized physically, first as scale models (built from matchsticks and glue instead of concrete and steel), then, finally, at full scale and cost.
+This incrementally weeds out nontransferable features and adds mechanical complexity only when and where it is necessary to do so, rather than globally from the outset.
+
+The assumption that the reality gap can be bridged by policy search alone, with a single robot design, is groundless. 
+The desired behavior of a robot is typically much more complicated than that of architecture.
+This suggests the necessity of more, not less, sketches.
+Soft robots are more complicated still.
+This makes their automated design that much more appealing, but implies the need for even greater breadth of sketches, at more intermediate levels of realism.
+Though not every experiment will need to start from a blank slate.
+Instead, designers (whether human or AI) could leverage prior knowledge to reject truly awful designs before sketching them in the first place.
+The designs transferred here add to a growing database (prior probabilities) about which and how well different soft robot designs and behaviors can be realized physically.
+Our construction kit has the potential to further increase this data by lowering not only cost and build times but also the barrier of entry to soft robotics for non-experts.
+
+
+The generality of such data beyond robotics is currently not known, but it could also have important implications for developmental biology and regenerative medicine.
+The bioelectric and genetic control policies that orchestrate adaptive remodeling of growth and form in organisms are not yet understood, but could, in future, be reverse-engineered by machine learning, and then controlled externally to induce regeneration in otherwise non-regenerative organisms (such as adult humans), or to reprogram otherwise unbounded cancerous growth toward functional organogenesis \cite{levin2013reprogramming}.
+However, such advances in regenerative medicine and synthetic morphology will only be possible if hypotheses generated in simulation are transferable and testable in reality.
+

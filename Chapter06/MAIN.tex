@@ -1,0 +1,100 @@
+\documentclass[sigconf]{acmart} % authordraft
+
+\usepackage{booktabs} % For formal tables
+
+\usepackage{hyperref}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{xr}
+% \usepackage{float}
+% \usepackage{stackengine}
+
+
+% Copyright
+\copyrightyear{2018} 
+\acmYear{2018} 
+\setcopyright{acmcopyright}
+\acmConference[GECCO '18]{Genetic and Evolutionary Computation Conference}{July 15--19, 2018}{Kyoto, Japan}
+\acmBooktitle{GECCO '18: Genetic and Evolutionary Computation Conference, July 15--19, 2018, Kyoto, Japan}
+\acmPrice{15.00}
+\acmDOI{10.1145/3205455.3205529}
+\acmISBN{978-1-4503-5618-3/18/07}
+
+
+\begin{document}
+
+\title{Interoceptive robustness through environment-mediated morphological development}
+
+\author{Sam Kriegman}
+\affiliation{%
+  \institution{University of Vermont}
+  \city{Burlington} 
+  \state{VT} 
+  \country{USA}
+}
+\email{sam.kriegman@uvm.edu}
+
+\author{Nick Cheney}
+\affiliation{%
+  \institution{University of Wyoming}
+  \city{Laramie} 
+  \state{WY} 
+  \country{USA}
+}
+
+\author{Francesco Corucci}
+\affiliation{%
+  \institution{3DNextech s.r.l.}
+  \city{Livorno} 
+  \country{Italy}
+}
+
+\author{Josh C. Bongard}
+\affiliation{%
+  \institution{University of Vermont}
+  \city{Burlington} 
+  \state{VT} 
+  \country{USA}
+}
+
+
+
+% The default list of authors is too long for headers.
+\renewcommand{\shortauthors}{Kriegman et al.}
+
+
+\begin{teaserfigure}
+\centering
+\vspace{-1.75em}
+\includegraphics[width=\linewidth]{img/Callosities} \\
+\vspace{-1.75em}
+\includegraphics[width=0.35\linewidth]{img/colorbar} \\
+\vspace{-1em}
+\caption{A single robot grows calluses as it walks, 
+% rigidifying
+in response to pressure on its feet   
+(\href{https://youtu.be/0cmwpcxSUWI}{\textcolor{blue}{\textbf{\texttt{youtu.be/0cmwpcxSUWI}}}}).
+} % (The champion of run 6.)
+\label{fig:calluses}
+\vspace{1em}
+\end{teaserfigure}
+
+
+\input{abstract}
+
+\maketitle
+
+\input{intro}
+
+\input{methods}
+
+\input{results}
+
+\input{discussion}
+
+\input{acknowledgments}
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{main}
+
+
+\end{document}

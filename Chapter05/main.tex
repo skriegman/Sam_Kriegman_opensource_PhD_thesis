@@ -1,0 +1,91 @@
+\documentclass[letterpaper, 10pt, conference]{IEEEtran}
+\usepackage{times}
+\usepackage{xr}
+\usepackage{amsmath,amssymb,mathrsfs}
+\usepackage[]{algorithm2e}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{wrapfig}
+\usepackage{textcomp}
+
+\definecolor{control}{RGB}{203, 65, 107}
+\definecolor{shape}{RGB}{61, 153, 115}
+
+% \usepackage{setspace}
+% \doublespacing
+
+% numbers option provides compact numerical references in the text. 
+\usepackage[numbers]{natbib}
+\usepackage{multicol}
+\usepackage[bookmarks=true, hidelinks]{hyperref}
+
+% \pdfinfo{
+%   /Author (Kriegman et al.)
+%   /Title  (Automated shapeshifting for function recovery in damaged robots)
+% %   /CreationDate (D:20101201120000)
+% %   /Subject (Robots)
+%   /Keywords (Soft Robots)
+% }
+
+\begin{document}
+
+% paper title
+\title{Automated shapeshifting for function recovery in damaged robots}
+
+% You will get a Paper-ID when submitting a pdf file to the conference system
+\author{Author Names Omitted for Anonymous Review. Paper-ID [add your ID here]}
+
+
+% avoiding spaces at the end of the author lines is not a problem with
+% conference papers because we don't use \thanks or \IEEEmembership
+
+
+\author{
+
+\IEEEauthorblockN{Sam Kriegman$^1$,  Stephanie Walker$^2$,  Dylan Shah$^2$, Michael Levin$^3$,  Rebecca Kramer-Bottiglio$^2$, Josh Bongard$^1$}
+\IEEEauthorblockA{$^1$University of Vermont,  $^2$Yale University,  $^3$Tufts University}
+
+% \IEEEauthorblockN{Sam Kriegman}%sam.kriegman@uvm.edu
+% \IEEEauthorblockA{Dept.~Comp.~Sci.\\University of Vermont}\\
+% \IEEEauthorblockN{Michael Levin}%Michael.Levin@tufts.edu
+% \IEEEauthorblockA{Dept.~Biology\\Tufts University}
+% \and
+% \IEEEauthorblockN{Stephanie Walker}%stephanie.walker@yale.edu
+% \IEEEauthorblockA{Dept.~Mech.~Eng.~\& Mat.~Sci.\\Yale University}\\
+% \IEEEauthorblockN{Rebecca Kramer-Bottiglio}%rebecca.kramer@yale.edu
+% \IEEEauthorblockA{Dept.~Mech.~Eng.~\& Mat.~Sci.\\Yale University}
+% \and
+% \IEEEauthorblockN{Dylan Shah}%dylan.shah@yale.edu
+% \IEEEauthorblockA{Dept.~Mech.~Eng.~\& Mat.~Sci.\\Yale University}\\
+% \IEEEauthorblockN{Josh Bongard}%josh.bongard@uvm.edu
+% \IEEEauthorblockA{Dept.~Comp.~Sci.\\University of Vermont}
+
+}
+
+
+\input{0_fig_teaser.tex}
+
+\maketitle
+
+\begin{abstract}
+\input{0_abstract}
+\end{abstract}
+
+\IEEEpeerreviewmaketitle
+
+\input{1_intro}
+
+\input{2_methods}
+
+\input{3_results}
+
+\input{4_discussion}
+
+\input{5_thanks.tex}
+
+\bibliographystyle{plainnat}
+\bibliography{main}
+
+\end{document}
+
+

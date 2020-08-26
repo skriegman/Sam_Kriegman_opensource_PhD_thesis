@@ -1,0 +1,87 @@
+\section*{Discussion}
+\label{sec:discussion}
+
+ 
+In these experiments, the intersection of two time scales|slow linear development and rapid oscillatory actuation, as from a central pattern generator|generates positive and negative feedback in terms of instantaneous velocity: the robot speeds up and slows down during various points in its lifetime (Supplementary Fig. \hyperref[fig:S2]{S2}J).
+Prior to canalization, unless all of the phenotypes swept over by an individual in development keep the robot motionless, there will be intervals of relatively superior and inferior performance.
+Evolution can thus improve overall fitness in a descendant by lengthening the time intervals containing superior phenotypes and reducing the intervals of inferior phenotypes. However, this is only possible if such mutations exist.
+
+We have found here that such mutations do exist in cases where evolutionary changes
+to one trait do not disrupt the successful behavior contributed
+by other traits.
+For example,
+robots that exhibited the locally optimal trotting behavior 
+(Fig. \ref{fig:trot-gallop-roll}A)
+exhibited a tight coupling between morphology and control, and thus evolution was 
+unable to canalize development in either one, since mutations to one subsystem 
+tended to disrupt the other.
+Brief ontogenetic periods of rolling behavior 
+(Fig. \ref{fig:trot-gallop-roll}C), 
+on the other hand, could be temporally extended by evolution through canalization of the morphology alone
+(Fig. \ref{fig:trot-gallop-roll}D), 
+since these morphologies are generally robust to the pattern of actuation.
+The key observation here is that only phenotypic traits that render the agent robust to changes in other traits become assimilated, a phenomenon we term differential canalization. 
+
+This insight was exposed by modeling the development of simulated robots as they interacted with a physically realistic environment.
+Differential canalization may be possible in disembodied agents as well, 
+if they conform to appropriate conditions described in Supplementary Discussion.
+
+This finding of differential canalization has important implications for the evolutionary design of artificial and embodied agents such as robots.
+Computational and engineered systems generally maintain a fixed form as they behave and are evaluated.
+However, these systems are also extremely brittle when confronted with slight changes in their internal structure, such as damage, 
+or in their external environment such as moving onto a new terrain
+\cite{french1999catastrophic,
+carlson2005ugvs,
+bongard2006resilient}.
+Indeed, a perennial problem in robotics and AI is finding general solutions which perform well in novel environments 
+\cite{koos2013transferability,
+nguyen2015deep
+}.
+Our results demonstrate how incorporating morphological development in the optimization of robots can reveal, through differential canalization, characters which are robust to internal changes.
+Robots that are robust to internal changes in their controllers may also be robust to external changes in their environment \cite{bongard2011morphological}.
+Thus, allowing robots to change their structure as they behave might facilitate evolutionary improvement of their descendants, even if these robots will be deployed with static phenotypes or in relatively unchanging environments.
+
+These results are particularly important for the nascent field of soft robotics in which engineers cannot as easily presuppose a robot's body plan and optimize controllers for it because designing such machines manually is unintuitive
+\cite{lipson2014challenges, pfeifer2012challenges}.
+Our approach addresses this challenge, because differential canalization provides a mechanism whereby static yet robust soft robot morphologies may be automatically discovered using evolutionary algorithms for a given task environment.
+Furthermore, future soft robots could potentially alter their shape to best match the current task by selecting from previously trained and canalized forms.
+This change might occur pneumatically, as in Shepherd \textit{et al.} \cite{shepherd2011multigait}, or it could modulate other material properties such as stiffness (e.g.~using a muscular hydrostat).
+
+We have shown that 
+for canalization to occur in our developmental model, some form of paedomorphosis must also occur. However, there are at least two distinct methods by which such heterochrony can proceed: progenesis and neoteny.
+Progenesis 
+% |the acceleration of developmental processes such that adult traits of ancestors are realized earlier in juvenile stages of descendants| 
+could occur through mutations which move initial parameter values $(\ell,\, \phi)$ toward their final values $(\ell^*,\, \phi^*)$.
+Neoteny 
+% |the retention of juvenile traits into the adult form as a result of retardation of development| 
+could instead occur through mutations which move final values $(\ell^*,\, \phi^*)$ toward their initial values $(\ell,\, \phi)$.
+Although a superior phenotype can materialize anywhere along the ontogenetic timeline, late onset mutations are less likely to be deleterious than early onset mutations.
+This is because our developmental model is linear in terms of process, and interfering with any step affects all temporally-downstream steps. 
+Since the probability of a mutation being beneficial is inversely proportional to its phenotypic magnitude \cite{fisher1930genetical}, mutational changes in the terminal stages of development require the smallest change to the developmental program.
+Hence, late-onset discoveries of superior traits are more likely to occur without breaking functionality at other points in ontogeny, and these traits can become canalized by evolution through progenesis: mutations which reduce the amount of ontogenetic time prior to realizing the superior trait (by moving $\ell \rightarrow \ell^*$ and/or $\phi \rightarrow \phi^*$). 
+Indeed progenesis was observed most often in our trials (Fig. \ref{fig-discovery}): late onset mutations which transform a walking robot into a rolling one are discovered by the evolutionary process, and are then moved back toward the birth of the robots'
+descendants through subsequent mutations.
+
+Finally, we would like to note the observed phenomenon of \textit{increased} 
+% phenotypic 
+% ballistic
+plasticity prior to genetic assimilation.
+Models of the Baldwin effect usually assume that phenotypic plasticity itself does not evolve, although it has been shown how major changes in the environment can select for increased plasticity in a character that is initially canalized \cite{lande2009adaptation}.
+In our experiments however, there is no environmental change.
+There is also a related concept known as `sensitive periods' of development in which an organism's phenotype is more responsive to experience 
+\cite{bateson1979sensitive}.
+Despite great interest in sensitive periods, the adaptive reasons why they have evolved are unclear \cite{Fawcett2015}.
+In our model, increasing the amount of morphological development increases the chance of capturing an advantageous static phenotype, which can then be canalized, once found.
+However, a phenotype will not realize the globally optimal solution by simply maximizing development.
+This would merely lengthen the \textit{line} on which development unfolds in phenotypic hyperspace ($n$-dimensional real space).
+
+
+The developmental model described herein is intentionally minimalistic in order to isolate the effect of morphological and neurological change in the evolutionary search for embodied agents.
+The simplifying assumptions necessary to do so make it difficult to assess the biological implications.
+For example, we model development as an open loop process 
+and thus ignore environmental queues and sensory feedback 
+\cite{Moczekrspb20110971,snell2013overview}.
+We also disregard the costs and constraints of phenotypic plasticity 
+\cite{snell2012selective,murren2015constraints}. 
+By removing these confounding factors, we hope these results will help generate novel hypotheses about morphological development, heterochrony, modularity and evolvability in biological systems.
+

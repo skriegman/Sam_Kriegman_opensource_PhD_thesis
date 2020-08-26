@@ -1,0 +1,65 @@
+\section{Discussion}
+\label{sec:discussion}
+
+
+Building systems that are robust in the face of changing environmental conditions is a grand challenge in robotics and AI.
+The brittleness of current systems is exemplified by the growing literature on adversarial examples
+\citep{szegedy2013intriguing,
+nguyen2015deep,
+athalye2017synthesizing}, 
+and the fact that almost all practical robots are confined to the perfectly flat floors they clean, or the hermetic factories built around their work.
+Robustness is not unknown in human-engineered systems, but it is relatively rare; in nature it is everywhere, and one of the reasons is that in nature organisms develop: 
+They constantly change not just their cognitive architectures but the morphologies that contain them and mediate with the external world.
+
+It has been shown for rigid robots \citep{bongard2011morphological}
+that morphological development can in some cases increase robustness since it exposes evolution to 
+richer sensory information: the robot must maintain locomotion while changing its body. 
+Soft robots have much greater potential in this domain:
+If soft, there are more ways that morphology can change, so by definition the increase
+in breadth in sensorimotor experiment induced by development will be even greater than that
+for developing yet rigid machines.
+Toward this goal, by allowing material stiffness to be plastic, we have here 
+investigated a heretofore unexplored dimension of morphological change (stiffness) not available
+to rigid robots.
+
+Advances in materials science and 3D printing promise new engineered systems{\textemdash} protean machines{\textemdash}that may continuously morph in response to changing environmental signals.
+Simply put, if a robot always changes its strategy along many morphological and neural modalities, 
+it is more difficult to fool with a static adversarial example or a new task environment.
+Little to no analysis has been conducted, however, into how such systems should respond to environmental stimuli in order to adapt their functions in the face of changing environmental conditions.
+
+In initiating such a study here, we have shown that it is not just a matter of reacting to \textit{any} stimulus: different types of developmental feedback loops elicit different \textit{evolved} properties.
+We observed that if one modality (stiffness) responds to one particular internal signal (engineering stress) but not another (pressure), robots evolved structure that  intrinsically buffered large deviations from their expected material properties.
+
+% Pressure and stress have very different mechanical load signatures, and so too were the developmental reactions they stimulated.
+Pressure and stress bear distinct mechanical load signatures which in turn stimulated very different developmental reactions.
+Intriguingly, increased robustness was correlated with increased canalization: developmental reactions with stress were canalized to a greater degree than those with pressure.
+Although developmental reactions with pressure did not afford the evolution of robustness here, it did increase evolutionary divergence: pressure-adaptive robots evolved more diverse 
+(congenital) 
+shapes than stress-adaptive robots.
+% We focused the present investigation on robustness, but, in some domains, diversity might be a more desirable property. 
+Our work here suggests
+there may be other developmental feedback loops that could be made available to evolution
+that would lead to more diverse and robust robots.
+
+
+For our purposes,  `morphology' is a robot body,
+but the concepts here could equally be applied to non-embodied systems, such as the architectures of deep 
+neural networks \citep{miikkulainen2017evolving,zoph2016neural}.
+One could define 
+internal neural processes such as node sharpening \cite{french1994dynamically},
+Hebbian learning,
+or neurotransmitter diffusion \cite{husbands1998better, velez2017diffusion}
+as interoceptive signals to which
+the neural network developmentally responds in a structural manner,
+such as adding or removing neurons.
+Meanwhile, at a faster time scale, synaptic weights might be tuned in response to 
+exteroceptive signals such as gradients of a loss function.
+Finally, such a network could be placed inside a robot
+which itself is experiencing morphological change.
+
+
+
+
+
+
+

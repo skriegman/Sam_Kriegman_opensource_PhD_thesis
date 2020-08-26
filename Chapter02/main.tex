@@ -1,0 +1,99 @@
+\documentclass[letterpaper, 10pt, conference]{IEEEtran}
+\usepackage{times}
+\usepackage{xr}
+\usepackage{amsmath,amssymb,mathrsfs}
+\usepackage[]{algorithm2e}
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\usepackage{wrapfig}
+\usepackage{textcomp}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{textcomp}
+% \usepackage[T1]{fontenc}  % double sans serif quotation
+\usepackage{textcomp} % single
+% \usepackage{titling}
+
+\definecolor{control}{RGB}{203, 65, 107}
+\definecolor{shape}{RGB}{61, 153, 115}
+
+% \usepackage{setspace}
+% \doublespacing
+
+% numbers option provides compact numerical references in the text. 
+\usepackage[numbers]{natbib}
+\usepackage{multicol}
+\usepackage[bookmarks=true, hidelinks, colorlinks = true, linkcolor = black, urlcolor  = blue, citecolor = black, linkcolor=black]{hyperref}
+
+\begin{document}
+
+% paper title
+\title{\vspace{5pt}Scalable sim-to-real transfer of soft robot designs}
+
+% You will get a Paper-ID when submitting a pdf file to the conference system
+\author{Author Names Omitted for Anonymous Review. Paper-ID [add your ID here]}
+
+
+% avoiding spaces at the end of the author lines is not a problem with
+% conference papers because we don't use \thanks or \IEEEmembership
+
+
+\author{
+\IEEEauthorblockN{Sam Kriegman$^1$,\quad
+Amir Mohammadi Nasab$^2$,\quad
+Dylan Shah$^2$,\quad
+Hannah Steele$^2$,\quad
+Gabrielle Branin$^2$,\\[2pt]
+Michael Levin$^3$,\quad
+Josh Bongard$^1$,\quad
+Rebecca Kramer-Bottiglio$^2$}\vspace{6pt}%\vspace{4pt}
+\IEEEauthorblockA{$^1$University of Vermont,  $^2$Yale University,  $^3$Tufts University}
+}
+
+
+\input{0_fig_teaser.tex}
+
+\maketitle
+
+\begin{abstract}
+\input{0_abstract}
+\end{abstract}
+
+\IEEEpeerreviewmaketitle
+
+\input{1_intro}
+
+\input{1_table1.tex}
+
+\input{2_methods}
+
+\input{2_fig_pressure.tex}
+
+\input{2a_methods_design_space.tex}
+
+\input{2_fig_real.tex}
+
+\input{2b_methods_sim.tex}
+
+\input{2c_methods_real.tex}
+
+\input{3_results}
+% \input{3_fig_sim.tex}  % moved inside 3_results.tex
+% \input{3_fig_transfer.tex} % also moved inside results for positioning
+\input{3_fig_hi_res_sim.tex}
+
+
+\input{4_discussion}
+
+\input{5_thanks.tex}
+
+\input{2_table2.tex}
+
+\bibliographystyle{plainnat}
+\bibliography{main}
+
+
+
+\end{document}
+
+
