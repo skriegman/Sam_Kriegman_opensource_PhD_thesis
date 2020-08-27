@@ -44,40 +44,74 @@ S.~Kriegman et al., A scalable pipeline for designing reconfigurable organisms.
 \chapter{Argument}
 
 
-\section{Overview}
+\section{Pr\'{e}cis of the Thesis}
+
+\textsc{In Chapter 1,}
+the background of ...
+
+To demonstrate 
+the value of incorporating increasingly more morphological plasticity in robots,
+I started with ...
 
 
-The following sections summarize each of the preceding chapters in turn.
+
+The following sections summarize each of the 
+% preceding 
+succeeding
+chapters in turn.
 
 
-\section{Soft Robot Blocks}
+\section{Sim-to-Real for Structure}
+% Soft Robot Blocks
+
+\textsc{In Chapter 2,}
+a low cost, open source, and modular soft robot design and construction kit was introduced and used to
+transfer an order of magnitude more robot designs from simulation to reality than any other method to date.
+
+\subsection{Protean Capacity}
 
 \begin{itemize}
-    \item \textit{Phylogenic change}: structure.
+    \item \textit{Phylogenic change}: structure, material distribution.
     \item \textit{Ontogenic change}: configuration.
 \end{itemize}
 
-\noindent
-In chapter 2,
-I introduced a method for 
-designing modular soft robots in silico,
-and
-building them out of hollow silicone voxels, layer by layer.
+\subsection{Realization}
+% Realization, Concretization, Actualization
 
-Two building blocks: passive and active material.
-The active block expanded in volume according to a sine wave but only contracted back to cube, 
-it did not compress because compression caused chaotic buckling and quasistatic motion has been
-shown to facilitate successful simulation to reality transfer \cite{lipson2000automatic}.
+\begin{itemize}
+    \item \textit{Material}: passive and pneumatically-actuated silicone voxels (cubic bladders).
+    \item \textit{Structure}: number, placement and kind of voxels.
+    \item \textit{Shape} [fixed]: atmospheric pressure (cubes).
+    \item \textit{Configuration}: pressure oscillation, all active voxels in unison (expansion, compression back to cube, hold at cube, repeat).
+\end{itemize}
 
-\subsection*{Related Work}
 
-% \citet{lipson2000automatic} did the same with rigid bodies.
+\subsection{Significance}
 
-\citet{hiller2011automatic} 
-evolved the overall geometry and distribution of actuating (orange) and passive (white) material in a voxel-based simulator, and transferred the best design to a pressure and vacuum chamber.
-Layers of open-cell (white) and closed-cell (orange) foam rubbers were stacked, pinned and glued together to fabricate the simulated design.
-The orange foam is pneumatically isolated from the changing external pressure, resulting in volumetric expansion and contraction.
-The white foam retains a constant volume because it quickly equalizes to the external pressure.
+
+Conceptually,
+this is scalable...
+
+Operationally,
+we hope that the kit's affordability, safety, speed, and simplicity will generate increasingly more, and more reproducible, data about the automated design of increasingly competent soft machines.
+
+% Other modular yet rigid-bodied robot design and construction kits exist, such as Molecubes \cite{zykov2007molecubes}.
+% However, our kit is easier, faster, cheaper, and safer to use.
+% In short, silicone is molded into hollow voxels, and tubing is attached to supply low pressure actuation from a hand pump,
+% causing volumetric changes in one or more of the voxels (Figs.~\ref{fig:pressure} and \ref{fig:real}).
+% For simple behaviors robust to actuation noise,
+% there is no need to use a highly-pressurized air supply or program microcontrollers for open-loop control.
+% There are also no expensive motors or power supplies.
+
+% \subsection{Related Work}
+
+% % \citet{lipson2000automatic} did the same with rigid bodies.
+
+% \citet{hiller2011automatic} 
+% evolved the overall geometry and distribution of actuating (orange) and passive (white) material in a voxel-based simulator, and transferred the best design to a pressure and vacuum chamber.
+% Layers of open-cell (white) and closed-cell (orange) foam rubbers were stacked, pinned and glued together to fabricate the simulated design.
+% The orange foam is pneumatically isolated from the changing external pressure, resulting in volumetric expansion and contraction.
+% The white foam retains a constant volume because it quickly equalizes to the external pressure.
 
 % In this paper, we introduced a low cost, open source platform for designing and rapidly building soft robots, and used it to transfer 
 % 108 different morphologies (voxels on a cartesian grid) from simulation to reality.
@@ -120,17 +154,38 @@ The white foam retains a constant volume because it quickly equalizes to the ext
 
 \section{Ballistic Development}
 
+
+\textsc{In Chapter 3,}
+a minimal yet embodied model of development: 
+the shape of the
+robot changes over its lifetime, yet development is not influenced
+by the environment. 
+It was shown that even this simple developmental
+model confers evolvability because it allows evolution to sweep over a larger range of body plans than an equivalent non-developmental system, and subsequent heterochronic mutations
+`lock in' this body plan in more morphologically-static descendants.
+
+
+\subsection{Protean Capacity}
+
 \begin{itemize}
     \item \textit{Phylogenic change}: shape alternatives.
     \item \textit{Ontogenic change}: shape, configuration.
 \end{itemize}
 
-\noindent
-In chapter 3,
-a 4-by-4-by-3 voxel
-structure was held fixed as
-the trajectories of its ballistic ontogenetic shape change
-were evolved.
+
+\subsection[Concretization]{Concretization\footnote{This particular capacity for morphological change was concretely demonstrated in a computational yet embodied model (in silico), however it was not \textit{realized}: no physical robot was used during hypothesis testing.}}
+
+\begin{itemize}
+    \item \textit{Material} [fixed]: actuated voxels (1 to 6 elastic beams).
+    \item \textit{Structure} [fixed]: a 4-by-4-by-3 block of voxels (48 voxels; 108 elastic beams).
+    \item \textit{Shape}: evolved initial and final sets of rest volumes (resting beam lengths) for each voxel; linear ontogenetic shape change between sets.
+    \item \textit{Configuration} [fixed]: voxel length oscillation, all voxels in unison (expansion/contraction according to sine wave with frequency 4 Hz).
+\end{itemize}
+
+
+\subsection{Significance}
+
+
 
 % In this chapter I introduced a minimal yet embodied model of development in order to isolate the effect of morphological change in ontogenetic time,
 % without the confounding effects of environmental mediation.
@@ -146,20 +201,44 @@ were evolved.
 
 \section{Differential Canalization}
 
+\textsc{In Chapter 4,}
+a previously unknown phenomenon when embodied agents are allowed to develop and evolve: Evolution discovers body plans robust to control changes, these body plans become genetically assimilated, yet controllers for these agents are not assimilated. 
+This allows evolution to continue climbing fitness gradients by tinkering with the developmental programs for controllers within these permissive body plans. 
+This exposes a previously unknown detail about the Baldwin effect: instead of all useful traits becoming genetically assimilated, only traits that render the agent robust to changes in other traits become assimilated. 
+We refer to this as \textit{differential canalization}.
+
+
+\subsection{Protean Capacity}
+
 \begin{itemize}
     \item \textit{Phylogenic change}: shape alternatives, configuration alternatives.
     \item \textit{Ontogenic change}: shape, configuration.
 \end{itemize}
 
 
-% gradients in morphospace
-\noindent
-The same
-a 4-by-4-by-3 voxel
-structure from chapter 3 was used endowed with more configuration plasticity in chapter 4.
-Instead of uniform expansion/contraction throughout the structure,
-phase-offsets were introduced to locally vary excitation relative to a central pattern generator.
-Both resting shape and the phase-offsets of configuration oscillations changed ballistically and the starting and ending points were evolved.
+\subsection{Concretization}
+
+\begin{itemize}
+    \item \textit{Material} [fixed]: same as chapter 3.
+    \item \textit{Structure} [fixed]: same as chapter 3.
+    \item \textit{Shape}: same as chapter 3.
+    \item \textit{Configuration}: voxel length oscillation phase shifted from a central pattern generator (sine wave with frequency 4 Hz).
+    Evolved initial and final of phase offsets for each voxel; linear ontogenetic phase-offset change between sets.
+\end{itemize}
+
+
+
+% The same
+% a 4-by-4-by-3 voxel
+% structure from chapter 3 was used endowed with more configuration plasticity in chapter 4.
+% Instead of uniform expansion/contraction throughout the structure,
+% phase-offsets were introduced to locally vary excitation relative to a central pattern generator.
+% Both resting shape and the phase-offsets of configuration oscillations changed ballistically and the starting and ending points were evolved.
+
+
+\subsection{Significance}
+
+gradients in morphospace
 
 % \noindent
 % In these experiments, the intersection of two time scales---slow linear development and rapid oscillatory actuation, as from a central pattern generator---generates positive and negative feedback in terms of instantaneous velocity: the robot speeds up and slows down during various points in its lifetime.
@@ -247,21 +326,52 @@ Both resting shape and the phase-offsets of configuration oscillations changed b
 
 \section{Environment-Mediated Development}
 
+\textsc{In Chapter 5,}
+we show robustness can be achieved by evolving the 
+geometry of soft robots, their control systems, and how
+their material properties develop in response to one particular interoceptive stimulus (engineering stress) during their lifetimes.
+By doing so we realized robots that were equally fit but more robust to  extreme material defects (such as might occur during fabrication or by damage thereafter) than robots that did not develop during their lifetimes, or developed in response to a different interoceptive stimulus (pressure).
+This suggests that the interplay between changes
+in the containing systems
+of agents (body plan and/or neural architecture)
+at different temporal scales (evolutionary
+and developmental) along different modalities
+(geometry, material properties, synaptic weights)
+and in response to different signals (interoceptive
+and external perception) all
+dictate those agents' abilities to evolve or 
+learn capable and robust strategies.
+
+
+\subsection{Protean Capacity}
+
 \begin{itemize}
     \item \textit{Phylogenic change}: structure; material alternatives, configuration alternatives.
     \item \textit{Ontogenic change}: material, configuration.
 \end{itemize}
 
-\noindent
-The constraint in chapters 2 to 4 of well-specified material were lifted in chapter 5.
-As in chapter 2,
-structure is free to vary but shape was not.
-However, a much larger, 10-by-10-by-10 workspace was used.
-The contribution of this chapter is that,
-instead of no development (chapter 2) or ballistic development (chapters 3 and 4),
-development is driven by environmental signals (stress and pressure).
+
+\subsection{Concretization}
 
 
+\begin{itemize}
+    \item \textit{Material} [ill-specified]: dense voxels with evolved initial elasticity (Young's modulus between $10^4$ and $10^{10}$ MPa), and evolved rate of ontogenetic softening/stiffening in response to engineering stress / pressure.
+    \item \textit{Structure}: evolved number and placement within a 10-by-10-by-10 workspace.
+    \item \textit{Shape} [fixed]: cubes.
+    \item \textit{Configuration}: voxel length oscillation phase shifted from a central pattern generator (sine wave with frequency 5 Hz).
+\end{itemize}
+
+
+% The constraint in chapters 2 to 4 of well-specified material were lifted in chapter 5.
+% As in chapter 2,
+% structure is free to vary but shape was not.
+% However, a much larger, 10-by-10-by-10 workspace was used.
+% The contribution of this chapter is that,
+% instead of no development (chapter 2) or ballistic development (chapters 3 and 4),
+% development is driven by environmental signals (stress and pressure).
+
+
+\subsection{Significance}
 
 % \noindent
 % % Initial exploration in closing the developmental feedback loop with as little additional machinery as possible to determine when and how such added complexity increases evolvability and robustness.
@@ -325,6 +435,12 @@ development is driven by environmental signals (stress and pressure).
 
 \section{Shapeshifting for Damage Recovery}
 
+
+\textsc{In Chapter 6,}
+for the first time, a robot automatically recovered from unanticipated damage by changing its resting shape not its control policy.
+
+\subsection{Protean Capacity}
+
 \begin{itemize}
     \item \textit{Phylogenic change}: configuration alternatives.
     \item \textit{Slow ontogenic change} [damage]: structure.
@@ -333,13 +449,49 @@ development is driven by environmental signals (stress and pressure).
 \end{itemize}
 
 
-\noindent
-In chapters 2 and 3, 
-plastic deformation of a single structure were explored.
-In chapter 5, a control policy was optimized for a quadruped of 140 voxels.
-The controller was then frozen and the robot was deployed.
-The robot then was subjected to a series of nine mechanical damage scenarios of increasing severity.
-In each case, the robot needed to find a shape within the confines of the remnant structure that ``resonated'' with its control policy to regenerate locomotion.
+\subsection{Realization}
+
+\begin{itemize}
+    \item \textit{Material} [fixed]: pneumatically-actuated, hollow silicone voxels.
+    \item \textit{Structure} [outdated specification]: various amputations from quadrupedal form.
+    \item \textit{Shape} [ill-specified]: learned resting pressure for each damage case.
+    \item \textit{Configuration} [evolved for quadruped]: pressure oscillation phase shifted from a central pattern generator (sine wave with frequency 5 Hz).
+\end{itemize}
+
+% Chapters 3 and 4, 
+% explored the plastic deformation of a block of 48 voxels.
+% In chapter 6, an open-loop controller was optimized to displace a common robot structure: a quadruped (140 voxels).
+% The quadruped was deployed with its optimized controller: 
+% a set of 140 values, one for each voxel, that shifted the timing of local configuration (voxel volume/pressure) oscillation about local resting shape (rest volume / atmospheric pressure).
+
+% The robot then was subjected to a series of nine mechanical damage scenarios of increasing severity.
+% In each case, the robot needed to find a shape within the confines of the remnant structure that ``resonated'' with its control policy to regenerate locomotion.
+
+
+% No robot built to date has altered its resting structure in order to recover function lost due to damage.
+
+% Instead of treating the body as just the problem domain, we here modify it as part of the computational loop.
+% This is possible because our robot has many more (140) mechanical degrees of freedom, and the ability to change the volume, rather than just the relative displacement, of each component.
+% This flexibility enables a heretofore unexplored mode of damage recovery: keep the existing controller but deform the resting structure.
+% Existing approaches to controller adaptation could in principle (although this is not investigated here) be paired with such changes to morphology.
+% However, in many cases, it would be desirable to retain a previously optimized and fine-tuned controller, especially if missing structure can simply be regenerated.
+
+\subsection{Significance}
+
+The robots in bongard et al and cully etal considered the body as the problem domain.
+
+the potential for regeneration potentiates evolution because without morphological plasticity the agent is very constrained in the kinds of errors it is safe to make.
+
+learning can only happen through trial and error (cite dennett generate and test paper)
+
+% Adult stem cells give us some capacity to regenerate tissues.
+
+While a diverse set of recovery mechanisms have been proposed, they all  
+shared a common assumption: 
+The damaged mechanical structure could be 
+reconfigured, but not fundamentally deformed.
+This assumption is reasonable in classical robots, which are, generally, jointed collections of rigid links.
+
 
 % \noindent
 % In this paper, a new approach to robot damage recovery has been proposed.
@@ -435,14 +587,38 @@ In each case, the robot needed to find a shape within the confines of the remnan
 
 \section{Reconfigurable Organisms}
 
-% Cells: The Final Frontier?
+
+\textsc{In Chapter 7,}
+by combining AI design methods with a cell-based construction toolkit, a scalable pipeline for designing and creating novel organisms was introduced.
+
+
+\subsection{Protean Capacity}
 
 \begin{itemize}
     \item \textit{Phylogenic change}: structure, material; configuration alternatives and variance.
-    \item \textit{Slow ontogenic change} [in vivo]: structure, material.
+    \item \textit{Slow ontogenic change} [in vivo]: structure, shape, material and configuration alternatives.
     \item \textit{Fast ontogenic change}: configuration.
 \end{itemize}
 
+
+\subsection{Realization}
+
+\begin{itemize}
+    \item \textit{Material} [ill-specified]: initially pluripotent stem cells, later fated to become specific epidermal and cardiomyocyte cell lineages.
+    \item \textit{Structure} [ill-specified]: evolved placement and distribution of cell types.
+    \item \textit{Shape} [ill-specified]: cells compact and conspire to self-heal lacerations in their collective structure (mechanism currently unknown; it's possible the tissue simply zippers shut through the action of cadherins, gap junctions, and tight junctions on neighboring cells).
+    
+    \item \textit{Configuration} [ill-specified]: contraction/relaxation of cardiomyocytes (temporal coordination in novel structures is currently unknown).
+\end{itemize}
+
+
+\subsection{Significance}
+Most technologies are made from steel, concrete, chemicals and plastics, which degrade over time and can produce harmful ecological and health side effects. It would thus be useful to build technologies using self-renewing and biocompatible materials, of which the ideal candidates are living systems themselves. Thus, we here present a method that designs completely biological machines from the ground up: computers automatically design new machines in simulation, and the best designs are then built by combining together different biological tissues. This suggests others may use this approach to design a variety of living machines to safely deliver drugs inside the human body, help with environmental remediation, or further broaden our understanding of the diverse forms and functions life may adopt.
+
+Living systems are more robust, diverse, complex, and supportive of human life than any technology yet created. However, our ability to create novel lifeforms is currently limited to varying existing organisms or bioengineering organoids in vitro. Here we show for the first time a scalable pipeline for creating functional novel lifeforms: AI methods automatically design diverse candidate lifeforms in silico to perform some desired function, and transferable designs are then created using a cell-based construction toolkit to realize living systems with the predicted behaviors. Although some steps in this pipeline still require manual intervention, complete automation in future would pave the way to designing and deploying unique, bespoke living systems for a wide range of functions.
+
+
+% Cells: The Final Frontier of Protean Machines?
 
 % \noindent
 % Although simulation and design of rigid structures and machines has been possible for some time, only recently has it become computationally tractable to simulate the combined behavior of arbitrary aggregates of soft components with differing material and actuation properties (22). As shown for the first time here, such fine-grained simulations can be embedded in evolutionary search methods to discover designs that can be instantiated in biological, rather than artificial materials. 
@@ -459,24 +635,30 @@ In each case, the robot needed to find a shape within the confines of the remnan
 
 
 
-\subsection*{Friends to Cite}
+\subsection{Friends to Cite}
 
 Bio-hybrids \cite{cvetkovic2014three,raman2016optogenetic,nawroth2012tissue,park2016phototactic,ricotti2017biohybrid}
 
 
-
-\subsection*{What}
-
+\subsection{How}
 
 
-\subsection*{Why}
+We defined configuration as defined in robotics, joint angles, 
+
+but modular robotics screwed up everything and redefined configuration more colloquially as a synonym for structure
+
+This is why ontologies are important!
+
+
+\subsection{Why}
 
 Robots are made from building blocks which are themselves fabricated or harvested from naturally occurring materials.
 Why on earth would we not use the best building blocks available?
 On Earth, those are cells.
 
 
-\subsection*{Returning to a Robot's Roots}
+
+\subsection{Returning to a Robot's Roots}
 
 The first use of the word ``robot'' occurred in the Czech
 play \textit{R.U.R.}
@@ -495,9 +677,7 @@ organs and other parts were made from vats of flesh-like dough and assembled int
 
 
 
-
-
-\subsection*{Living Cybernetic Machines}
+\subsection{Living Cybernetic Machines}
 
 Pask and Beer realized the limitations of 
 % electromagnetic and 
@@ -545,5 +725,5 @@ And this barrier to realizing a robot made entirely out of cells persisted for s
 
 \section{Conclusion}
 
-
+This thesis presented six sets of experiments (chapters 2, 3, 4, 5, 6 and 7), in which the morphologies of robots were permitted to vary on increasingly more scales in space and time.
 
