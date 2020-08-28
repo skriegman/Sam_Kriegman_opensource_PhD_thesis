@@ -1,4 +1,7 @@
-\chapter{\href{https://ieeexplore.ieee.org/abstract/document/9116004}{\color{blue}Structure}}
+
+
+
+\chapter[Structure]{\href{https://ieeexplore.ieee.org/abstract/document/9116004}{\color{blue}Structure}}
 
 \textbf{Appeared as:}\\
 S.~Kriegman et al.,
@@ -6,31 +9,31 @@ Scalable sim-to-real transfer of soft robot designs,
 \textit{Proceedings of the IEEE International Conference on Soft Robotics (RoboSoft)} (2020).
 
 
-\chapter{\href{https://dl.acm.org/doi/abs/10.1145/3071178.3071296}{\color{blue}Shape}}
+\chapter[Shape]{\href{https://dl.acm.org/doi/abs/10.1145/3071178.3071296}{\color{blue}Shape}}
 
 \textbf{Appeared as:}\\
 S.~Kriegman, et al., A minimal developmental model can increase evolvability in soft robots. \textit{Proceedings of the Genetic and Evolutionary Computation Conference} (2017).
 
 
-\chapter{\href{https://www.nature.com/articles/s41598-018-31868-7}{\color{blue}Shape and Configuration}}
+\chapter[Shape and Configuration]{\href{https://www.nature.com/articles/s41598-018-31868-7}{\color{blue}Shape and Configuration}}
 
 \textbf{Appeared as:}\\
 S.~Kriegman, et al., How morphological development can guide evolution. \textit{Scientific reports} \textbf{8}, 13934 (2018).
 
 
-\chapter{\href{https://arxiv.org/abs/1804.02257}{\color{blue}Structure, Configuration, Material}}
+\chapter[Material, Structure, Configuration]{\href{https://arxiv.org/abs/1804.02257}{\color{blue}Material, Structure, Configuration}}
 
 \textbf{Appeared as:}\\
 S.~Kriegman et al., Interoceptive robustness through environment-mediated morphological development. \textit{Proceedings of the Genetic and Evolutionary Computation Conference} (2018).
 
 
-\chapter{\href{http://www.roboticsproceedings.org/rss15/p28.html}{\color{blue}Configuration, Structure, Shape}}
+\chapter[Structure, Shape, Configuration]{\href{http://www.roboticsproceedings.org/rss15/p28.html}{\color{blue}Structure, Shape, Configuration}}
 
 \textbf{Appeared as:}\\
 S.~Kriegman et al., Automated shapeshifting for function recovery in damaged robots. \textit{Proceedings of Robotics: Science and Systems} (2019).
 
 
-\chapter{\href{https://www.pnas.org/content/117/4/1853}{\color{blue}Living Protean Machines}}
+\chapter[Xenobots: Material, Structure, Shape, Configuration]{\href{https://www.pnas.org/content/117/4/1853}{\color{blue}Xenobots: \\ {\LARGE Material, Structure, Shape, Configuration}}}
 
 \textbf{Appeared as:}\\
 S.~Kriegman et al., A scalable pipeline for designing reconfigurable organisms. 
@@ -47,17 +50,30 @@ S.~Kriegman et al., A scalable pipeline for designing reconfigurable organisms.
 \section{Pr\'{e}cis of the Thesis}
 
 \textsc{In Chapter 1,}
-the background of ...
-
+a history of 
+evolved robots 
+and protean machines was provided
+that situated the present thesis in the literature.
 To demonstrate 
 the value of incorporating increasingly more morphological plasticity in robots,
-I started with ...
+I started with
+
+the evolution of ontogenetically static structure
+
+the evolution of ballistic ontogenetic shape change
+
+the evolution of ballistic ontogenetic change to resting shape and configuration osculations occurring and interacting on two timescales.
+
+the evolution of material properties (stiffness) in response to environmental signals (stress, pressure)
 
 
+the evolution of configuration alternatives in a fixed structure; increasingly deeper mechanical amputations to that structure, each time automatically developing a new shape the recovered function without changing the controller.
 
-The following sections summarize each of the 
+the design and manufacture of novel organisms
+
+The following sections summarize each of these 
 % preceding 
-succeeding
+% succeeding
 chapters in turn.
 
 
@@ -82,73 +98,25 @@ transfer an order of magnitude more robot designs from simulation to reality tha
     \item \textit{Material}: passive and pneumatically-actuated silicone voxels (cubic bladders).
     \item \textit{Structure}: number, placement and kind of voxels.
     \item \textit{Shape} [fixed]: atmospheric pressure (cubes).
-    \item \textit{Configuration}: pressure oscillation, all active voxels in unison (expansion, compression back to cube, hold at cube, repeat).
+    \item \textit{Configuration}: pressure oscillation of all active voxels in unison (expansion, compression back to cube, hold at cube, repeat).
 \end{itemize}
 
 
-\subsection{Significance}
+
+\subsection{Contribution}
 
 
-Conceptually,
-this is scalable...
 
-Operationally,
-we hope that the kit's affordability, safety, speed, and simplicity will generate increasingly more, and more reproducible, data about the automated design of increasingly competent soft machines.
+There is little to no data on the simulation-reality gap for soft robots.
+By transferring a diversity of soft robot designs from simulation to reality, the reality gap was measured as a function of morphology given a static control policy.
+Under one measure (net displacement) the reality gap appeared rather small, but under another (velocity) the gap was much wider.
+This illuminated the fact that there are reality gaps rather than a single gap.
+This suggests that, if structure is allowed to vary, automated design can be used as a filter to discover morphologies which reduce the gap before attempting to cross it with controller optimization.
 
-% Other modular yet rigid-bodied robot design and construction kits exist, such as Molecubes \cite{zykov2007molecubes}.
-% However, our kit is easier, faster, cheaper, and safer to use.
-% In short, silicone is molded into hollow voxels, and tubing is attached to supply low pressure actuation from a hand pump,
-% causing volumetric changes in one or more of the voxels (Figs.~\ref{fig:pressure} and \ref{fig:real}).
-% For simple behaviors robust to actuation noise,
-% there is no need to use a highly-pressurized air supply or program microcontrollers for open-loop control.
-% There are also no expensive motors or power supplies.
-
-% \subsection{Related Work}
-
-% % \citet{lipson2000automatic} did the same with rigid bodies.
-
-% \citet{hiller2011automatic} 
-% evolved the overall geometry and distribution of actuating (orange) and passive (white) material in a voxel-based simulator, and transferred the best design to a pressure and vacuum chamber.
-% Layers of open-cell (white) and closed-cell (orange) foam rubbers were stacked, pinned and glued together to fabricate the simulated design.
-% The orange foam is pneumatically isolated from the changing external pressure, resulting in volumetric expansion and contraction.
-% The white foam retains a constant volume because it quickly equalizes to the external pressure.
-
-% In this paper, we introduced a low cost, open source platform for designing and rapidly building soft robots, and used it to transfer 
-% 108 different morphologies (voxels on a cartesian grid) from simulation to reality.
-% We then measured the reality gap as function of the robot's design (geometry and distribution of passive and actuating voxels) by tracking the behavior of nine transferred morphologies.
-% Under one measure (net displacement) the reality gap appeared rather small, but under another (velocity) the gap was much wider, likely due to oversimplified tribological contacts between the simulated ground plane and the robot's ventral surface \cite{majidi2013influence}.
-
-% Although most of the transferred designs (99 out of the 108) were not actuated in reality, they nevertheless served an important function:
-% they were \textit{sketches}.
-% Sketches let us think more clearly about the behavior or properties (e.g., stability) of a design without investing the additional time and resources required to fully build and examine the design itself.
-% Sketches, in other words, greatly increase the breadth of exploration in design space.
-% All sim2real methods embrace this utility of simplifying sketches.
-% Simulation, after all, is also a sketch.
-
-% However, there is a tacit assumption in robotics about Depth First.
-% A typical sim2real experiment begins by sending a
-% complicated robot design across the reality gap,
-% and then endeavors to learn transferable policies that control the morphology in all its complexity.
-% But this is not how most design proceeds.
-% An architect first roughly sketches a structure, say, a bridge, on the back of a napkin.
-% A diversity of designs are then generated, tweaked, discarded or provisionally accepted|at this shallow level of napkin realism|before more detailed blueprints are drawn under more stringent constraints.
-% Blueprints, too, undergo this breadthwise evolution, before the most promising are realized physically, first as scale models (built from matchsticks and glue instead of concrete and steel), then, finally, at full scale and cost.
-% This incrementally weeds out nontransferable features and adds mechanical complexity only when and where it is necessary to do so, rather than globally from the outset.
-
-% The assumption that the reality gap can be bridged by policy search alone, with a single robot design, is groundless. 
-% The desired behavior of a robot is typically much more complicated than that of architecture.
-% This suggests the necessity of more, not less, sketches.
-% Soft robots are more complicated still.
-% This makes their automated design that much more appealing, but implies the need for even greater breadth of sketches, at more intermediate levels of realism.
-% Though not every experiment will need to start from a blank slate.
-% Instead, designers (whether human or AI) could leverage prior knowledge to reject truly awful designs before sketching them in the first place.
-% The designs transferred here add to a growing database (prior probabilities) about which and how well different soft robot designs and behaviors can be realized physically.
-% Our construction kit has the potential to further increase this data by lowering not only cost and build times but also the barrier of entry to soft robotics for non-experts.
-
-
-% The generality of such data beyond robotics is currently not known, but it could also have important implications for developmental biology and regenerative medicine.
-% The bioelectric and genetic control policies that orchestrate adaptive remodeling of growth and form in organisms are not yet understood, but could, in future, be reverse-engineered by machine learning, and then controlled externally to induce regeneration in otherwise non-regenerative organisms (such as adult humans), or to reprogram otherwise unbounded cancerous growth toward functional organogenesis \cite{levin2013reprogramming}.
-% However, such advances in regenerative medicine and synthetic morphology will only be possible if hypotheses generated in simulation are transferable and testable in reality.
+The kit's affordability, safety, speed, and simplicity effectively lower the barrier of entry to soft robotics for non-experts.
+Such a tool is posed to generate increasingly more, and more reproducible, data about the design of protean machines.
+In the age of covid, a do-it-yourself-at-home soft robot kit 
+is particularly appealing and has been adopted by four soft robotics research labs thus far.
 
 
 
@@ -183,8 +151,12 @@ model confers evolvability because it allows evolution to sweep over a larger ra
 \end{itemize}
 
 
-\subsection{Significance}
+\subsection{Contribution}
 
+
+Protean body plans introduce smaller and thus safer mutations \cite{lehman2018safe}, whose behavioral deflection manifests temporarily during operation, rather than permanently from deployment (chapter 3).
+Evolution can then lengthen the time intervals containing superior traits and reduce the intervals of inferior traits.
+This allows evolution to surgically revise morphology with a pair of tweezers, if you will, rather than a sledgehammer.
 
 
 % In this chapter I introduced a minimal yet embodied model of development in order to isolate the effect of morphological change in ontogenetic time,
@@ -236,9 +208,32 @@ We refer to this as \textit{differential canalization}.
 % Both resting shape and the phase-offsets of configuration oscillations changed ballistically and the starting and ending points were evolved.
 
 
-\subsection{Significance}
+\subsection{Contribution}
 
 gradients in morphospace
+
+Protean body plans smooth the search space evolution operates in via the Baldwin effect (chapters 3 and 4).
+This effect is outlined in Figs.~\ref{fig:baldwin2d} and \ref{fig:baldwin3d}.
+In brief, the flexibility of a protean feature
+(e.g.~skin thickness) allows evolution to sweep through design space along a line of development rather than sampling a single point.
+Development can then be incrementally canalized about a good static setting (e.g.~calluses).
+This gradual homing-in process is hastened by natural selection,
+and eventually supplanted by the genetic determination of the feature 
+% which in previous generations needed to be rediscovered by development. 
+(e.g.~embryonic calluses).
+% that in previous generations was protean.
+%  that would otherwise be need to be earned through interaction with the environment
+This well-studied phenomenon is revisited with a twist:
+physically embodied robots, rather than an abstract control system.
+This distinction is important because it grounds hypotheses in the constraints and opportunities afforded by the physical world.
+
+
+Protean body plans promote (the canalization of) permissive body plans robust to control changes (chapter 4).
+It is much easier to train a control policy within a permissive body. 
+% Evolution discovers body plans robust to control changes, these body plans become genetically assimilated, yet controllers for these agents are not assimilated.
+This exposed a previously unknown detail about the Baldwin effect: instead of all useful traits becoming genetically assimilated, only traits that render the agent robust to changes in other traits become assimilated. 
+% This exposed the previously unknown phenomenon of differential canalization reported here.
+I refer to this as \textit{differential canalization}.
 
 % \noindent
 % In these experiments, the intersection of two time scales---slow linear development and rapid oscillatory actuation, as from a central pattern generator---generates positive and negative feedback in terms of instantaneous velocity: the robot speeds up and slows down during various points in its lifetime.
@@ -371,7 +366,10 @@ learn capable and robust strategies.
 % development is driven by environmental signals (stress and pressure).
 
 
-\subsection{Significance}
+\subsection{Contribution}
+
+Protean body plans foster ``zero-shot'' generalization (on the very first try, without adjustment) to fabrication errors (chapter 5).
+The amount of generalization in canalized (previously protean but now morphologically-static) machines was found to depend on the kinds of interoceptive signals used to guide their morphological change during optimization.
 
 % \noindent
 % % Initial exploration in closing the developmental feedback loop with as little additional machinery as possible to determine when and how such added complexity increases evolvability and robustness.
@@ -476,21 +474,25 @@ for the first time, a robot automatically recovered from unanticipated damage by
 % Existing approaches to controller adaptation could in principle (although this is not investigated here) be paired with such changes to morphology.
 % However, in many cases, it would be desirable to retain a previously optimized and fine-tuned controller, especially if missing structure can simply be regenerated.
 
-\subsection{Significance}
+\subsection{Contribution}
 
-The robots in bongard et al and cully etal considered the body as the problem domain.
+Protean body plans amplify robustness to damage (chapter 6).
+This is because a sufficiently deformable body can in some cases morph to ``resonate'' with an existing control policy---tuned prior to damage---to regenerate behavioral competence (not necessarily by reforming the original body shape).
+This allows protean machines to recover functionality after ``deep insult'', such as removal of all limbs, or being cut in half.
 
-the potential for regeneration potentiates evolution because without morphological plasticity the agent is very constrained in the kinds of errors it is safe to make.
+% The robots in bongard et al and cully etal considered the body as the problem domain.
 
-learning can only happen through trial and error (cite dennett generate and test paper)
+% the potential for regeneration potentiates evolution because without morphological plasticity the agent is very constrained in the kinds of errors it is safe to make.
 
-% Adult stem cells give us some capacity to regenerate tissues.
+% learning can only happen through trial and error (cite dennett generate and test paper)
 
-While a diverse set of recovery mechanisms have been proposed, they all  
-shared a common assumption: 
-The damaged mechanical structure could be 
-reconfigured, but not fundamentally deformed.
-This assumption is reasonable in classical robots, which are, generally, jointed collections of rigid links.
+% % Adult stem cells give us some capacity to regenerate tissues.
+
+% While a diverse set of recovery mechanisms have been proposed, they all  
+% shared a common assumption: 
+% The damaged mechanical structure could be 
+% reconfigured, but not fundamentally deformed.
+% This assumption is reasonable in classical robots, which are, generally, jointed collections of rigid links.
 
 
 % \noindent
@@ -585,11 +587,14 @@ This assumption is reasonable in classical robots, which are, generally, jointed
 
 
 
-\section{Reconfigurable Organisms}
+\section{Computer-Designed Organisms}
 
 
 \textsc{In Chapter 7,}
-by combining AI design methods with a cell-based construction toolkit, a scalable pipeline for designing and creating novel organisms was introduced.
+I described the first end-to-end automated design of novel organisms: AI methods design unique organisms in simulation, after which they are rapidly realized as living systems using a cell-based construction kit. 
+This yields a continuous flow of synthetic living organisms or ``biobots'' that perform useful tasks yet bear little resemblance, above the cellular level, to any existing organisms. 
+
+% by combining AI design methods with a cell-based construction toolkit, a scalable pipeline for designing and creating novel organisms was introduced.
 
 
 \subsection{Protean Capacity}
@@ -612,53 +617,47 @@ by combining AI design methods with a cell-based construction toolkit, a scalabl
 \end{itemize}
 
 
-\subsection{Significance}
-Most technologies are made from steel, concrete, chemicals and plastics, which degrade over time and can produce harmful ecological and health side effects. It would thus be useful to build technologies using self-renewing and biocompatible materials, of which the ideal candidates are living systems themselves. Thus, we here present a method that designs completely biological machines from the ground up: computers automatically design new machines in simulation, and the best designs are then built by combining together different biological tissues. This suggests others may use this approach to design a variety of living machines to safely deliver drugs inside the human body, help with environmental remediation, or further broaden our understanding of the diverse forms and functions life may adopt.
+\subsection{Contribution}
 
-Living systems are more robust, diverse, complex, and supportive of human life than any technology yet created. However, our ability to create novel lifeforms is currently limited to varying existing organisms or bioengineering organoids in vitro. Here we show for the first time a scalable pipeline for creating functional novel lifeforms: AI methods automatically design diverse candidate lifeforms in silico to perform some desired function, and transferable designs are then created using a cell-based construction toolkit to realize living systems with the predicted behaviors. Although some steps in this pipeline still require manual intervention, complete automation in future would pave the way to designing and deploying unique, bespoke living systems for a wide range of functions.
+Protean body plans regulate building blocks that exhibit unpredictable behavior, such as cardiomyocytes (heart muscle) when reorganized into novel structures in vitro.
+Structural evolution in silico can yield an appropriate static morphology that denoises and stabilizes even completely random control policies.
+Under certain constraints, such robust designs can be built as new organisms, designed by a computer, that are by virtue of their living cells inherently protean.
 
-
-% Cells: The Final Frontier of Protean Machines?
-
-% \noindent
-% Although simulation and design of rigid structures and machines has been possible for some time, only recently has it become computationally tractable to simulate the combined behavior of arbitrary aggregates of soft components with differing material and actuation properties (22). As shown for the first time here, such fine-grained simulations can be embedded in evolutionary search methods to discover designs that can be instantiated in biological, rather than artificial materials. 
-
-% The resulting organisms embodied not only the structure (Fig. S8) of evolved in silico designs but also their behavior (Fig. 4), despite modeling cardiomyocyte temporal coordination as random noise. As a side effect of selection pressure for locomotion, derandomizing morphologies evolved: evolutionary improvement occurred through changes in overall shape, and distribution of the passive and contractile cells, to collectively derandomize the global movement produced by the random actuation. In biology, such robustness to random noise is ubiquitous; one example is the ability of many species to adapt to wide ranges of diversity in cell size and number as starting points in their embryogenesis (23).
-
-% The behavioral competence of individual cells, and the propensity of cells to cooperate in groups, facilitate functional morphogenesis in novel circumstances. The lifeforms presented here, despite lacking nervous systems, following novel developmental trajectories, and being composed of materials from different tissues, nevertheless possess these self-organizing properties. These properties synergize with and support the behavior they were designed to exhibit. For instance, although signaling between cardiomyocytes was not enforced, emergent spontaneous coordination among the cardiac muscle cells produced coherent, phase-matched contractions which aided locomotion in the physically-realized designs. Also, some of the designs, when combined, spontaneously and collectively aggregate detritus littered within their shared environment (Figs. 3F and S11). Finally, reconfigurable organisms not only self-maintain their externally-imposed configuration, but they also self-repair in the face of damage, such as automatically closing lacerations (Fig. S9). Such spontaneous behavior cannot be expected from machines built with artificial materials unless that behavior was explicitly selected for during the design process (24).
-
-% This approach admits future generalization and automation because the generator-and-filter architecture enables modular addition, removal, or reorganization of elements in the pipeline for rapid design and deployment of new living systems for new tasks in new domains. For instance, a filter could be added which pre-emptively steers the evolutionary algorithm away from portions of the design space known to contain designs that cannot be realized physically (25). Or, inspired by the hierarchical organization of deep neural networks (26), individual designs output by one generator could become the building blocks input to the next generator, thus enabling hierarchical design and re-use of cellular assemblies, and assemblies of assemblies.
-
-% Beyond the applications reported here, the generality of this approach is as of yet unknown. But, advances in machine learning, soft body simulation, and bioprinting are likely to broaden the potential applications to which it may be put in future. Applications could be numerous, given the ease of misexpressing novel proteins and synthetic biology pathways and computational circuits in Xenopus cells (27). Given their non-toxicity and self-limiting lifespan, they could serve as a novel vehicle for intelligent drug delivery (28) or internal surgery (29). If equipped to express signaling circuits and proteins for enzymatic, sensory (receptor), and mechanical deformation functions, they could seek out and digest toxic or waste products, or identify molecules of interest in environments physically inaccessible to robots. If equipped with reproductive systems (by exploiting endogenous regenerative mechanisms such as occurs in planarian fissioning), they may be capable of doing so at scale. In biomedical settings, one could envision such biobots (made from the patient's own cells) removing plaque from artery walls, identifying cancer, or settling down to differentiate or control events in locations of disease. A beneficial safety feature of such constructions is that in the absence of specific metabolic engineering, they have a naturally limited life-span. 
-
-% These methods, reagents, and data extend the breadth of model organisms available for study by designing living systems that are as orthogonal as possible to existing species, yet capable of being built from existing cell types. By enabling a computationally-guided interplay between emergent and designed processes, this platform facilitates studies of the relationship between genomes (in our case, wild-type Xenopus laevis), the resulting body-plan, and its behaviors in diverse environments. Thus, such reconfigurable organisms could serve as a unique model system facilitating work in the evolution of multicellularity, exobiology, artificial life, basal cognition, and regenerative medicine. If equipped with electrically-active cells and selected for cognitive or computational functions (30), such designed systems may similarly broaden our understanding of how intelligence can be instantiated in living as well as non-living systems.
+Computer-designed organisms embodied not only the structure of evolved in silico designs but also their behavior, despite modeling cardiomyocyte temporal coordination as random noise. 
+As a side effect of selection pressure for locomotion, derandomizing morphologies evolved: evolutionary improvement occurred through changes in overall shape, and distribution of the passive and contractile cells, to collectively derandomize the global movement produced by the random actuation. 
 
 
+\subsection{Context}
 
-\subsection{Friends to Cite}
-
-Bio-hybrids \cite{cvetkovic2014three,raman2016optogenetic,nawroth2012tissue,park2016phototactic,ricotti2017biohybrid}
-
-
-\subsection{How}
-
-
-We defined configuration as defined in robotics, joint angles, 
-
-but modular robotics screwed up everything and redefined configuration more colloquially as a synonym for structure
-
-This is why ontologies are important!
+Growing interest in AI has to date been restricted to technological constructs such as neural networks, robots, or autonomous cars. 
+The experiments in chapter 7
+introduced the first artificial, intelligent, yet fully biological constructs. 
+While automatically designing machines in silico and manufacturing them as robots using 3D printers is now well established, automatically designing and instantiating living systems has never before been demonstrated. 
+Recent efforts to build novel living machines \cite{herr2004swimming,xi2005self,feinberg2007muscular,cvetkovic2014three,raman2016optogenetic,nawroth2012tissue,park2016phototactic,ricotti2017biohybrid} used designs created by the investigators, rather than AI-generated ones.
+% The field was also focused on biohybrids supported by 3D synthetic scaffolds, rather than organisms composed of 100 percent biological tissue.
+Although the fields of synthetic biology and organoid design have made inroads into designing living systems, the former is restricted to genetic modification of existing organisms while the latter is focused on designing only parts of a whole organism.
+This work, in contrast, describes a novel path to creating synthetic organisms out of cells without genomic editing.
 
 
-\subsection{Why}
+% In one set of experiments, we designed organisms capable of collective object transport: Given the small size and biocompatibility of these entities, members of the medical community will likely see the import of this approach for clinical applications such as intelligent drug delivery or microsurgery. 
+% Environmental scientists may imagine, for example, microplastic corralling or other bioremediation applications.
+
+% Computer-designed organisms would greatly broaden the range of viable living systems available for study by biologists. 
+% Clinically, this work could hasten the arrival of biocompatible microrobots capable of drug delivery or microsurgery. 
+% Industries could rapidly design and manufacture novel organisms with varying combinations of artificial and biological components that collectively perform a wide range of tasks in diverse environments. 
+
+% unique as organisms because of their provenance
+
+
+
+\subsection{Historical Note}
+
 
 Robots are made from building blocks which are themselves fabricated or harvested from naturally occurring materials.
 Why on earth would we not use the best building blocks available?
 On Earth, those are cells.
 
 
-
-\subsection{Returning to a Robot's Roots}
 
 The first use of the word ``robot'' occurred in the Czech
 play \textit{R.U.R.}
@@ -675,9 +674,13 @@ inspired by the emerging technology of
 in vitro (in vivo?) tissue culture,
 organs and other parts were made from vats of flesh-like dough and assembled into bodies
 
+This is the first instance of the phrase ``playing god''
 
+which we are frequently asked if we are worried about this
 
-\subsection{Living Cybernetic Machines}
+...
+
+In the 1950s and 60s,
 
 Pask and Beer realized the limitations of 
 % electromagnetic and 
@@ -719,6 +722,60 @@ But made little progress getting these systems to work as regulators.
 There was certainly enough variety but the feedback to the environment was too ambiguous.
 Living systems self-regulate and self-proliferate but they are difficult to persuade steer into new directions contrary to their natural homeostatic tendencies.
 And this barrier to realizing a robot made entirely out of cells persisted for seven more decades after Beer's attempts, before Douglas Blackiston and I figured our how to build and program novel organisms.
+
+
+\subsection{Ontological Note}
+
+
+In robotics, the term ``configuration'' has long been used
+as defined in our ontology (section \ref{sec:ontology})
+to describe the relative displacement of a robot's actuators: the set of joint angles in a rigid-bodied robot, for instance.
+Inverse kinematics were calculated to determine what configuration the robot will need to assume in order to 
+place its end-effector in a desired position and orientation.
+Then came modular robotics, in which the relative displacement of modules---the configuration---could also determine the robot's overall structure.
+In reconfigurable modular robots, and their automatically restructuring cousins ``self-reconfigurable modular robots'', structure and configuration are two sides of the same coin, as we saw in the simulations of \citet{pathak2019learning}.
+To a protean machine capable of changing material, structure and shape on various timescales,
+it's all configuration.
+And so it is in the spirit of truly protean machines,
+that the first computer-designed organisms
+adopted their namesake ``reconfigurable''.
+\textbf{Reconfigurable Organisms}, after all, are
+robots built out of cells: the modules of life.
+
+
+\subsection{A New Taxonomy}
+
+How do current biohybrids,
+computer-designed organisms,
+reconfigurable organisms,
+and xenobots
+all relate to each other?
+They are all examples of synthetic biology.
+Within synthetic biology, the distinction between human- and computer- designed is more fundamental than the specific materials (biohybrid vs.~organism),
+or level of manipulation (cell-level vs.~tissue-level).
+I've sketched out a taxonomy of synthetic biology in  Fig.~\ref{fig:synthbio} that places the ``xenobots'' in context with other kinds of living machines.
+
+Xenobots are reconfigurable organisms made from Xenopus cells.
+If we made reconfigurable organisms out of cells taken from early elephant embryos, they would be called ``elebots'' or likely something more catchy by the public and the memesphere.
+
+Reconfigurable organisms are assembled according to a computer-designed blueprint.
+Rather than telling a microsurgeon or 3D bioprinter roughly where all the tissues should go, 
+a blueprint could instead say how to deflect development toward a target morphology.
+The pipeline could in principle learn to build specific shapes by automatically choosing and applying biochemical/biomechanical/bioelectrical
+manipulations and then observing the cells' self-assembly.
+These would be a kind of computer-designed organism but they would relax the build filter and could in theory produce any structure / organ seen in nature (hands, eyes, noses, brains) and others yet to be discovered by evolution on Earth that may support increasingly protean machines and organisms.
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{fig/synthbio.pdf}
+    \vspace{1pt}
+    \caption{%
+    \textbf{Taxonomy of synthetic biology.}
+    ``Where am I?'' --- a xenobot.
+    \label{fig:synthbio}%
+    }
+\end{figure}
 
 
 
