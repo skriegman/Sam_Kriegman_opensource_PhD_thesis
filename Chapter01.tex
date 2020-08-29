@@ -94,8 +94,8 @@ Seven key benefits were uncovered and scrutinized:
     \item Protean body plans smooth the search space evolution operates in via the Baldwin effect (chapters 3 and 4).
     This effect is outlined in Figs.~\ref{fig:baldwin2d} and \ref{fig:baldwin3d}.
     In brief, the flexibility of a protean feature
-    (e.g.~skin thickness) allows evolution to sweep through design space along a line of development rather than sampling a single point.
-    Development can then be incrementally canalized about a good static setting (e.g.~calluses).
+    (e.g.~skin thickness) allows evolution to sweep through design space along a line of development rather than sampling a single point of a morphologically-static agent.
+    Development can then be incrementally canalized about a good static trait (e.g.~calluses).
     This gradual homing-in process is hastened by natural selection,
     and eventually supplanted by the genetic determination of the feature 
     % which in previous generations needed to be rediscovered by development. 
@@ -114,15 +114,18 @@ Seven key benefits were uncovered and scrutinized:
     I refer to this as \textit{differential canalization}.
     
     \item Protean body plans foster ``zero-shot'' generalization (on the very first try, without adjustment) to fabrication errors (chapter 5).
-    The amount of generalization in canalized (previously protean but now morphologically-static) machines was found to depend on the kinds of interoceptive signals used to guide their morphological change during optimization.
+    The amount of generalization in canalized machines (previously protean but now morphologically-static body plans) was found to depend on the kinds of interoceptive signals used to guide their morphological change during optimization.
     
     \item Protean body plans amplify robustness to damage (chapter 6).
     This is because a sufficiently deformable body can in some cases morph to ``resonate'' with an existing control policy---tuned prior to damage---to regenerate behavioral competence (not necessarily by reforming the original body shape).
     This allows protean machines to recover functionality after ``deep insult'', such as removal of all limbs, or being cut in half.
     
-    \item Protean body plans regulate building blocks that exhibit unpredictable behavior, such as cardiomyocytes (heart muscle) when reorganized into novel structures in vitro (chapter 7).
-    Structural evolution in silico can yield an appropriate static morphology that denoises and stabilizes even completely random control policies.
-    Under certain constraints, such robust designs can be built as new organisms, designed by a computer, that are by virtue of their living cells inherently protean.
+    \item Protean body plans 
+    can, in some cases, cohere the unpredictable behavior of biological building blocks (such as cardiomyocytes) into more predictable whole-body behavior (chapter 7).
+    % regulate building blocks that exhibit unpredictable behavior, such as cardiomyocytes (heart muscle) when reorganized into novel structures in vitro (chapter 7).
+    Evolution in silico can yield an appropriate static morphology that denoises and stabilizes even completely random control policies.
+    Under certain constraints, such robust designs can be built from biological building blocks.
+    This in effect can yield new organisms that are by virtue of their living cells inherently protean.
     
     % \item Protean body plans steer collectives of autonomous agents, such as swarms of computer-designed organisms, toward desired system-level outcomes (e.g.~kinematic self-replication) and away from emergent unintended consequences.
     
@@ -174,29 +177,28 @@ two new platforms for constructing physical protean machines were developed as p
 \end{changemargin}
 
 \noindent
-In the chapters that follow, we will incrementally liberate different physical attributes of a robot's design so that they may vary during operation.
+In the chapters that follow, we will incrementally liberate different physical attributes of a robot's design from the assumption that they are hand designed and fixed, so that they may vary during operation.
 This section 
 % (roughly) 
 defines each such variable, 
 how they relate to each other (Fig.~\ref{fig:taxonomy}), 
 as well as the different time scales in which they may change.
 The definitions are necessarily fuzzy around the edges, idealized, stipulative, and include (at least) one category mistake---but they will be precise enough to be useful.
-% Later, when more exact concepts have been developed (e.g.~how physics is simulated), it will be possible to state the ontology more precisely.% (chapter 6).
+Later, when more exact concepts have been developed (e.g.~how physics is simulated), it will be possible to state the ontology more precisely.% (chapter 6).
 
 
 \begin{enumerate}
 
-    \item \textbf{Time.} It will be convenient to define $\{T\in\mathbb{N} \,|\, T>0\}$, for evolutionary (phylogenetic) time, and $\{t\in\mathbb{R} \,|\, t>0\}$, for developmental (ontogentic) time.
+    \item \textbf{Time.} It will be convenient to define $\{T\in\mathbb{N} \,|\, T>0\}$ for evolutionary (phylogenetic) time, and $\{t\in\mathbb{R} \,|\, t>0\}$ for developmental (ontogentic) time.
     Time is strictly positive, with $t$ nested inside of $T$.
-    Nested inside of $t$, is another timescale---that of physiological functioning (e.g.~the beating of a heart) and behavior (e.g.~the cycle of a gait):
+    Nested inside of $t$ is another timescale---that of physiological functioning (e.g.~the beating of a heart) and behavior (e.g.~the cycle of a gait):
     ``here and now'' as \citet{pfeifer2006body} put it.
     Time is of course relative to an observer---and there are nested observers.
     Here-and-now is minutes for a squirrel burying acorns, seconds for a dog chasing the squirrel, milliseconds for a racing heart, microseconds for its gated ion channels, pico- or femtoseconds for its vibrating molecular bonds.
     We can denote these finer timescales $\theta_1, \theta_2, \ldots$
-    if you wish.
-    But that won't be strictly necessary.
+    but that won't be strictly necessary for the purposes of this thesis.
     
-    $T$ and $t$ are enough to describe the basic algorithm of evolution in time.
+    $T$ and $t$ are sufficient to describe the basic algorithm of evolution in time.
     For the entire $n$-th generation of evolution, $T=n$ as a population of designs develop and behave for $\tau$ seconds during ontogeny: an evaluation period over $t\in(0, \tau)$.
     The worst designs are culled and replaced by noisy copies of the survivors.
     $T$ is incremented by one, $t$ starts over at 0, and generation $n+1$ begins.
@@ -221,7 +223,7 @@ The definitions are necessarily fuzzy around the edges, idealized, stipulative, 
     These 
     properties determine the system's passive dynamics and can thus streamline or frustrate the evolution of adaptive behavior.
     Material properties can be heterogeneously distributed across a robot's body, and in some experiments, 
-    can change non-uniformly across the robot's body, in both evolutionary and developmental time.
+    can change across the robot's body, in both evolutionary and developmental time.
     
     %
     \begin{figure}[H]
@@ -257,21 +259,23 @@ The definitions are necessarily fuzzy around the edges, idealized, stipulative, 
     A block can be a passive slab of raw material,
     or it can itself be composed
     of functional subcomponents, circuitry, sensors and motors.
-    Wherever possible, the building blocks will be voxels: congruent cubes that attach face to face to form a structure, known formally as a polycube.
+    In most of the following chapters,
+    the building blocks will be voxels: congruent cubes that attach face to face to form a structure, known formally as a polycube.
     In computer-designed organsims, however, the building blocks are biological cells: de/ciliated ectoderm and cardiomyocytes.
     
     
     \item \textbf{Structure.} The contiguous topological arrangement and coupling of building blocks.
     % More concretely, the number and placement of sensors, motors, mechanical degrees of freedom, and the framework linking them together.
     The space of possible structures that can be built out of a pile of voxels---the set of polycubes---and the duplicates that result when these structures are translated, rotated or reflected---are enumerable.
-    This simplifying constraint biases evolution toward buildable structures (rather than tangled balls of particles) and it makes it easier for any humans in the loop to think about the design space: it's just (squishy and sometimes moist) Lego bricks that can attach on all sides (not just dorsoventrally).
+    This simplifying constraint biases evolution toward buildable structures (rather than tangled balls of particles) and it makes it easier for any humans in the loop to think about the design space.
+    % : it's just (squishy and sometimes moist) Lego bricks that can attach on all sides (not just dorsoventrally).
     % 
     % The number of unique behaviors too can be estimated.
     % For example a tortoise robot that walks in straight line (under open-loop control) that is spun about its sagittal plane will simply move in a different direction.
     % But flipped onto its shell (rotated 180$^{\circ}$~about its transverse plane) the robot will struggle to generate forward movement.
     
     
-    \item \textbf{Shape.} Plastic deformations and folding in the building blocks of a given structure, which persist after stresses have been removed.
+    \item \textbf{Shape.} Plastic deformations and folding of the building blocks of a given structure, which persist after stresses have been removed.
     Or, elastic deformations that are held relatively constant under stress, within some interval of developmental time, during a sequence of configurations (definition 6) (e.g.~as the leg moves from point to point).
     Shape change can adjust the robot's posture, volume, mass distribution, number/placement of limbs, storage/release of elastic strain energy, surface contact geometry and tribology, during behavior.
     % There are numerous mechanisms of shape change currently avaible to robots: pneumatic \cite{hawkes2017soft}, thermal, magnetic \cite{ze2019magnetic}, mechanical \cite{felton2014method}, chemical \cite{gladman2016biomimetic},
@@ -391,7 +395,7 @@ The definitions are necessarily fuzzy around the edges, idealized, stipulative, 
     an actuated sphere turns almost all lines of configuration change into rolling behavior.
     However, by stretching a few physical attributes past a critical point,
     % new configurations became possible and 
-    the robot found itself in a new field, capable of a previously unreachable behavior: brachiation (Fig.~\ref{fig:ashbyStepMech}).
+    the robot finds itself in a new field, capable of a previously unreachable behavior: brachiation (Fig.~\ref{fig:ashbyStepMech}).
     
     
     
@@ -452,7 +456,9 @@ These experiments started with an objective, such as locomotion, and a populatio
 Although it was unlikely that any randomly assembled robot would fully satisfy the objective, by replacing the worst-performing designs with slightly- and randomly modified copies of the better ones, the population made incremental progress, generation by generation. 
 It was the survival of the fittest, or, in the case of locomotion, the fastest.
 
-Six years later and ten miles down the road, at Brandeis University, \citet{lipson2000automatic} transferred similarly evolved robots from simulation to reality (Fig.~\ref{fig:lipson}) with a technology just then emerging: 3D printing. Robot designs were rapidly and safely prototyped as virtual creatures, discarding the truly awful or dangerous designs before testing them in reality. 
+Six years later, 
+% and ten miles down the road, 
+at Brandeis University, \citet{lipson2000automatic} transferred similarly evolved robots from simulation to reality (Fig.~\ref{fig:lipson}) with a technology just then emerging: 3D printing. Robot designs were rapidly and safely prototyped as virtual creatures, discarding the truly awful or dangerous designs before testing them in reality. 
 The result were ``robotic lifeforms'' that were designed, optimized, and built, end-to-end, with almost no human intervention. 
 
 
@@ -568,7 +574,8 @@ Despite vast increases in computational power since 1994
 and major advances in additive manufacturing after 2000,
 evolutionary robotics has floundered in a sea of Sims-like virtual creatures (Fig.~\ref{fig:sims}) and Lipsonian machines (Fig.~\ref{fig:lipson}).
 Apart from the work documented in this thesis,
-there have only been three examples  \cite{hiller2012automatic,brodbeck2015morphological,cellucci20171d} of evolved robots published since \citet{lipson2000automatic}.
+there have only been three examples  \cite{hiller2012automatic,brodbeck2015morphological,cellucci20171d} of evolved physical
+robots published since \citet{lipson2000automatic}.
 % primordial crawlers.
 % (This thesis contributes a few more.)
 Even in silico,
@@ -631,7 +638,7 @@ When these parts change, such as by the lengthening of a single leg, the control
 Other aspects of behavior are generated by virtue of embodiment and the laws of physics alone, such as rolling down a declined plane, and the swing phase of human walking.
 From the controller's perspective, such behaviors, or aspects thereof, are passive: the body and world provide them ``for free''.
 The control system need not spend any of its valuable resources orchestrating this behavior from scratch; instead, it may exploit these passive dynamics, gently guiding them when necessary, to render useful work.
-However, if control is predicated on certain body-world interactions occurring automatically, then even sight changes to the body can result in catastrophic failure.
+However, if control is predicated on certain body-world interactions occurring automatically, then even slight changes to the body can result in catastrophic failure.
 In the worst case, the controller could be considered ``totaled'': it's cheaper to evolve a totally new controller or robot than to repair the existing system.
 
 Thus, much work has attempted to reduce the behavioral repercussions of morphological change \cite{cheney2018scalable}.
@@ -646,7 +653,7 @@ is to spread that impact across a period of time: development.
 
 In a population of evolving but non-developmental robots, mutations can only change the physical layout by discrete steps, from parent to child.
 This is because the design of a non-developmental robot cannot change during its lifetime.
-The morphological and thus behavioral impacts of such mutations kick-in immediately, at $t=0$.
+The morphological and thus behavioral impacts of such mutations take hold immediately, at $t=0$.
 Introducing development allows mutations to manifest slowly during the lifetime of a robot, or at the very end of the lifetime, which enables arbitrarily small design modifications.
 
 Of course there are other ways to reduce the behavioral impact of mutations.
@@ -689,7 +696,7 @@ However this is only possible if such mutations exist.
 
 When a behavioral change manifests late in the lifetime of a developing robot, it might discover a promising static design at the end of its life.
 The sequence of mutations required to prepone or ``earlify'' this trait such that it arises increasingly earlier in the lifetimes of descendants, might be hard to find or might not exist at all.
-Symmetrically, if a promising static design is discovered early in the lifetime of an robot, but the robot develops out of it, the hypothetical series of mutations that prolong this behavior may be 
+Symmetrically, if a promising static design is discovered early in the lifetime of a robot, but the robot develops out of it, the hypothetical series of mutations that prolong this behavior may be 
 % a chimera. 
 illusory or impossible to execute without completely disrupting behavior.
 Indeed, one of the first experiments to explore the interaction between evolution and (neurological) development in controllers onboard real robots \cite{floreano1996plastic}, found that such mutations are unlikely to exist if agents exploit developmental change for behavior.
@@ -713,14 +720,14 @@ Proximity to the great design determines the speed and reliability with which it
 
 When picturing Hinton and Nolwan's idealization as a single column of high fitness in the middle of an abstract 1D design space (Fig.~\ref{fig:baldwin2d}), it can be difficult to imagine how evolution moves through a real, multidimensional search space. 
 So at the risk of being redundant, 
-I've included a second depiction of the Baldwin effect (Fig.~\ref{fig:baldwin3d}) in which the vertical axis is again fitness, but in which the horizontal axes directly map onto continuous parameters of the design.
+I have included a second depiction of the Baldwin effect (Fig.~\ref{fig:baldwin3d}) in which the vertical axis is again fitness, but in which the horizontal axes directly map onto continuous parameters of the design.
 Development unfolds on a line in this space, with the vast majority of possible trajectories missing the good trait combination.%
 \footnote{%
 There are typically many such (potentially Baldwinifiable) local optima, and so there is also evolution: a population spread out on the landscape, not just a single developmental robot.%
 } 
 Let's call the good one ($x^*,y^*$).
 Evolution discretely samples the space by setting the initial conditions ($x_0,y_0$) and how development may unfold across the landscape (curvature and length of the line) in time (acceleration along the curve) until death ($x_{\tau},y_{\tau}$).
-Once found, successful developmental trajectories can become canalized by evolution such that the good trait combo becomes increasingly likely in future descendants.
+Once found, successful developmental trajectories can become canalized by evolution such that the good trait combination becomes increasingly likely in future descendants.
 In the limit the line of development shrinks until $(x_0,y_0) = (x_{\tau},y_{\tau}) = (x^*,y^*)$.
 
 % Note that it is also possible for a continuum of highly-fit variations on a design to exist on a manifold that is isolated from the surrounding search space.
@@ -754,7 +761,7 @@ But the Baldwin effect did not occur, because it could not occur.
 Bongard's experiments began on familiar ground.
 Populations of neural controllers were evolved to
 steer (the configuration of) a simulated quadruped/hexapod so that it moved toward a simulated light source.
-But this robot had a trick up it's four (or six) sleeves.
+But this robot had a trick up its four (or six) sleeves.
 The robot was, for most of its evolutionary history, deployed with an anguilliform body plan---an eel with an actuated spine.
 As the initially legless robot behaved (i.e.~during configuration changes),
 limbs were slowly extruded from its trunk,
@@ -1055,11 +1062,11 @@ A sensor electrode was dipped into the solution.
 The generated waveform of the electrical output could be conditioned by rewarding thread networks with an increase in current supply, which released an influx of free metal ions---the building blocks of threads.
 As a result, certain types of structures were allowed to survive and grow while those that did not act appropriately could be
 starved of ions and tended to die off. 
-Pask noted that, regardless of how the electrodes where configured, the system would tend to develop a thread structure that lead to current flowing in such a way that it was rewarded further.
-Keep in mind, this reward is simply an increased capacity for growth---there is no specification of what form the growth should take. 
+Pask noted that, regardless of how the electrodes were configured, the system would tend to develop a thread structure that led to current flowing in such a way that it was rewarded further.
+It is important to note that this reward is simply an increased capacity for growth---there is no specification of what form the growth should take. 
 
 Thread networks could be steered and selected to become sensitive to a wide variety of stimuli impinging on their structure.
-Electrical output was noticeably affected by all sorts of variables, including, but not limited to: temperature, pH, magnetic fields, and vibrations.
+Electrical output was noticeably affected by all sorts of variables, including, but not limited to temperature, pH, magnetic fields, and vibrations.
 So Beer and Pask took a microphone, 
 hung it out of a window on Baker Street
 and picked up noise from the street.
@@ -1118,7 +1125,7 @@ that could examine
 initially unspecified attributes of their surroundings: vibrations or magnetic fields.
 The machine had epistemic autonomy
 relative to its designer (Pask) because it was
-not bounded by
+not bounded by a
 closed set of perceptual categories (``filters'').
 Instead,
 the machine was free to 
@@ -1237,7 +1244,7 @@ because their autonomy was restricted to flipping a fixed set of switches on a f
 % with well-specified (though abused) components.
 
 
-Other technologies exist with much deeper morphological flexibility.
+Other modern technologies exist with much more material/structure/shape flexibility than Thompson's FPGA and Bird's radio.
 For instance,
 modular robots have been reported that self-assembled, -disintegrated, and -replicated by changing the arrangement of a fixed set of blocks \cite{zykov2005robotics,romanishin20153d,li2019particle,white2005three};
 origami robots that self-folded
@@ -1291,15 +1298,12 @@ the system would also need to take control over the kinds of actions it has avai
 % was a requirement of consciousness \cite{pask1979consciousness}.
 It is contended here that autonomy can evolve by degrees with increasingly protean machines.
 This follows from the fact that a morphologically-static machine is bounded, if not fully determined by the complete specification of its parts---%
-whereas a more or less protean machine, more or less determines its own relationship with the world (and with its designer).
-There is no limit to embodiment as far as we know.
-% Machines that can generate new kinds of structures, shapes and materials---%
-% on increasingly more scales in space and time---%
-Increasingly protean machines
-could keep broadening their perceptual and motoric abilities, and continue to discover ever new tasks that 
-are meaningful to them,
-% and to us, as a species.
-supportive of human lives and the biosphere.
+whereas a more or less protean machine more or less determines its own relationship with the world (and with its designer).
+% There is no limit to embodiment as far as we know.
+% Increasingly protean machines
+% could keep broadening their perceptual and motoric abilities, and continue to discover ever new tasks that 
+% are meaningful to them,
+% supportive of human lives and the biosphere.
 
 % fractal body plans, ever broadening the scales robots can preciously manipulate
 % % Fractals: Bush robot
@@ -1389,9 +1393,9 @@ The papers are presented chronologically with the exception of chapter 2, which 
 Chapter 2 contains a fairly standard Lipsonian experiment in which robot structure was permitted to vary in evolutionary time $T$, but not developmental time $t$; evolved designs transferred to reality with static structures.
 Succeeding chapters introduce experiments in which increasingly more aspects of the robot's design are allowed to vary in different combinations in $T$ and/or $t$.
 Chapter 3 explores shape change in both $T$ and $t$.
-Chapter 4 allows the configuration controller to vary alongside shape, in both $T$ and $t$.
-Chapter 5 permits structural and configuration controller changes in $T$, as well as material changes in both $T$ and $t$.
-Chapter 6 investigates controller changes in $T<s$, structural change at $T=s$, and then shape change for recovery in $T>s$; evolved designs were transferred to a physical robot that could vary both shape and configuration.
+Chapter 4 allows configuration alternatives to vary alongside shape, in both $T$ and $t$.
+Chapter 5 permits changes in structure and configuration alternatives in $T$, as well as material change in both $T$ and $t$.
+Chapter 6 investigates change to configuration alternatives in $T<s$, structural change at $T=s$, and then shape change for recovery in $T>s$; evolved designs were transferred to a physical robot that could vary both shape and configuration.
 The penultimate chapter describes reconfigurable organisms whose structure and material were evolved in silico under configuration variance in $T$; and whose structure, shape, material and configuration, all vary during development in vivo.
 The final chapter summarizes this progression,
 and, under the assumption that the reader is familiar with the main results in the intervening chapters, states the contributions in greater detail than was possible in section~\ref{sec:contributions}.
