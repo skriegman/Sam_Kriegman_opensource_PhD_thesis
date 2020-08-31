@@ -149,6 +149,41 @@ but they cannot deform to regenerate configuration space lost to structural inju
 It follows that a more protean machine can potentially be more robust, resilient, adaptive and autonomous than an otherwise equivalent but less protean machine.
 
 
+% Next development was driven by evironmental signals instead of ballistic.
+
+% To investigate the relative robustness (if any) across the three treatments,
+% in the following experiment, development was manually removed from the stress- and pressure-adaptive run champions.
+% We then tested the sensitivity of the resulting reduced robots to their evolved congenital stiffness distribution (Fig. \ref{fig:run_champs}C).
+% To do so, we replaced the evolved network dictating material stiffness, $\mathbb{C}_2,$ with a random number generator that draws from the same range of possible stiffness ($10^4 - 10^{10}$ Pa).
+% That is to say, we `built' the evolved run champions without any errors in the specifications of geometry and actuation, but completely ignored the evolved specifications of their material stiffness, replacing them instead with random noise.
+% We then calculated the relative fitness
+% \begin{equation}
+% \label{eq:robustness}
+% R = F_{\text{test}}\,/\,F_{\text{train}} \, ,
+% \end{equation}
+% where $F_{\text{train}}$ is the fitness achieved using the evolved stiffness and $F_{\text{test}}$ is the fitness when tested with a random stiffness distribution.
+% We repeated this process ten times for each run champion, each time drawing a new random stiffness distribution.
+
+% We found that, compared to nonadaptive robots, reduced stress-adaptive robots 
+% were more robust to this (extreme) discrepancy between training and testing stiffness distributions $(P < 0.01)$.
+% These results are consistent with the 
+% found correlation between development and robustness
+% \cite{miller2004evolving,bongard2011morphological,kriegman2017morphological}.
+% However, the results here indicate that this correlation is contingent on the kind of environmental
+% signal the developing agent responds to: there was no difference between pressure-adaptive and nonadaptive robots in this regard, at the 0.05 level.
+
+% This implies that by behaving interoceptively with respect to engineering stress, robots evolved the ability to ameliorate large deviations from their expected material properties, but by behaving interoceptively with respect to pressure, robots did not evolve this character.
+% Because development was manually removed beforehand, robustness in our case was not a matter of changing one's body, as in the example of plant growth \citep{sultan2000phenotypic}; rather, it is an intrinsic property of structure (geometries and actuation patterns) educed from ancestors who changed in response to one particular internal state (stress), but not from those who responded to another (pressure).
+
+
+% Therefore, because there is no difference in the variation of $\alpha_i$ (Fig. \ref{fig:run_champs}F), and because  $\alpha_i$ cannot change during operation (Eqs. \ref{eq:stress} and \ref{eq:pressure}), it follows that pressure was generally much more localized within
+% the bodies of the pressure-adaptive robots than stress within the bodies of the stress-adaptive robots.
+% In other words, the entire body plan encountered stress, but only a small portion of the body encountered appreciable pressure.
+% (An example of this localized response to localized pressure can be seen in Fig. \ref{fig:calluses}.)
+% We hypothesize that this global spread of stress is the likely cause of increased robustness in the stress-adaptive robots
+% (Fig. \ref{fig:run_champs}C).
+
+
 Designing protean systems, however, is both operationally and conceptually challenging.
 Perhaps because of the former reason, despite early investigations by Pask and Beer (and a mini-Enlightenment at Sussex University in the 1990s), protean machines remain a neglected research program.
 To overcome some of the conceptual challenges that arise when designing protean machines,
