@@ -62,7 +62,7 @@ This thesis is at heart about closing the robot-organism gap by means of increas
 
 
 By incrementally incorporating morphological plasticity in the preceding chapters, it was possible to isolate how various aspects of development can affect and, under certain conditions, guide the evolution of adaptive behavior in embodied systems.
-Previously the evolution of development of artificial systems had only been investigated using abstract nonembodied systems (e.g.~bitstrings \cite{hinton1987learning})
+Previously the evolution of development of artificial systems was investigated using either abstract nonembodied systems (e.g.~bitstrings \cite{hinton1987learning})
 or software onboard morphologically-static hardware
 % wheeled or gantry-driven robots
 (e.g.~neural network weights \cite{husbands1998better,floreano1996plastic}).
@@ -70,30 +70,30 @@ Evolution and development were therefore confined to select subsets of actions a
 Neither evolution or development could vary structure, shape or material properties to construct new configuration alternatives.
 
 In our pursuit of 
-protean machines,
+increasingly protean machines,
 % robots that can vary increasingly more physical attributes on ever more timescales,
 we are also interested in the interaction of subsystems unfolding at different timescales.
-As machines become more protean, however, the  number and kind of modalities that can vary and interact between timescales increases in snowball-like fashion.
+As machines become more and more protean, however, the number and kind of modalities that can vary and interact between timescales increases in snowball-like fashion.
 As a first step,
 we introduced
 a new mode of evolved development in artificial systems: shape change.
 By using embodied agents in a physically realistic environment,
 our model was able to strip away some of the assumptions required in previous work.
 Specifically,
-the evolution of open-loop shape change demonstrated that the explicit suppression of development enforced by \citet{hinton1987learning} 
+the evolution of open-loop shape change demonstrated that the explicit suppression of development enforced by \citet{hinton1987learning}, and their disciples,
 % (and presumed by \citet{dennett2003baldwin}) 
-is in fact not necessary: ballistic morphological change is enough to confer evolvability.
+is in fact not necessary: ballistic development in physical systems is enough to confer evolvability.
 
 
-Later shape was allowed to vary in addition to configuration subset selection.
+Later, shape was allowed to vary in addition to configuration subset selection.
 Shape change occurred gradually, linearly from evolved infant to evolved adult forms.
 The temporal coordination of configuration oscillations was likewise shifted linearly across evolved initial and final phase-offsets.
-This allowed us to investigate how changes in shape and configuration might differentially affect the direction or rate of evolutionary search.
+This allowed us to investigate how changes in shape and configuration-patterns might differentially affect the direction or rate of evolutionary search.
 More specifically, it exposed the previously unknown phenomenon of differential canalization reported here:
 Some initially developmentally plastic traits become integrated and canalized---if and only if they are robust to changes in other traits that remain plastic.
-This was missed in previous studies because they considered development of just a single modality.
+This was missed in previous studies because they considered development of just a single modality: neural networks or abstractions thereof.
 
-The robots presented in this thesis 
+The robots presented here 
 swept across a continuum of structures, shapes and material properties,
 as they
 % rapidly oscillated to 
@@ -107,7 +107,7 @@ We have found here that such mutations do exist in cases where evolutionary chan
 to one trait do not disrupt the successful behavior contributed
 by other traits.
 
-This finding of differential canalization has important implications
+The finding of differential canalization has important implications
 for protean machines since it introduces a form of developmental modularity
 % robust traits become fixed and instinctual while others remain variable and developable.
 % Modular systems are more evolvable than non-modular systems because they
@@ -117,7 +117,7 @@ This might help explain why organisms have any persistent canalized forms at all
 It also provides a mechanism through which exceedingly protean machines could settle into a recognizable shape while operating in a relatively static environment.
 A temporally-clamped protean machine might even look like a conventional robot for an extended period of time, but unlike paradigmatic robots, when the environmental conditions change, a protean machine is not bounded by a static body plan with fixed sensorimotor constraints and well-specified configuration spaces.
 
-The current paradigm of robotics relies on well-specified components that are designed to physically interact in particular ways with each other and outside world.
+The current paradigm of robotics relies on well-specified components that are designed to physically interact in particular ways with each other and the outside world.
 A sequence of steadily more protean machines, in contrast, will have by definition progressively ill-specified body plans.
 This allows increasingly protean machines to gradually distance themselves from their designer or meta-designer.
 This is a fundamentally different form of autonomy than a robot can achieve with a well-specified static morphology.
@@ -141,47 +141,12 @@ but if a rigid-bodied robot can contort and reorient its well-specified jointed 
 Such a machine could construct its own means of influencing the world in the same way insects can rub their wings or legs together
 % about a temporary body shape, 
 to generate sounds.
-However a robot with $n$ rigid links is also by definition less protean than a robot with $n^2$ rigid links, or one that can change the rigidity and volume of its links.
+However, a robot with $n$ rigid links is also by definition less protean than a robot with $n^2$ rigid links, or one that can change the rigidity, volume, number and placement of its links.
 
 Autonomy is a spectrum that by and large aligns with the breadth and depth of morphological plasticity.
-A developing yet morphologically-static robot \cite{husbands1998better,floreano1996plastic,bongard2011morphological,bongard2006resilient,cully2015robots} can intelligently select sequences of configurations among those available given their current body plan,
-but they cannot deform to regenerate configuration space lost to structural injury, nor can they morph to expand the set of configurations made available to them from the outset (deployment/birth).
-It follows that a more protean machine can potentially be more robust, resilient, adaptive and autonomous than an otherwise equivalent but less protean machine.
-
-
-% Next development was driven by evironmental signals instead of ballistic.
-
-% To investigate the relative robustness (if any) across the three treatments,
-% in the following experiment, development was manually removed from the stress- and pressure-adaptive run champions.
-% We then tested the sensitivity of the resulting reduced robots to their evolved congenital stiffness distribution (Fig. \ref{fig:run_champs}C).
-% To do so, we replaced the evolved network dictating material stiffness, $\mathbb{C}_2,$ with a random number generator that draws from the same range of possible stiffness ($10^4 - 10^{10}$ Pa).
-% That is to say, we `built' the evolved run champions without any errors in the specifications of geometry and actuation, but completely ignored the evolved specifications of their material stiffness, replacing them instead with random noise.
-% We then calculated the relative fitness
-% \begin{equation}
-% \label{eq:robustness}
-% R = F_{\text{test}}\,/\,F_{\text{train}} \, ,
-% \end{equation}
-% where $F_{\text{train}}$ is the fitness achieved using the evolved stiffness and $F_{\text{test}}$ is the fitness when tested with a random stiffness distribution.
-% We repeated this process ten times for each run champion, each time drawing a new random stiffness distribution.
-
-% We found that, compared to nonadaptive robots, reduced stress-adaptive robots 
-% were more robust to this (extreme) discrepancy between training and testing stiffness distributions $(P < 0.01)$.
-% These results are consistent with the 
-% found correlation between development and robustness
-% \cite{miller2004evolving,bongard2011morphological,kriegman2017morphological}.
-% However, the results here indicate that this correlation is contingent on the kind of environmental
-% signal the developing agent responds to: there was no difference between pressure-adaptive and nonadaptive robots in this regard, at the 0.05 level.
-
-% This implies that by behaving interoceptively with respect to engineering stress, robots evolved the ability to ameliorate large deviations from their expected material properties, but by behaving interoceptively with respect to pressure, robots did not evolve this character.
-% Because development was manually removed beforehand, robustness in our case was not a matter of changing one's body, as in the example of plant growth \citep{sultan2000phenotypic}; rather, it is an intrinsic property of structure (geometries and actuation patterns) educed from ancestors who changed in response to one particular internal state (stress), but not from those who responded to another (pressure).
-
-
-% Therefore, because there is no difference in the variation of $\alpha_i$ (Fig. \ref{fig:run_champs}F), and because  $\alpha_i$ cannot change during operation (Eqs. \ref{eq:stress} and \ref{eq:pressure}), it follows that pressure was generally much more localized within
-% the bodies of the pressure-adaptive robots than stress within the bodies of the stress-adaptive robots.
-% In other words, the entire body plan encountered stress, but only a small portion of the body encountered appreciable pressure.
-% (An example of this localized response to localized pressure can be seen in Fig. \ref{fig:calluses}.)
-% We hypothesize that this global spread of stress is the likely cause of increased robustness in the stress-adaptive robots
-% (Fig. \ref{fig:run_champs}C).
+A developing yet morphologically-static robot \cite{husbands1998better,floreano1996plastic,bongard2011morphological,bongard2006resilient,cully2015robots} can intelligently select sequences of configurations among those available given its current body plan,
+but it cannot deform to regenerate configuration space lost to structural injury, nor can it morph to expand the set of configurations made available to it externally from the outset (deployment/birth).
+It follows that a more protean machine can potentially be more robust, adaptive and autonomous than an otherwise equivalent but less protean machine.
 
 
 Designing protean systems, however, is both operationally and conceptually challenging.
@@ -438,6 +403,15 @@ shapes than stress-adaptive robots.
 This suggests
 there may be other developmental feedback loops that could be made available to evolution
 that would lead to more diverse and robust robots.
+
+% % When the evolution of development (of material properties) was later driven by environmental signals (stress and pressure) instead of ballistic (chapter 5), 
+% The results were consistent with the found correlation between development and robustness \cite{miller2004evolving,bongard2011morphological}.
+% However, the results here indicate that this correlation is contingent on the kind of environmental
+% signal the developing agent responds to.
+% By behaving interoceptively with respect to engineering stress, robots evolved the ability to absorb large deviations from their expected material properties, 
+% but by behaving interoceptively with respect to pressure, robots did not evolve this character.
+% Because development was manually removed beforehand, robustness in our case was not a matter of changing one's body, as in the example of plant growth \citep{sultan2000phenotypic}; 
+% rather, it is an intrinsic property of structure and configuration-patterns educed from ancestors who changed in response to one particular internal state (stress), but not from those who responded to another (pressure).
 
 
 
