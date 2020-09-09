@@ -83,16 +83,15 @@ Seven key benefits were uncovered and scrutinized:
     persisting over extended periods of 
     % developmental 
     time, that cause the same sequence of actions to generate different behaviors (chapters 2, 3, 6 and 7).
-    % This is important because controllers are often complex software, finely tuned prior to deployment and difficult to re-specify in the field.
 
-    \item Protean body plans introduce smaller and thus safer mutations \cite{lehman2018safe}, whose behavioral impact manifests temporarily during operation, rather than permanently from deployment (chapter 3).
+
+    \item Protean body plans introduce arbitrarily small, and thus arbitrarily safe mutations \cite{lehman2018safe}, whose behavioral impact manifests temporarily during operation, rather than permanently from deployment (chapter 3).
     Evolution can then lengthen the time intervals containing superior traits and reduce the intervals of inferior traits.
     This allows evolution to surgically revise morphology with a pair of tweezers, if you will, rather than a sledgehammer.
 
     
     \item Protean body plans smooth the search space evolution operates in via the Baldwin effect (chapters 3 and 4).
-    This effect is outlined in section \ref{sec:evo-devo}. 
-    % Figs.~\ref{fig:baldwin2d} and \ref{fig:baldwin3d}.
+    This effect is outlined in section \ref{sec:evo-devo}.
     In brief, the flexibility of a protean feature
     (e.g.~skin thickness) allows evolution to sweep through design space along a line of development rather than sampling a single point of a morphologically-static agent.
     Development can then be incrementally canalized about a good static trait (e.g.~calluses).
@@ -115,7 +114,7 @@ Seven key benefits were uncovered and scrutinized:
     I refer to this as \textit{differential canalization}.
     
     \item Protean body plans foster ``zero-shot'' generalization (on the very first try, without adjustment) to fabrication errors (chapter 5).
-    The amount of generalization in canalized machines (previously protean but now morphologically-static body plans) was found to depend on the kinds of interoceptive signals used to guide their morphological change during optimization.
+    The amount of generalization in manually-canalized machines was found to depend on the kinds of interoceptive signals used to guide their morphological change during optimization.
     
     \item Protean body plans amplify robustness to damage (chapter 6).
     This is because a sufficiently deformable body can in some cases morph to ``resonate'' with an existing control policy---tuned prior to damage---to regenerate behavioral competence.
@@ -275,16 +274,16 @@ Later, when more exact concepts have been developed (e.g.~how physics is simulat
     or it can itself be composed
     of functional subcomponents, circuitry, sensors and motors---but these sub-block-level elements cannot be manipulated by the designer or optimizer.
     In most of the following chapters,
-    the building blocks will be voxels: congruent cubes that attach face to face to form a structure, known formally as a polycube.
+    the building blocks will be elastic voxels, because the simulator employed for most of this work is voxel-based.
+    Voxels are
+    congruent cubes that attach face to face to form a structure, known formally as a polycube.
     In computer-designed organsims, however, the building blocks are biological cells: de/ciliated ectoderm and cardiomyocytes.
     
     
     \item \textbf{Structure.} The contiguous topological arrangement and coupling of building blocks.
     % More concretely, the number and placement of sensors, motors, mechanical degrees of freedom, and the framework linking them together.
     The space of possible structures that can be built out of a pile of voxels---the set of polycubes---and the duplicates that result when these structures are translated, rotated or reflected---are enumerable.
-    This simplifying constraint biases evolution toward buildable structures (rather than tangled balls of particles) and it makes it easier for any humans in the loop to think about the design space.
-    % : it's just (squishy and sometimes moist) Lego bricks that can attach on all sides (not just dorsoventrally).
-    % 
+    This simplifying constraint biases evolution toward regular, buildable structures and it makes it easier for any humans in the loop to think about the design space.
     % The number of unique behaviors too can be estimated.
     % For example a tortoise robot that walks in straight line (under open-loop control) that is spun about its sagittal plane will simply move in a different direction.
     % But flipped onto its shell (rotated 180$^{\circ}$~about its transverse plane) the robot will struggle to generate forward movement.
@@ -321,8 +320,12 @@ Later, when more exact concepts have been developed (e.g.~how physics is simulat
     
     
     \item \textbf{Configuration.}
-    The relative displacement, orientation, and elastic deformation of a robot's structure---%
-    away from its current resting shape---% 
+    The 
+    % relative 
+    displacement, orientation, and elastic deformation of a robot's 
+    % structure---%
+    % away from its current resting shape---% 
+    resting shape
     during ontogeny.
     When the robot relaxes, it returns to its resting shape.
     For example, a spherical robot could deform to generate four limbs (shape change) and then move those limbs back and forth to gallop across flat terrain (configuration change).
@@ -394,7 +397,10 @@ Later, when more exact concepts have been developed (e.g.~how physics is simulat
     \item \textbf{Field.}
     % We have already use the concept of a ``change of behavior'', as when the robot transitioned from running to climbing.
     % Yet the behavior is itself a sequence of changes (e.g.~as the leg moves from point to point).
-    Borrowing yet another page from Ashby's book, a ``field'' is defined as ``the phase-space containing all the lines of [ontogeny] found by releasing the system from all possible initial states in a particular set of surrounding conditions.''
+    Borrowing yet another page from Ashby's book, a ``field'' is defined as ``the phase-space containing all the lines of 
+    [ontogeny] 
+    % behavior
+    found by releasing the system from all possible initial states in a particular set of surrounding conditions.''
     We can now see ``behaviors'' as attractor states in the field of a robot arising from interactions among configuration, shape, structure, material properties, 
     controller 
     and environment.
@@ -403,6 +409,9 @@ Later, when more exact concepts have been developed (e.g.~how physics is simulat
     % From the space of all logically possible genomes
     % Evolution selects from the space of possible genomes, constraining the field of possible ontogenies.
     If a set of variables is fixed, the lines of ontogeny run in a sub-space orthogonal to the axes (Fig.~\ref{fig:ashbyInactiveVars}).
+    Thus, the robot's current body plan defines which configurations are available to the robot, 
+    and which are out of reach.
+    % Morphological change can push the robot into a new subfield with new configuration alternatives.
     
     Reconsider the example of limb growth in an initially spherical robot.
     The field 
@@ -426,9 +435,9 @@ Later, when more exact concepts have been developed (e.g.~how physics is simulat
     
     % may fall into during locomotion across solid ground
     
-    \item line of development / oscillations of behavior / sub oscillations -- fractals (fig)
-    \item field is defined for static body in Ashby
-    \item configuration subspace is the orthogonal subspace defined by struct/shape/mat and determines how much force is needed to push configurations away from root morphology (which defines strength and direction of field)
+    % \item line of development / oscillations of behavior / sub oscillations -- fractals (fig)
+    % \item field is defined for static body in Ashby
+    % \item configuration subspace is the orthogonal subspace defined by struct/shape/mat and determines how much force is needed to push configurations away from root morphology (which defines strength and direction of field)
 
 
 
@@ -663,8 +672,6 @@ learn to orchestrate entirely new interactions.
 % Either a small software patch or larger update will be necessary to regain control over the new hardware
 In the worst case it will be easier to evolve a totally new controller or robot than to repair the existing system \cite{cheney2016difficulty}.
 
-% then even slight changes to the body can result in catastrophic failure.
-% In the worst case, the controller could be considered ``totaled'': it's cheaper to evolve a totally new controller or robot than to repair the existing system.
 
 Thus, much work has attempted to reduce the behavioral repercussions of morphological change \cite{cheney2018scalable}.
 A natural way
@@ -786,11 +793,9 @@ Bongard's experiments began on familiar ground.
 Populations of neural controllers were evolved to
 steer (the configuration of) a simulated quadruped/hexapod so that it moved toward a simulated light source.
 But this robot had a developmental trick inside each of its four (or six) limbs.
-% But this robot had a trick up its four (or six) sleeves.
 The robot was, for most of its evolutionary history, deployed with an anguilliform body plan---an eel with an actuated spine.
 As the initially legless robot behaved (varied its configuration),
 limbs were slowly extruded from its trunk.
-% like a quartet (or sextet) of trombones descending in pitch.
 As the limbs lengthened, they dipped their resting angle about the shoulder joint, transitioning the robot from a prone to upright stance, during development (shape change).
 
 Early in evolution, limb growth occurred over the robot's entire evaluation period.
@@ -804,7 +809,6 @@ the robot was deployed with its final shape from the very beginning of its behav
 Thus, by the end of evolution, these robots were identical to a control treatment but for a single isolated difference: one group had ancestors that developed, and the other had ancestors which did not develop.
 However, this clean experimental design came at a cost: the robot's initial shape, and the way in which its shape developed, were both manually fixed \textit{a priori}. 
 Thus evolution could not modify morphological development, indeed, it could not modify morphology at all.\footnote{%
-% The trombone trick 
 The linear-actuators-as-semipermanent-body-segments trick
 was also employed by a 
 % carbon fiber 
@@ -875,7 +879,7 @@ absorb and eliminate
 variety in the system being regulated.
 The field of each of these regulators is ``ultrastable'', as Ashby would say, tending all the time towards stabilization and
 physiologic constancy.
-However, these regulators are controllers (Fig.~\ref{fig:policy}), not robots.\footnote{Any system that cannot move through the world has at best a questionable claim to be a robot.}
+However, these regulators are controllers (Fig.~\ref{fig:policy}), not robots.\footnote{Any system that cannot move through the environment has at best a questionable claim to be a robot.}
 % Six decades after the Homeostat, 
 % Six centuries after the invention of the thermostat, two centuries after the invention of the governor
 % across the pond, at Cornell University, 
@@ -924,7 +928,10 @@ loss of a single leg to injury.
 But they do not have the requisite variety to recover from deeper mechanical damage, such as the removal of all limbs or being chopped into a hundred little pieces.
 
 It's not just that they can't re-generate structure, motors or sensors.
-It's that they can't generate these things in the first place.
+It's that they can't generate these
+body parts
+% things 
+in the first place.
 Their ability to perceive the environment, and act against it, 
 is constrained within a fixed set of perceptual categories and action alternatives, rather than open-ended.
 % Prespecified perceptual categories and action alternatives 
@@ -1374,7 +1381,7 @@ Any adaptive protean machine will
 likely
 need to balance an energy budget,
 among many other concerns,
-and metamorphosis (for animals) is metabolically expensive.
+and metamorphosis is metabolically expensive for animals.
 This is why caterpillars are such
 voracious feeders:
 % essentially eating machines:

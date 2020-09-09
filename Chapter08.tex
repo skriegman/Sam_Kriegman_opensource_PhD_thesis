@@ -65,7 +65,7 @@ By incrementally incorporating morphological plasticity in the preceding chapter
 Previously the evolution of development of artificial systems was investigated using either abstract nonembodied systems (e.g.~bitstrings \cite{hinton1987learning})
 or software onboard morphologically-static hardware
 % wheeled or gantry-driven robots
-(e.g.~neural network weights \cite{husbands1998better,floreano1996plastic}).
+(e.g.~neural network synaptic weights \cite{husbands1998better,floreano1996plastic}).
 Evolution and development were therefore confined to select subsets of actions among the fixed configuration space defined by the static body plan.
 Neither evolution or development could vary structure, shape or material properties to construct new configuration alternatives.
 
@@ -80,13 +80,13 @@ a new mode of evolved development in artificial systems: shape change.
 By using embodied agents in a physically realistic environment,
 our model was able to strip away some of the assumptions required in previous work.
 Specifically,
-the evolution of open-loop shape change demonstrated that the explicit suppression of development enforced by \citet{hinton1987learning}, and their disciples,
+the evolution of open-loop shape change demonstrated that the explicit suppression of development enforced by \citet{hinton1987learning}, and those who built on their work,
 % (and presumed by \citet{dennett2003baldwin}) 
-is in fact not necessary: ballistic development in physical systems is enough to confer evolvability.
+is in fact not necessary: ballistic development in physical systems is enough to increase evolvability (chapter 3).
 
 
-Later, shape was allowed to vary in addition to configuration subset selection.
-Shape change occurred gradually, linearly from evolved infant to evolved adult forms.
+Later in the thesis, shape was allowed to vary in addition to configuration patterns (chapter 4).
+Shape change occurred gradually and linearly from evolved infant to evolved adult forms.
 The temporal coordination of configuration oscillations was likewise shifted linearly across evolved initial and final phase-offsets.
 This allowed us to investigate how changes in shape and configuration-patterns might differentially affect the direction or rate of evolutionary search.
 More specifically, it exposed the previously unknown phenomenon of differential canalization reported here:
@@ -125,15 +125,15 @@ Changing a morphologically-static robot's self image \cite{bongard2006resilient,
 only changes the way the robot maps sensor data to 
 % actions: 
 the sequences of configurations it will execute.
-In addition to finding an appropriate mapping from sensors (or central-pattern-generators) to configuration, 
+In addition to finding an appropriate mapping from sensors (or central pattern generators) to configuration, 
 there is also the problem of determining the basic categories of configurations: the configuration space.
 
 By constructing their own structures, shapes and material properties, 
 the protean machines in this thesis created their own means of interacting with their environments.
-Some formed spheres (chapter 4), others grew long limbs (chapter 6); 
-some grew analogues of bones and calluses, others grew stronger or additional motors (chapter 5).
+Some formed spheres (chapter 4); others grew long limbs (chapter 6); 
+some grew analogues of bones and calluses; and yet others grew stronger or additional motors (chapter 5).
 In each case there was functional emergence: 
-the same sequence of actions led to different configurations, different ways the robot pushed and pulled against its environment to propel itself forward or influence objects (such as pellets or other agents; chapter 7) in its environment.
+the same sequence of actions led to different configurations, different ways the robot pushed and pulled against its environment to propel itself forward or influence objects in its environment (such as pellets or other agents; chapter 7).
 
 
 This thesis focused on soft robots,
@@ -143,7 +143,7 @@ Such a machine could construct its own means of influencing the world in the sam
 to generate sounds.
 However, a robot with $n$ rigid links is also by definition less protean than a robot with $n^2$ rigid links, or one that can change the rigidity, volume, number and placement of its links.
 
-Autonomy is a spectrum that by and large aligns with the breadth and depth of morphological plasticity.
+This thesis suggests that autonomy is a spectrum that by and large aligns with the breadth and depth of morphological plasticity.
 A developing yet morphologically-static robot \cite{husbands1998better,floreano1996plastic,bongard2011morphological,bongard2006resilient,cully2015robots} can intelligently select sequences of configurations among those available given its current body plan,
 but it cannot deform to regenerate configuration space lost to structural injury, nor can it morph to expand the set of configurations made available to it externally from the outset (deployment/birth).
 It follows that a more protean machine can potentially be more robust, adaptive and autonomous than an otherwise equivalent but less protean machine.
@@ -167,7 +167,7 @@ We l;earned something from differential canalization!
 Prior to the work presented here,
 there have only been four cases of evolved physical robots reported in the literature
 \cite{lipson2000automatic,hiller2012automatic,brodbeck2015morphological,cellucci20171d}.
-In each instance, structure and configuration-subsets were evolved, but the robot could not change its body plan (configuration space) during operation.
+In each instance, structure and configuration patterns were evolved, but the robot could not change its body plan (configuration space) during operation.
 The first experiment reported here likewise evolved ontogenetically static structures which were manufactured in reality (chapter 2).
 To demonstrate 
 the value of incorporating ontogenetic morphological plasticity,
@@ -182,7 +182,7 @@ configuration oscillations were evolved for a fixed structure,
 which was later exposed to a series of 
 increasingly deeper structural amputations;
 for each damage scenario, the robot automatically deformed its shape so as to recover function without changing the evolved configuration oscillations (chapter 6).
-Finally, we saw the design and manufacture of novel organisms, which represent an alternative path to protean machines, one in which there is no robot-organism gap, but that raises its own unique set of engineering challenges (chapter 7).
+Finally, we saw the design and manufacture of novel organisms, which represent an alternative path to protean machines, one in which there is no robot-organism gap, but does raise its own unique set of engineering challenges (chapter 7).
 % Instead of looking to nature for inspiration, look to nature for materials.
 
 The following sections summarize each of these 
@@ -227,9 +227,9 @@ Little to no work, however, has investigated the simulation-reality gap as a fun
 By transferring a diversity of soft robot designs from simulation to reality, the reality gap was measured as a function of robot structure given a static control policy.
 Under one measure (net displacement) the reality gap appeared rather small, but under another (velocity) the gap was much wider.
 This illuminated the fact that there are reality \textit{gaps} rather than a single gap.
-This suggests that, if structure is allowed to vary, automated design could be used as a filter to discover body plans which reduce the gap before attempting to cross it with controller optimization.
+This suggests that, if structure is allowed to vary, automated design could be used as a filter to discover body plans which provide a small gaps before attempting to cross them with controller optimization.
 
-The kit's affordability, safety, speed, and simplicity effectively lower the barrier of entry to soft robotics for non-experts.
+The kit's affordability, safety, speed, and simplicity effectively lowers the barrier of entry to soft robotics for non-experts.
 Such a tool is posed to generate increasingly more, and more reproducible, data about the design of protean machines.
 In the age of Covid-19, a do-it-yourself-at-home soft robot kit 
 is particularly appealing and has been adopted by four soft robotics research labs thus far.
