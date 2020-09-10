@@ -73,14 +73,14 @@ In our pursuit of
 increasingly protean machines,
 % robots that can vary increasingly more physical attributes on ever more timescales,
 we are also interested in the interaction of subsystems unfolding at different timescales.
-As machines become more and more protean, however, the number and kind of modalities that can vary and interact between timescales increases in snowball-like fashion.
+As machines become more and more protean, however, the number and kind of modalities that can vary and interact between timescales increases in exponential fashion.
 As a first step,
 we introduced
 a new mode of evolved development in artificial systems: shape change.
 By using embodied agents in a physically realistic environment,
 our model was able to strip away some of the assumptions required in previous work.
 Specifically,
-the evolution of open-loop shape change demonstrated that the explicit suppression of development enforced by \citet{hinton1987learning}, and those who built on their work,
+the evolution of open-loop ``ballistic'' shape change demonstrated that the explicit suppression of development enforced by \citet{hinton1987learning}, and those who built on their work,
 % (and presumed by \citet{dennett2003baldwin}) 
 is in fact not necessary: ballistic development in physical systems is enough to increase evolvability (chapter 3).
 
@@ -98,7 +98,9 @@ swept across a continuum of structures, shapes and material properties,
 as they
 % rapidly oscillated to 
 moved through their environments.
-The intersection of these ill-specified traits across different timescales generated positive and negative feedback in terms of instantaneous velocity: 
+The intersection of these 
+% ill-specified 
+traits across different timescales generated positive and negative feedback in terms of instantaneous velocity: 
 robots sped up (synergy across developing traits) and slowed down (interference between traits) during various points in their lifetime.
 Unless all of the phenotypes swept over by an individual in development keep the robot motionless, there will be intervals of relatively superior and inferior performance.
 Evolution can thus improve overall fitness in a descendant by lengthening the time intervals containing superior phenotypes and reducing the intervals of inferior phenotypes. 
@@ -111,7 +113,7 @@ The finding of differential canalization has important implications
 for protean machines since it introduces a form of developmental modularity
 % robust traits become fixed and instinctual while others remain variable and developable.
 % Modular systems are more evolvable than non-modular systems because they
-which
+that
 allows evolution to improve one subsystem without disrupting others.
 This might help explain why organisms have any persistent canalized forms at all.
 It also provides a mechanism through which exceedingly protean machines could settle into a recognizable shape while operating in a relatively static environment.
@@ -233,7 +235,7 @@ This illuminated the fact that there are reality \textit{gaps} rather than a sin
 This suggests that, if structure is allowed to vary, automated design could be used as a filter to discover body plans which provide a small gaps before attempting to cross them with controller optimization.
 
 The kit's affordability, safety, speed, and simplicity effectively lowers the barrier of entry to soft robotics for non-experts.
-Such a tool is posed to generate increasingly more, and more reproducible, data about the design of protean machines.
+Such a tool is poised to generate increasingly more, and more reproducible, data about the design of protean machines.
 In the age of Covid-19, a do-it-yourself-at-home soft robot kit 
 is particularly appealing and has been adopted by four soft robotics research labs thus far.
 
@@ -276,6 +278,7 @@ It was shown that even this simple developmental model confers evolvability
 because it allows evolution to sweep over a larger range of body plans than an equivalent non-developmental system, and subsequent heterochronic mutations
 ``lock in'' this body plan in more morphologically-static descendants.
 % Adjustable (instead of prescribed \cite{bongard2011morphological}) 
+
 % ontogenetic morphological change 
 Ontogenetic shape change
 naturally provided
@@ -328,38 +331,38 @@ We refer to this as \textit{differential canalization}.
 The key observation here is that only phenotypic traits that render the agent robust to changes in other traits become assimilated, a phenomenon we term differential canalization. 
 This insight was exposed by modeling the development of simulated robots as they interacted with a physically realistic environment.
 
-\citet{hinton1987learning} showed how the Baldwin effect could speed evolution.
+In 1987,
+\citet{hinton1987learning} showed how the Baldwin effect could speed evolution in the presence of a ``needle in the haystack'': an abstract trait that is only of value when perfect.
 However, this is only possible if such mutations exist.
-
 We have found here that such mutations do exist in cases where evolutionary changes
 to one trait do not disrupt the successful behavior contributed
 by other traits.
 
+An embodied needle in the haystack was found: a rolling ball.
+On flat terrain, rolling can be much faster and more efficient than walking, but finding such a design is difficult in morphologically-static robots because (1) rolling over once is much less likely to occur in a random individual than shuffling forwards slightly; 
+and (2) 
+rolling just once incurs the fitness penalty of having fallen over and thus not being able to subsequently walk for the rest of the trial. 
+ 
+Among the oscillating shapes swept over by the evolution of ballistic development, some had limbs and shuffled, while others had smoother curvatures and rocked back and forth.
+The peak of morphological plasticity generally lined up with the start of an increasing trend in fitness and marked the onset of differential canalization:
+The discovery of rolling at the very end of ontogeny, followed by a form of progenesis in which heterochronic mutations reduced morphological plasticity in each voxel, gradually preponing rolling from a late onset behavior to one that arose increasing earlier in ontogeny.
+That is, shape was canalized; however, configuration patterns were not.
+This was because an asymmetrical ball is a ``permissive body plan''.
+Simply put, practically all oscillation patterns in an asymmetrical ball will result in locomotion (rolling).
+Legged body shapes were not permissive: they were finely tuned to match their configuration oscillations (and vice versa). 
+Moreover, they were brittle: a sequence of four or five random mutations would always break a legged walker.
+Thousands of random mutations to the ball, in contrast, did not significantly affect its performance.
+Whereas the ball shape could be refined and canalized without disruption, mutations to legged bodies needed to be precisely coordinated with mutations in configuration patterns and this prevented the canalization of highly fit legged morphologies.
 
-Our results demonstrate how incorporating morphological development in the optimization of robots can reveal, through differential canalization, characters which are robust to internal changes.
+These results demonstrate how incorporating morphological development in the optimization of robots can reveal, through differential canalization, characters which are robust to internal changes.
 % Robots that are robust to internal changes in their controllers may also be robust to external changes in their environment \cite{bongard2011morphological}.
 Thus, allowing robots to change their structure as they behave might facilitate evolutionary improvement of their descendants, even if these robots will be deployed with static phenotypes or in relatively unchanging environments.
 
 % gradients in morphospace
 
-% The evolutionary algorithm can rapidly discover an actuation pattern that elicits a very small amount of forward movement in these soft robots regardless of the morphology. 
-% There is then an incremental path of increasing locomotion speed that natural selection can climb by gradually growing legs to reduce the surface area touching the floor and thus friction, and simultaneously refining controller actuation patterns to better match and exploit the morphology.
 
-% There is, however, a vastly superior design partially hidden from natural selection---a ``needle in the haystack'', to use Hinton and Nowlan's metaphor \cite{hinton1987learning}.
-% On flat terrain, rolling can be much faster and more efficient than walking, but finding such a design is difficult because the fitness landscape is deceptive.
-% Rolling over once is much less likely to occur in a random individual than shuffling forwards slightly. 
-% And as a population continues to refine walking morphologies and gaits, lineages containing rocking individuals which are close to rolling over, or roll over just once, do not survive long enough to eventually produce a true rolling descendant. 
 
-% Development can alter the search space evolution operates in because individuals sweep over a continuum of phenotypes, with different velocities, rather than single static phenotype that travels at a constant speed.
-% The lineages which ultimately evolved the faster rolling design initially increased their morphological plasticity in phylogenetic time.
-% This exposes evolution to a wider range of body plans and thus increases the chance of randomly rolling at least once at some point during the evaluation period.
 
-% The peak of morphological plasticity generally lines up with the start of an increasing trend in fitness (blue curves) and marks the onset of differential canalization.
-% Rolling just once allows an individual to move further (1 body length) than some early walking behaviors but they incur the fitness penalty of having fallen over and thus not being able to subsequently walk for the rest of the trial. 
-% Therefore this tends to happen at the very end of ontogeny as individuals evolve to ``dive'' in the last few time steps of the simulation of their behavior, thus incurring an additional increase of fitness over their parent, which does not exhibit this behavior.
-% Since more rolling incurs more fitness than less rolling, a form of progenesis occurs as heterochronic mutations reduce morphological plasticity in each voxel.
-% This gradually earlifies rolling from a late onset behavior to one that arises increasing earlier in ontogeny.
-% As more individuals in the population discover and earlify this rolling behavior, the competition stiffens until eventually individuals which are not born rolling from the start are not fast enough to compete.
 
 
 
@@ -396,16 +399,15 @@ By doing so we realized robots that were equally fit but more robust to extreme 
 
 
 Robustness is not unknown in human-engineered systems, but it is relatively rare; in nature it is everywhere, and one of the reasons is that in nature organisms are constantly restructuring themselves according to environmental signals.
-This work demonstrated that robustness can be achieved by evolving the structure of protean machines, their configuration alternatives, and how
-their material properties develop in response particular interoceptive stimuli during their lifetimes.
+This work demonstrated that robustness can be achieved by evolving the structure of robots, their configuration patterns, and how
+their material properties develop in response to particular interoceptive stimuli during their lifetimes.
 
-Different types of developmental feedback loops elicited different evolved properties.
-Specifically, we observed that if one modality (stiffness) responds to one particular internal signal (engineering stress) but not another (pressure), robots evolved structure that (even when manually canalized) intrinsically buffered large deviations from their expected material properties.
-In other words, protean body plans foster ``zero-shot'' generalization to fabrication errors.
-Although developmental reactions with pressure did not afford the evolution of robustness here, they did increase evolutionary divergence: 
+We found that different types of developmental feedback loops elicited different evolved properties.
+Specifically, we observed that if one modality (stiffness) responds to one particular internal signal (engineering stress) but not another (pressure), robots evolved structures that intrinsically buffered large deviations from their expected material properties.
+In other words, morphological change in response to the appropriate signals during evolution can foster ``zero-shot'' generalization to fabrication errors.
+Although developmental reactions in response to pressure did not afford the evolution of robustness here, they did increase evolutionary divergence: 
 pressure-adaptive robots evolved more diverse 
-(congenital) 
-shapes than stress-adaptive robots.
+structures than stress-adaptive robots.
 % We focused the present investigation on robustness, but, in some domains, diversity might be a more desirable property. 
 This suggests
 there may be other developmental feedback loops that could be made available to evolution
@@ -507,18 +509,18 @@ This yields a continuous flow of synthetic living organisms or ``biobots'' that 
 \subsection{Contribution}
 
 Growing interest in AI has to date been restricted to technological constructs such as neural networks, robots, or autonomous cars. 
-The experiments in chapter 7
+The experiments here
 introduced the first artificial, intelligent, yet fully biological constructs. 
 While automatically designing machines in silico and manufacturing them as robots using 3D printers is now well established, automatically designing and instantiating living systems has never before been demonstrated. 
 Recent efforts to build novel living machines \cite{herr2004swimming,xi2005self,feinberg2007muscular,cvetkovic2014three,raman2016optogenetic,nawroth2012tissue,park2016phototactic,ricotti2017biohybrid} used designs created by the investigators, rather than AI-generated ones.
 Although the fields of synthetic biology and organoid design have made inroads into designing living systems, the former is restricted to genetic modification of existing organisms while the latter is focused on designing only parts of a whole organism.
 This work, in contrast, describes a novel path to creating synthetic organisms out of cells without genomic editing.
 
-This work demonstrates how to evolve novel organisms for specific behaviors entirely in simulation and then build them 
+Chapter 7 demonstrated how to evolve novel organisms for specific behaviors entirely in simulation and then build them 
 by combining together different biological tissues.
 This is possible despite the fact that we do not fully understand how cells communicate and cooperate to build and maintain functional bodies.
 Specifically,
-it is currently unknown how cardiomyocytes will synchronize their contractions when reorganized into novel structures in vitro.
+it is currently unknown how cardiomyocytes will synchronize their contractions when reorganized into novel structures in vitro / in vivo.
 Thus, in order to avoid injecting incorrect assumptions into the simulations,
 cardiomyocyte temporal coordination was modeled as random noise.
 As a side effect of selection pressure for locomotion, derandomizing morphologies evolved: evolutionary improvement occurred through changes in overall structure, and distribution of the passive and contractile cells, to collectively derandomize the global movement produced by the random actuation. 
@@ -622,7 +624,7 @@ Thus, by virtue of structure and distribution of material (tissue types), new ki
     \vspace{1pt}
     \caption{%
     \textbf{Taxonomy of synthetic biology.}
-    Xenobots are a specific kind of Reconfigurable Organism, which are a particular kind of Computer-Designed Organism, which is a particular mode of Synthetic Biology distinguished from human-designed biological constructs, which includes all organiods and biohybrids built to date.
+    Xenobots are a particular species of Reconfigurable Organisms, which are an instantiation of Computer-Designed Organisms, a mode of Synthetic Biology distinguished from human-designed biological constructs, which includes all organiods and biohybrids built to date.
     \label{fig:synthbio}%
     }
 \end{figure}
@@ -630,14 +632,26 @@ Thus, by virtue of structure and distribution of material (tissue types), new ki
 
 \subsection{Future Work}
 
-Xenobots are reconfigurable organisms made from Xenopus cells.
-If we made reconfigurable organisms out of cells taken from early elephant embryos, they might be popularly referred to as ``elebots'' or perhaps something else by the memesphere.
-Reconfigurable organisms are assembled according to a computer-designed blueprint.
-Rather than telling a microsurgeon or 3D bioprinter roughly where all the tissues should go, a blueprint could instead say how to deflect development toward a target morphology. 
-The pipeline could in principle learn to build specific shapes by automatically choosing and applying biochemical/biomechanical/bioelectrical manipulations and then observing the cells' self-assembly.
-These would be a kind of computer-designed organism but they would relax the build filter described in chapter 7, and could in theory produce any structure / organ seen in nature (hands, eyes, noses, brains) and others yet to be discovered by natural evolution on Earth that could support increasingly protean machines and organisms.
 
-Fig.~\ref{fig:synthbio}
+The first computer-designed organisms were called reconfigurable organisms (Fig.~\ref{fig:synthbio}) because their configuration spaces could be changed by combining together different living materials (cells) into different structures.
+This is a hat tip to reconfigurable modular robots which are free to attach/detach during assembly and sometimes behavior, thus blurring the line between structure and configuration  \cite{pathak2019learning}.
+Xenobots are a particular kind of reconfigurable organism.
+If we made a batch of reconfigurable organisms out of cells taken from early embryos of the
+African elephant (\textit{Loxodonta})
+instead of the African clawed frog (\textit{Xenopus laevis})
+then they would be called ``loxobots'' not ``xenobots''.
+There is also the possibility of chimeras (mixtures of species) and biohybrids (mixtures of living and synthetic materials).
+
+
+Reconfigurable organisms are assembled according to a blueprint which could be computer-designed or human-designed.
+The blueprint tells a microsurgeon or 3D bioprinter, at some resolution of detail, precisely where all the tissues should go in relation to each other.
+But there are other ways computers could design bespoke organisms.
+Rather than a blueprint of a specific target form, 
+a computer-designed recipe could indicate how and when to apply various biochemical/biomechanical/bioelectrical manipulations so as to deflect development toward a target form and/or function.
+With constant feedback from silico to vivo and back,
+the pipeline would learn to influence the cells' self-assembly instead of imposing sometimes unbuildable constraints on their structure.
+These auto-ontogenetic computer-designed organisms would thus relax the build filter described in chapter 7, and could in theory produce any structure or organ seen in nature (hands, eyes, noses, brains) and others yet to be discovered by evolution on Earth.
+% capable of supporting increasingly protean machines and organisms.
 
 
 Despite our initial demonstrations that such is possible, 
@@ -647,16 +661,24 @@ Many behaviors that are difficult to instantiate in robots composed of metal and
 On the other hand, we can fabricate just about any reasonably scaled and shaped structure using steel, concrete, or plastics; living systems tend to resist adopting new forms imposed on them.
 The xenobots, as just one example, tend to smooth sharp edges and close small concavities in their sculpted body plans during development.
 
-To more adequately investigate and exploit this strange inversion of engineering difficulty, contributions will need to span diverse academic departments: developmental biology, materials science, mechanical engineering, and computer science.
+Collaboration across traditional academic departments
+(not just between computer science and developmental biology, but also mechanical-, chemical-, biomedical-, and molecular engineering)
+will be necessary
+to more adequately investigate and exploit this strange inversion of engineering difficulty.
 
 
-deflect devo instead of blueprint of shape
 
 
 \section{Conclusion}
 
 This thesis presented six sets of experiments (chapters 2, 3, 4, 5, 6 and 7), in which the morphologies of robots were permitted to vary on increasingly more scales in space and time.
+The results suggest that ontogenetic morphological change can 
+fortify autonomous machines against entropy,
+and
+confer the evolution of robust behavior,
+even if the system is later deployed with a realtively static morphology.
+The penultimate chapter described the first organisms to evolve in computer simulations, instead of physically on Earth.
+By building novel multicellular organisms without genetic engineering, we have learned a great deal about the phenotypic plasticity inherent in development but missing in conventional robots.
+Ultimately,
+this knowledge will be put to work developing useful technologies, whether they are composed of electronics, living systems, or admixtures of both.
 
-[...]
-
-[profound but conservative closing sentence here.]
