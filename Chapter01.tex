@@ -82,7 +82,9 @@ Seven key benefits were uncovered and scrutinized:
     % (to shape, structure, and/or material properties) 
     persisting over extended periods of 
     % developmental 
-    time, that cause the same sequence of actions to generate different behaviors (chapters 2, 3, 6 and 7).
+    time, that cause the same sequence of 
+    actions 
+    to generate different behaviors (chapters 2, 3, 6 and 7).
 
 
     \item Protean body plans introduce arbitrarily small, and thus arbitrarily safe mutations \cite{lehman2018safe}, whose behavioral impact manifests temporarily during operation, rather than permanently from deployment (chapter 3).
@@ -101,7 +103,7 @@ Seven key benefits were uncovered and scrutinized:
     (e.g.~embryonic calluses).
     % that in previous generations was protean.
     %  that would otherwise be need to be earned through interaction with the environment
-    This well-studied phenomenon \cite{hinton1987learning} is revisited with a twist:
+    This well-studied phenomenon in artificial neural networks \cite{hinton1987learning} is revisited with a twist:
     physically embodied robots, rather than an abstract control system.
     This distinction is important because it grounds hypotheses in the constraints and opportunities afforded by the physical world.
     
@@ -237,7 +239,7 @@ Later, when more exact concepts have been developed (e.g.~how physics is simulat
         % All of the other variables due to the robot's body or environment that are varied by $\mathbf{\Pi}$, fall into $\mathbf{\Pi'}$: they are ``out of control''.
         Traditionally, a robot's structure, shape and material properties are not varied by $\mathbf{\Pi}$: they are ``out of control''.
         They are, from the perspective of $\mathbf{\Pi}$, part of the environment.
-        This body-policy 
+        This body/policy 
         dissection is ubiquitous in robotics, and often useful for analyzing and predicting behavior.
         }
     \end{minipage}
@@ -254,15 +256,14 @@ Later, when more exact concepts have been developed (e.g.~how physics is simulat
     later be turned inside out when designs are evolved without development in silico, and then built as organisms that develop but do not evolve and cannot reproduce in vivo.
     
     \item \textbf{Material.} Embodied systems are made out of physical matter
-    with mechanical properties: 
+    with mechanical properties---% 
     mass, density, friction,
     stickiness,
     viscosity,
     elasticity, plasticity,
     stability,
-    strengths and limits.
-    These 
-    properties determine the system's passive dynamics and can thus streamline or frustrate the evolution of adaptive behavior 
+    strengths and limits---%
+    which can either streamline or frustrate the evolution of adaptive behavior 
     \cite{vaughan2004evolution}.
     Material properties can be heterogeneously distributed across a robot's body, and in some experiments, 
     can change in both evolutionary and developmental time.
@@ -739,7 +740,7 @@ Symmetrically, if a promising static design is discovered early in the lifetime 
 illusory or impossible to execute without completely disrupting behavior.
 Indeed, one of the first experiments to explore the interaction between evolution and (neurological) development in controllers onboard real robots \cite{floreano1996plastic}, found that such mutations are unlikely to exist if agents exploit developmental change for behavior.
 
-\begin{figure}
+\begin{figure}[t]
 \centering
 \includegraphics[trim={40pt 20pt 30pt 25pt},clip,width=0.49\linewidth]{fig/baldwin_rugged.pdf}
 \includegraphics[trim={40pt 20pt 30pt 25pt},clip,width=0.49\linewidth]{fig/baldwin_smooth.pdf}
@@ -750,6 +751,8 @@ The vertical axis is fitness.
 On the left, we have a highly-fit genotype (red spike) among a sea of designs with much lower fitness (blue waves).
 The red design might be an upright bipedal walker with the appropriate elasticity,
 while the blue designs perhaps can only scoot, tumble, or row themselves forward (if they can move at all).
+Evolution cannot see the red spike, as we can.
+Evolution only ``sees'' the relative elevation beneath each design in the current population.
 On the right: the aftermath of the Baldwin effect.
 Developmental plasticity alters the space by introducing a gradient: 
 Proximity to the great design determines the speed and reliability with which it may be expressed during development, and thus determines (expected) fitness.
@@ -1302,8 +1305,9 @@ because their autonomy was restricted to flipping a fixed set of switches on a f
 
 
 Other modern technologies exist with much more 
-% material/structure/shape flexibility 
+% material/structure/shape  
 morphological
+flexibility
 than Thompson's FPGA and Bird's radio.
 For instance,
 modular robots have been reported that self-assembled, -disintegrated, and -replicated by changing the arrangement of a fixed set of blocks \cite{zykov2005robotics,romanishin20153d,li2019particle,white2005three};
@@ -1359,7 +1363,8 @@ was thus well-specified by whatever displays or motors Pask happened to attach t
 %  perceive and influence their environment.
 
 In order to achieve epistemic autonomy,
-the system would also need to take control over the kinds of 
+the system would also need to take control over the kinds 
+of effectors and
 % actions 
 configurations
 it has available to influence the world \cite{cariani1993evolve}.
@@ -1368,26 +1373,16 @@ it has available to influence the world \cite{cariani1993evolve}.
 It is contended here that autonomy can evolve by degrees with increasingly protean machines.
 This follows from the fact that a morphologically-static machine is bounded, if not fully determined by the complete specification of its parts---%
 whereas a more or less protean machine more or less determines its own relationship with the world (and with its designer).
+
 % There is no limit to embodiment as far as we know.
 % Increasingly protean machines
 % could keep broadening their perceptual and motoric abilities, and continue to discover ever new tasks that 
-% are meaningful to them,
-% supportive of human lives and the biosphere.
+% are meaningful to them
 
 % fractal body plans, ever broadening the scales robots can preciously manipulate
 % % Fractals: Bush robot
 % \cite{moravec1999fractal}
 % Fractals are ubiquitous in nature but not in robots.
-
-% What would a maximally protean machine look like?
-% To us perhaps an amorphous blur in constant flux.
-% Would it ever step into the same shape twice? I wonder.
-
-% Setting aside any theoretical infinitely protean machine bound only by the laws of physics,
-% there will be practical limits.
-% For instance,
-% we may suppose that, 
-% under realistic conditions,
 
 For this to be achieved, however, several conceptual and operational challenges will need to be overcome. 
 % as evidenced by the stagnancy in evolutionary robotics.
@@ -1395,7 +1390,7 @@ Any adaptive protean machine will
 likely
 need to balance an energy budget,
 among many other concerns,
-and metamorphosis is metabolically expensive for animals.
+and metamorphosis is metabolically expensive---for animals, at least.
 This is why caterpillars are such
 voracious feeders:
 % essentially eating machines:
@@ -1407,7 +1402,6 @@ rather than an ultimate mechanism \cite{tinbergen1963aims} or law of adaptive su
 % Frogs are slower and eat through most of the stages: it takes weeks/months for \textit{Xenopus laevis} to completely change from tadpole to frog, according to Doug Blackiston and his frogs.
 It is unclear
 when and where (if at all) a robot's morphological freedom should likewise be clamped (e.g.~as a crawling 
-% cylindrical
 eating machine) in order to accelerate the acquisition of new adaptive behaviors (e.g.~land-to-air transition).
 
 Appreciable 
