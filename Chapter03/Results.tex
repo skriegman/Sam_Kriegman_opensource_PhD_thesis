@@ -1,13 +1,13 @@
 \section{Results}
-\label{sec:results}
+\label{sec3:results}
 
 
-In this section we present the results of our experiments\footnote{\href{https://youtu.be/gXf2Chu4L9A}{\textbf{https://youtu.be/gXf2Chu4L9A}} directs to a video overview of our experiments.} and indicate statistical significance under the Mann-Whitney $U$ test where applicable. 
+In this section we present the results of our experiments\footnote{\href{https://youtu.be/gXf2Chu4L9A}{\color{blue}\textbf{https://youtu.be/gXf2Chu4L9A}} directs to a video overview of our experiments.} and indicate statistical significance under the Mann-Whitney $U$ test where applicable. 
 
 
 
 
-\subsection{Random search.}
+\subsection*{Random search.}
 
 
 \begin{figure}[t]
@@ -22,7 +22,7 @@ The best overall designs are the best Evo robots since they maintain their good 
 
 
 To get a sense of the evolutionary search space, prior to optimization, we randomly generated one thousand robots from each group (figure \ref{fig:random}).
-The horizontal axes of figure \ref{fig:random} measure the fitness (equation \ref{eq:fitness}) of our randomly generated designs.
+The horizontal axes of figure \ref{fig:random} measure the fitness (equation \ref{eq3:fitness}) of our randomly generated designs.
 The top portion of this figure plots the histogram of relative frequencies, using equal bin sizes between groups.
 The mode is zero for both groups, meaning that the majority of designs are immobile.
 
@@ -38,7 +38,7 @@ Also note that while the total displacement may be lower in the Evo-Devo case, s
 % nac: also note that while the total displacement may be lower in the Evo-Devo case, since the robots "travel" through a number of different morphologies, they may pass through those which travel at a higher instantaneous speed (but spend less of their lifetime in this morphology).  
 
 
-\subsection{Evolution.}
+\subsection*{Evolution.}
 
 \begin{figure}[t]
 \centering
@@ -57,7 +57,7 @@ At the end of optimization there is a significant difference between Evo and Evo
 
 
 
-We also chose to reevaluate Evo-Devo robots with their development frozen at their median ontogenetic morphologies (figure \ref{fig:main_frozen}b). For each robot, we measure the robot's fitness (equation \ref{eq:fitness}) at this midlife morphology with development frozen, for two seconds. Selection is completely blind to this frozen evaluation. It exists solely for the purpose of post-evolution analysis, and serves primarily as a sanity check to make sure Evo-Devo robots are not explicitly utilizing their ability to grow/shrink to move faster.
+We also chose to reevaluate Evo-Devo robots with their development frozen at their median ontogenetic morphologies (figure \ref{fig:main_frozen}b). For each robot, we measure the robot's fitness (equation \ref{eq3:fitness}) at this midlife morphology with development frozen, for two seconds. Selection is completely blind to this frozen evaluation. It exists solely for the purpose of post-evolution analysis, and serves primarily as a sanity check to make sure Evo-Devo robots are not explicitly utilizing their ability to grow/shrink to move faster.
 
 Development appears to inhibit locomotion to some degree as the best morphologies run slightly faster with development turned off, particularly in earlier generations.
 A significant difference, at the 0.001 level, between Evo robots and Evo-Devo robots with development frozen at midlife, occurs after only 108 generations compared to 255 generations with development enabled.
@@ -67,7 +67,7 @@ Note that the midlife morphology is not necessarily the top speed of an Evo-Devo
 
 
 
-\subsection{Closing the window.}
+\subsection*{Closing the window.}
 
 \begin{figure}[t]
 % \hspace{-0.2cm}
@@ -115,7 +115,7 @@ it is only helpful in that it can lead to better optima down the road once the w
 
 
 
-\subsection{The effect of mutations.}
+\subsection*{The effect of mutations.}
 
 \begin{figure*}
 \centering
@@ -166,9 +166,9 @@ This makes sense in a task with dependent time steps since a child created throu
 
 
 
-% \subsection{Evolved morphologies and behaviors.}
+% \subsection*{Evolved morphologies and behaviors.}
 
-% A robot can move a greater raw distance with a larger body. Not just because a single `footstep' is taken with a longer `leg', but also because the actuation is dampened for smaller volumes. Recall that a voxel at the minimum volume doesn't actuate at all to prevent simulation instability. This is in part why we chose our particular fitness function (equation \ref{eq:fitness}) that normalizes distance by volume. As a result, the best performing individuals must efficiently utilize larger volumes in a trade off with speed analogous to energy preservation in nature. 
+% A robot can move a greater raw distance with a larger body. Not just because a single `footstep' is taken with a longer `leg', but also because the actuation is dampened for smaller volumes. Recall that a voxel at the minimum volume doesn't actuate at all to prevent simulation instability. This is in part why we chose our particular fitness function (equation \ref{eq3:fitness}) that normalizes distance by volume. As a result, the best performing individuals must efficiently utilize larger volumes in a trade off with speed analogous to energy preservation in nature. 
 
 % Under our particular settings, `pinching in' internal voxel volumes is a common design element among evolved individuals.
 % This creates a gap between hind and foreleg(s) which reduces volume while maintaining a fast body plan that walks in a straight line.
@@ -181,7 +181,7 @@ This makes sense in a task with dependent time steps since a child created throu
 
 
 
-\subsection{The necessity of development.}
+\subsection*{The necessity of development.}
 
 \begin{figure}
 % \hspace{-0.2cm}

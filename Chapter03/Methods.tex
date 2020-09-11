@@ -1,8 +1,8 @@
 \section{Methods}
-\label{sec:methods}
+\label{sec3:methods}
 
 
-All experiments\footnote{\href{https://github.com/skriegman/gecco-2017}{\textbf{https://github.com/skriegman/gecco-2017}} contains the source code necessary for reproducing our results.} were performed in the open-source soft-body physics simulator  
+All experiments\footnote{\href{https://github.com/skriegman/gecco-2017}{\color{blue}\textbf{https://github.com/skriegman/gecco-2017}} contains the source code necessary for reproducing our results.} were performed in the open-source soft-body physics simulator  
 \textit{Voxelyze}, which is described in detail in Hiller and Lipson \cite{hiller2014dynamic}.
 
 We consider a locomotion task for soft robots composed of a $4\times4\times3$ grid of voxels (see figure \ref{fig:videos} for example). 
@@ -46,7 +46,7 @@ Voxels actuate at 4 Hz in our experiments (for 8 sec or 32 cycles) however actua
 
 
 
-\subsection{From gene to volume.}
+\subsection*{From gene to volume.}
 
 %nac: awkward and confusing, just say that you use a 4x4x3, and with bilateral symmetry to result in 24 genes for Evo.  And then later say that you use 48 genes for Evo-Devo.  
 % The Evo genome is a collection of 48 genes, one gene for each voxel in its $4\times4\times3$ $(x,y,z)$ body.
@@ -81,7 +81,7 @@ The true actuation, $\tilde{a}(t, s_k)$, is calculated by multiplying the unrest
 \end{equation}
 
 Actuation is then added to the resting volume to realize the \textit{current} volume, $V_k(t)$, of the $k^{\text{th}}$ voxel of an Evo robot at time $t$.
-\begin{equation} \label{eq:evo_vol}
+\begin{equation} \label{eq3:evo_vol}
 V_k(t)=[s_k+\tilde{a}(t,s_k)]^3
 \end{equation}
 
@@ -109,7 +109,7 @@ Q(t)=2\sum_{k=1}^{24} V_k(t)
 \end{equation}
 % To account for volumetric development in our objective that normalizes distance by volume, 
 We track the $y$ position of the center of mass, $y(t)$, as well as the current total volume, $Q(t)$, at $n$ discrete intervals within the lifetime of a robot. Fitness, $F$, is the sum of the distance traveled in time interval, divided by the average volume in the interval.
-\begin{equation} \label{eq:fitness}
+\begin{equation} \label{eq3:fitness}
 F = 2 \sum_{t=1}^{n} \frac{y(t)-y(t-1)}{Q(t) + Q(t-1)}
 \end{equation}
 We track $y(t)$ and $Q(t)$ 100 times per second. Since robots are evaluated for eight seconds, $n=800$.
@@ -120,7 +120,7 @@ We track $y(t)$ and $Q(t)$ 100 times per second. Since robots are evaluated for 
 
 
 
-\subsection{A direct encoding.}
+\subsection*{A direct encoding.}
 
 
 This paper differs from previous evolutionary robotics work that used Voxelyze \cite{Cheney:2013:UEE:2463372.2463404, cheney2014evolved, Cheney:2015:ESR:2739480.2754662} in that we evolve the volumes of a fixed collection of voxels, rather than the presence/absence of voxels in a bounding region. 
@@ -139,10 +139,10 @@ although these voxels had a fixed resting volume of one ($s_k=1$ for all $k$).
 
 
 
-\subsection{Evolutionary search.}
+\subsection*{Evolutionary search.}
 
 
-We employ a standard evolutionary algorithm, Age-Fitness-Pareto Optimization (AFPO, \cite{Schmidt2011}), which uses the concept of Pareto dominance and an objective of age (in addition to fitness) intended to promote diversity among candidate designs. For 30 runs, a population of 30 robots is evolved for 2000 generations.
+We employ a standard evolutionary algorithm, Age-Fitness-Pareto Optimization (AF-PO, \cite{Schmidt2011}), which uses the concept of Pareto dominance and an objective of age (in addition to fitness) intended to promote diversity among candidate designs. For 30 runs, a population of 30 robots is evolved for 2000 generations.
 Every generation, the population is first doubled by creating modified copies of each individual in the population. Next, an additional random individual is injected into the population. Finally, selection reduces the population down to its original size according to the two objectives of fitness (maximized) and age (minimized).
 
 % Whereas Evo robots have a single parameter per voxel dictating a static volume, Evo-Devo robots have two parameters per voxel dictating their starting and final volumes.
@@ -168,7 +168,7 @@ Then we apply the same mutation process as before in Evo robots: loop through ea
 
 % % nac: the above wording makes it sound as though this is our main hypothesis, which I do not believe it is... 
 
-\subsection{An artificially rugged landscape.}
+\subsection*{An artificially rugged landscape.}
 
 We did not fine-tune the mutation hyperparameters (scale and probability), but intentionally chose a relatively high probability of mutation in order to elicit a large mutational impact in an attempt to render evolutionary search more difficult. 
 This removes easy to follow gradients in the search space --- `compressing' gentle slopes into abrupt cliffs --- which make `good designs' more difficult to find.  Any one of these good solutions then, to a certain extent, become like Hinton \& Nowlan's `needle in a haystack' \cite{hinton1987learning}.

@@ -3,13 +3,14 @@
 \label{sec:results}
 
 
-\begin{wrapfigure}{r}{0.35\linewidth}
-\vspace{-1em}
-\includegraphics[width=\linewidth]{Chapter02/fig/legend.pdf}
-\vspace{-15pt}
+\begin{wrapfigure}{r}{0.475\linewidth}
+\vspace{-14pt}
+\centering
+\includegraphics[width=0.8\linewidth]{Chapter02/fig/legend.pdf}
+% \vspace{-15pt}
 \caption{The 2D tessellation of 8D ternary vector space used in Fig.~\ref{fig:sim}.}
 \label{fig:tesselation}
-\vspace{-0.5em}
+\vspace{-1em}
 \end{wrapfigure}
 
 
@@ -17,6 +18,7 @@ To test the effects of morphology on fitness and sim2real transfer success, it i
 However, because there are eight cartesian voxel coordinates in the chosen workspace, the design space here is eight dimensional, which is difficult to draw (let alone conceptualize) without dimensionality reduction.
 By nesting the dimensions of a search space onto a single plot (Fig.~\ref{fig:tesselation}), the entire space can be visualized as a 2D heatmap.
 This strategy was used by \citet{cully2015robots} to neatly visualize the predicted fitness of a very large library of control policies, as a function of the time a robot's six limbs were in contact with the simulated ground plane: 6D quinary control space was mapped to 2D, by nesting pairs of dimensions within each other.
+
 
 \input{Chapter02/3_fig_sim.tex}
 
@@ -34,11 +36,12 @@ Yet we can see small clusters and lines of similarly colored pixels in Fig.~\ref
 This suggests that these configurations and substructures would be relatively stable under random mutations or errors in fabrication.
 
 
-Because fitness was measured by displacement in any direction away from the origin (Eq.~\ref{eq:fitness}), there are four configurations|rotations, in the x,y plane, of a single geometry and distribution of passive and active voxels|with different behaviors (they moved in different directions) but very similar (if not identical) fitness.
+Because fitness was measured by displacement in any direction away from the origin (Eq.~\ref{eq:fitness}), there are four configurations---rotations, in the x,y plane, of a single geometry and distribution of passive and active voxels---with different behaviors (they moved in different directions) but very similar (if not identical) fitness.
 There were also some configurations that, when rotated upward (in the x,z or y,z plane) fell into the same basic orientation and behavior but with a slightly different heading.
 Thus, configurations with similar fitness (similarly colored pixels) are reflected across multiple, nested planes of symmetry in Fig.~\ref{fig:sim}.
 These symmetries can also be seen in the manufactured robots (Fig.~\ref{fig:teaser}b).
 The uniqueness of designs (i.e., the size of the search space of morphologies) is therefore a function of how behavior is measured.
+
 
 \input{Chapter02/3_fig_transfer.tex} 
 \input{Chapter02/3_fig_hi_res_sim.tex}

@@ -1,16 +1,6 @@
 
 
-\begin{figure}[t]
-\centering
-\includegraphics[width=0.8\linewidth]{Chapter04/Fig1}
-\caption{\label{fig:blueprint}\textbf{Modeling development.} An evolved soft robot changes its shape during its lifetime (postnatal development), from a walking quadruped into a rolling form. 
-Evolution dictates how a robot's morphology develops by setting each voxel's initial ($\ell_k$) and final ($\ell^*_k$) resting length.
-The length of a single voxel $k$ is plotted to illustrate its (slower) growth and (faster) actuation processes.
-Voxel color indicates the current length of that cell: the smallest voxels are blue, medium sized voxels are green, and the largest voxels are red.
-As robots develop and interact with a physically realistic environment, they generate heterogeneous behavior in terms of instantaneous velocity (bottom arrows).
-Soft robot evolution, development and physiological functioning can be seen in Supplementary \href{https://youtu.be/Ee2sU-AZWC4}{Video S1}.
-}
-\end{figure}
+
 
 \begin{figure}[t]
 \includegraphics[width=\linewidth]{Chapter04/Fig2}
@@ -23,7 +13,7 @@ Voxels in this figure are colored by the amount of subsequent morphological deve
 (D) A rolling juvenile robot at 10 points in ontogeny immediately after birth.
 Arrows indicate the general directionality of movement,  
 but this is more precisely captured by
-Supplementary \href{https://youtu.be/Ee2sU-AZWC4}{Video S1}. 
+Supplementary \href{https://youtu.be/Ee2sU-AZWC4}{\color{blue}Video S1}. 
 }
 \end{figure}
 
@@ -42,7 +32,8 @@ Fitness of just the final, evolved populations (at generation 10000) are plotted
 \includegraphics[width=\linewidth]{Chapter04/Fig4}
 \caption{\label{fig-correlation}\textbf{Differential canalization.} 
 Developmental windows (i.e.~the total lifetime developmental change) for morphology, $W_L$ (see Equation \ref{eq-WL}), and controller, $W_{\Phi}$ (see Equation \ref{eq-WPhi}), alongside fitness $F$.
-(A) Three representative lineages taken from Supplementary Fig. S1, which displays the lineages of all 30 Evo-Devo run champions. Evolutionary time $T$ moves from the oldest ancestor (left) to the run champion (right). A general trend emerges wherein lineages initially increase their morphological development in $T$ (rising red curves) and subsequently decrease morphological development to almost zero (falling red curves). Five of the 30 evolutionary trials, annotated by {\Large $\ast$}, fell into a local optima.
+(A) Three representative lineages taken from Supplementary Fig. \ref{fig:S1}, % S1, 
+which displays the lineages of all 30 Evo-Devo run champions. Evolutionary time $T$ moves from the oldest ancestor (left) to the run champion (right). A general trend emerges wherein lineages initially increase their morphological development in $T$ (rising red curves) and subsequently decrease morphological development to almost zero (falling red curves). Five of the 30 evolutionary trials, annotated by {\Large $\ast$}, fell into a local optima.
 (B) Median fitness as a function of morphology and controller development windows $(W_L,\; W_{\Phi})$, for all Evo-Devo designs evaluated. 
 Overall, the fastest designs tend to have small amounts of morphological development, but are free to explore alternative control policies.}
 \end{figure}
@@ -71,11 +62,11 @@ because mutational changes affect all downstream steps, their phenotypic impact 
 
 
 \section{Results}
-\label{sec:results}
+\label{sec4:results}
 
 We consider a locomotion task, over flat terrain, for soft robots composed of a $4\times4\times3$ grid of voxels (Fig. \ref{fig:blueprint}).
 Robots are evaluated for 40 actuation cycles at 4 Hz, yielding a lifetime of ten seconds. Fitness is taken to be distance traveled measured in undeformed body lengths (four unit voxels, i.e.~4 cm). 
-Example robots are shown in Figures \ref{fig:blueprint} and \ref{fig:trot-gallop-roll}, and Supplementary \href{https://youtu.be/Ee2sU-AZWC4}{Video S1}.
+Example robots are shown in Figures \ref{fig:blueprint} and \ref{fig:trot-gallop-roll}, and Supplementary \href{https://youtu.be/Ee2sU-AZWC4}{\color{blue}Video S1}.
 
 
 All experiments were performed in the open-source soft-body physics simulator  
@@ -101,7 +92,7 @@ The controller, however, is not constrained to be symmetrical since many behavio
 The controller is denoted by the 48-element vector $\phi$, where each element is the phase offset of that voxel (with possible values within $0 \pm \pi/2$). 
 
 
-We investigated the impact of development in this model by comparing two experimental variants: Evo and Evo-Devo (schematized in Supplementary Fig. \hyperref[fig:S2]{S2}). 
+We investigated the impact of development in this model by comparing two experimental variants: Evo and Evo-Devo (schematized in Supplementary Fig. \ref{fig:S2}). % \hyperref[fig:S2]{S2}). 
 The control treatment, \textbf{Evo}, lacks development and therefore maintains a fixed morphology and control policy in a robot as it behaves over its lifetime. 
 Two parameters per voxel are sufficient to specify an evolved robot at any time $t$ in its lifetime: its morphology $\ell_k$, and controller $\phi_k$.
 An evolutionary algorithm optimizes 24 morphological and 48 control parameters.
@@ -112,18 +103,18 @@ The evolutionary algorithm associated with the Evo-Devo treatment thus optimizes
 The morphology and controller of the $k$-th voxel change linearly from starting to final values, throughout the lifetime of a developing robot.
 The endpoint parameters are denoted by asterisks: the controller develops from $\phi$ to $\phi^*$, the morphology develops from $\ell$ to $\ell^*$.
 The starting and final points of development are predetermined by a genome which in turn fixes the direction (compression or expansion) and rate of change for each voxel.
-Development is thus \textit{ballistic} in nature rather than adaptive, as it cannot be influenced by the environment (Equation \ref{eq:ballistic-devo}). 
+Development is thus \textit{ballistic} in nature rather than adaptive, as it cannot be influenced by the environment (Equation \ref{eq4:ballistic-devo}). 
 
 
 For both treatments we conducted 30 independent evolutionary trials.
 At the end of evolutionary optimization, the non-developmental robots (Evo) tend to move on average with a speed of 10 body lengths in 10 seconds, or 1 length/sec. The evolved and developing robots (Evo-Devo) tend to move at over 5 lengths/sec (Fig. \ref{fig-fitness}A).
-To ensure evolved and developing robots are not exploiting some unfair advantage conferred by changing body plans and control policies unavailable to non-developmental robots, we manually remove their development by setting $\ell^*=\ell$ and $\phi^*=\phi$, which fixes the structure of their morphologies and controllers at birth ($t=0$) (Equation \ref{eq:ballistic-devo}). 
-That is to say, we convert the evolved Evo-Devo robots into Evo robots (Equation \ref{eq:ballistic-devo} reduces to Equation \ref{eq:no-devo}).
+To ensure evolved and developing robots are not exploiting some unfair advantage conferred by changing body plans and control policies unavailable to non-developmental robots, we manually remove their development by setting $\ell^*=\ell$ and $\phi^*=\phi$, which fixes the structure of their morphologies and controllers at birth ($t=0$) (Equation \ref{eq4:ballistic-devo}). 
+That is to say, we convert the evolved Evo-Devo robots into Evo robots (Equation \ref{eq4:ballistic-devo} reduces to Equation \ref{eq4:no-devo}).
 The resulting reduced robots suffer only a slight (and statistically non-significant) decrease in median speed and still tend to be almost five times faster than the systems evolved without development (Fig. \ref{fig-fitness}B, treatment `Evo-Devo removed').
 Ballistic development is therefore beneficial for search but does not provide a behavioral advantage in this task environment.
 
 
-To investigate this apparent search advantage, we trace development and fitness across the 30 lineages which produced a `run champion': the robot with highest fitness at the termination of a given evolutionary trial (Supplementary Fig. \hyperref[fig:S1]{S1}). 
+To investigate this apparent search advantage, we trace development and fitness across the 30 lineages which produced a `run champion': the robot with highest fitness at the termination of a given evolutionary trial (Supplementary Fig. \ref{fig:S1}).% \hyperref[fig:S1]{S1}). 
 We measure the amount of ballistic change in each robot|its `ballistic plasticity'|by a statistic we call the \textit{developmental window}.
 The developmental window is defined separately for morphology (Equation \ref{eq-WL}) and control (Equation \ref{eq-WPhi}) as the absolute difference in starting and final values summed across the robot and divided by the total amount of possible development, such that 0 and 1 indicate no and maximal developmental change, respectively.
 Evo robots by definition have development windows of zero, as do Evo-Devo robots that have had development manually removed.
@@ -134,7 +125,7 @@ In terms of fitness, there were two observed basins of attraction in average vel
 After ten thousand generations, 25 out of a total of 30 Evo-Devo trials (83.3\%) find the faster design, compared to just 6 out of 30 Evo trials (20\%).
 
 
-\subsection{Differential canalization.}
+\subsection*{Differential canalization.}
 
 Modular systems are more evolvable than non-modular systems because they allow evolution to improve one subsystem without disrupting others \cite{wagner1996perspective,lipson2007principles}.
 Modularity may be a property of the way a system is built, or it may be an evolved property.
@@ -144,7 +135,8 @@ Some initially developmentally plastic traits become integrated and canalized, w
 
 
 In the successful Evo-Devo trials, morphological traits were canalized while control traits were not.
-Evidence for this is provided in Supplementary Fig. \hyperref[fig:S1]{S1}, which is summarized by Fig. \ref{fig-correlation}A.
+Evidence for this is provided in Supplementary Fig. \ref{fig:S1},%\hyperref[fig:S1]{S1}, 
+which is summarized by Fig. \ref{fig-correlation}A.
 Trajectories of controller development (green curves) do not follow any discernible pattern in phylogenetic time, and appear upon visual inspection to be consistent with a random walk or genetic drift.
 The trajectories of morphological development (red curves), however, follow a consistent pattern.
 The magnitude of morphological development increases slightly, but significantly $(p<0.001)$, before decreasing all the way to the most recent descendant, which is the most fit robot from that trial (the run champion). 
@@ -168,13 +160,14 @@ To test the sensitivity of the evolved controllers to changes in their morpholog
 It was found that both developmental and non-developmental systems tend to evolve controllers that are very sensitive to morphological mutations (Fig. \ref{fig-random-walks}C).
 These findings are consistent with those of Cheney \textit{et al.} \cite{cheney2017scalable}, who also reported that robots were more sensitive to changes in their morphology than in their controllers.
 Here, the first few morphological mutations to optimized robots, in both treatments, tend to immediately render them immobile.
-Within Evo-Devo design types, neither of which canalized development in their controllers (Supplementary Fig. \hyperref[fig:S1]{S1}), both the fast and slow designs possess controllers sensitive to changes in their morphologies (Fig. \ref{fig-random-walks}D).
+Within Evo-Devo design types, neither of which canalized development in their controllers (Supplementary Fig. \ref{fig:S1},% \hyperref[fig:S1]{S1}), 
+both the fast and slow designs possess controllers sensitive to changes in their morphologies (Fig. \ref{fig-random-walks}D).
 Thus it can be concluded that the non-canalized controllers evolved a strong dependency on their morphologies. 
 Therefore the only trait to be successfully canalized was also the only trait that rendered the agent robust to changes in other traits.
 
 
 
-\subsection{Heterochrony in morphological development.}
+\subsection*{Heterochrony in morphological development.}
 
 
 The evolutionary algorithm can rapidly discover an actuation pattern that elicits a very small amount of forward movement in these soft robots regardless of the morphology. 
@@ -185,11 +178,13 @@ There is, however, a vastly superior design partially hidden from natural select
 On flat terrain, rolling can be much faster and more efficient than walking, but finding such a design is difficult because the fitness landscape is deceptive.
 Rolling over once is much less likely to occur in a random individual than shuffling forwards slightly. And as a population continues to refine walking morphologies and gaits, lineages containing rocking individuals which are close to rolling over, or roll over just once, do not survive long enough to eventually produce a true rolling descendant. 
 
-Development can alter the search space evolution operates in because individuals sweep over a continuum of phenotypes, with different velocities, rather than single static phenotype that travels at a constant speed (Supplementary Fig. \hyperref[fig:S2]{S2}E,J).
-The lineages which ultimately evolved the faster rolling design initially increased their morphological plasticity in phylogenetic time as evidenced by the initial upward trends in the red curves in Supplementary Fig. \hyperref[fig:S1]{S1} (summarized by Fig. \ref{fig-correlation}A) which contain a statistically significant difference between their starting and maximum developmental window sizes $(p<0.001)$.
+Development can alter the search space evolution operates in because individuals sweep over a continuum of phenotypes, with different velocities, rather than single static phenotype that travels at a constant speed (Supplementary Fig. \ref{fig:S2}E,J).% \hyperref[fig:S2]{S2}E,J).
+The lineages which ultimately evolved the faster rolling design initially increased their morphological plasticity in phylogenetic time as evidenced by the initial upward trends in the red curves in Supplementary Fig. \ref{fig:S1}% \hyperref[fig:S1]{S1} 
+(summarized by Fig. \ref{fig-correlation}A) which contain a statistically significant difference between their starting and maximum developmental window sizes $(p<0.001)$.
 This exposes evolution to a wider range of body plans and thus increases the chance of randomly rolling at least once at some point during the evaluation period.
 
-The peak of morphological plasticity in  Supplementary Fig. \hyperref[fig:S1]{S1} (summarized by Fig. \ref{fig-correlation}A) generally lines up with the start of an increasing trend in fitness (blue curves) and marks the onset of differential canalization.
+The peak of morphological plasticity in  Supplementary Fig. \ref{fig:S1}% \hyperref[fig:S1]{S1}
+(summarized by Fig. \ref{fig-correlation}A) generally lines up with the start of an increasing trend in fitness (blue curves) and marks the onset of differential canalization.
 Rolling just once allows an individual to move further (1 body length) than some early walking behaviors but they incur the fitness penalty of having fallen over and thus not being able to subsequently walk for the rest of the trial. 
 Therefore this tends to happen at the very end of ontogeny (Fig. \ref{fig-discovery}), as individuals evolve to `dive' in the last few time steps of the simulation of their behavior, thus incurring an additional increase of fitness over their parent, which does not exhibit this behavior.
 Since more rolling incurs more fitness than less rolling, a form of progenesis occurs as heterochronic mutations move $\ell_k$ closer to $\ell_k^*$, for each voxel.
@@ -197,20 +192,22 @@ This gradually earlifies rolling from a late onset behavior to one that arises i
 As more individuals in the population discover and earlify this rolling behavior, the competition stiffens until eventually individuals which are not born rolling from the start are not fast enough to compete (Fig. \ref{fig:trot-gallop-roll}C,D).
 
 
-\subsection{Generality of results.}
+\subsection*{Generality of results.}
 
 
 For the results above, as in nature \cite{lynch2010evolution}, the mutation rate of each voxel was left under evolutionary control (self-adaptation).
-In an effort to assess the generality of our results, we replicated the experiment described above for various fixed mutation rates (Supplementary Fig. \hyperref[fig:S3]{S3}).
+In an effort to assess the generality of our results, we replicated the experiment described above for various fixed mutation rates (Supplementary Fig. \ref{fig:S3}).% \hyperref[fig:S3]{S3}).
 Without development, as in Hinton and Nowlan's case\cite{hinton1987learning}, the search space has a single spike of high fitness. 
 One can not do better than random search in such a space.
 At the highest mutation rate, optimizing Evo morphologies reduces to random search, and this is the only mutation rate where Evo does not require significantly more generations than Evo-Devo to find the faster design. 
-This can be observed in Supplementary Fig. \hyperref[fig:S3]{S3} by comparing the generation at which the slopes of the fitness curves increase dramatically. 
+This can be observed in Supplementary Fig. \ref{fig:S3}  % \hyperref[fig:S3]{S3} 
+by comparing the generation at which the slopes of the fitness curves increase dramatically. 
 However, the best two treatments, as measured by the highest median speed at the end of optimization, have development, and the robots they produced are significantly faster than those produced by random search (Evo with the highest mutation rate) $(p<0.01)$.
 
 To further test the sensitivity of our results to the various settings of our particular system,
 we transcribed the main experiment for a different class of morphologies (rigid bodies) and controllers (neural networks).
-Details are provided in Supplementary Fig. \hyperref[fig:S5]{S5} and Supplementary Methods.
+Details are provided in Supplementary Fig. \ref{fig:S5} %\hyperref[fig:S5]{S5} 
+and Supplementary Methods.
 The results of this test indicate that differential canalization exists elsewhere, but it does not always increase evolvability.  
 
 

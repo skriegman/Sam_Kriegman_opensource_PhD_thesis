@@ -1,6 +1,6 @@
 
 \section{Results}
-\label{sec:results}
+\label{sec5:results}
 
 
 Prior to damage, twenty controllers were optimized (for \mbox{$G=1500$} generations) to generate forward movement in the simulated quadruped during an evaluation period of 4 sec (with numerical integration time steps of 0.000151 sec).
@@ -10,10 +10,10 @@ In order to isolate the effect of shape change relative to that of controller ad
 Each copy is thus given an optimized controller and recovery option, cut according to its particular damage case, and then reoptimized for displacement (for \mbox{$G=500$} postdamage generations).
 % with a unique random seed
 
-\subsection{The performance recovered after damage.}
+\subsection*{The performance recovered after damage.}
 
 
-Figure~\ref{fig:recovery} plots 
+Figure~\ref{fig5:recovery} plots 
 mean relative performance (i.e.,~postdamage displacement as a fraction of predamage displacement),
 with 99\% bootstrapped confidence intervals,
 for the two recovery options in each damage scenario. 
@@ -29,31 +29,31 @@ the samples can be thought of as a single sample from one population.
 
 We used a distribution-free rank sum test (Wilcoxon, Mann and Whitney) for the hypothesis of no treatment effect, with Bonferroni correction for nine comparisons.
 The corrected rank sum test and the 99\% bootstrapped CIs (of the mean) are in agreement.
-That is, statistical significance between shapeshifting and controller adaptation, at the 0.01 level, can be correctly inferred, for each damage scenario, by visual inspection of Fig.~\ref{fig:recovery} (i.e., no overlap in the shaded confidence intervals here implies rejection of the null hypothesis).
+That is, statistical significance between shapeshifting and controller adaptation, at the 0.01 level, can be correctly inferred, for each damage scenario, by visual inspection of Fig.~\ref{fig5:recovery} (i.e., no overlap in the shaded confidence intervals here implies rejection of the null hypothesis).
 
 Overall, shape change was more successful (often better and never worse) than controller adaptation.
 Interestingly, the proportion of fitness recovered was in some cases higher than one.
 This could be due to a lack of volume conservation and the possibility that larger robots simply run faster than small ones.
-However, many robots recovered by reducing their overall volume (e.g.,~Figs.~\ref{fig:splay} and \ref{fig:scruncher}).
+However, many robots recovered by reducing their overall volume (e.g.,~Figs.~\ref{fig5:splay} and \ref{fig5:scruncher}).
 Moreover, controller adaptation also achieved higher-than-predamage performance in one case (amp.~=~2~adj.~legs), and this phenomenon was also documented in \cite{cully2015robots} but not via shape change.
 
-To explicitly control for the effect of body size, we optimized the controller of an otherwise identical quadruped that is twice the size of the original (Fig.~\ref{fig:size_effect}).
+To explicitly control for the effect of body size, we optimized the controller of an otherwise identical quadruped that is twice the size of the original (Fig.~\ref{fig5:size_effect}).
 Isometrically increasing volume did not affect speed: There was no significant difference in speed (at the 0.01 level) between the enlarged and original quadruped. 
-This is because the controller oscillations are added on top of (not relative to) the root shape~(Eq.~\ref{eq:beam_configuration}).
+This is because the controller oscillations are added on top of (not relative to) the root shape~(Eq.~\ref{eq5:beam_configuration}).
 The enlarged robot has eight times the volume of the original, beam length oscillations still have the same amplitude.
 
 
 \input{Chapter05/3B_fig_size_effect.tex}
 
 
-Despite the fact that control was optimized for the original quadruped, and that amputation of all four legs removes 23\% of the original volume and actuation (Fig.~\ref{fig:scenarios}), robots that recovered from this particular insult through shape change (Fig.~\ref{fig:teaser}) move significantly faster than both the original and isometrically enlarged quadrupeds (Fig.~\ref{fig:size_effect}).
+Despite the fact that control was optimized for the original quadruped, and that amputation of all four legs removes 23\% of the original volume and actuation (Fig.~\ref{fig5:scenarios}), robots that recovered from this particular insult through shape change (Fig.~\ref{fig5:teaser}) move significantly faster than both the original and isometrically enlarged quadrupeds (Fig.~\ref{fig5:size_effect}).
 It follows that the efficacy of shapeshifting is not due simply to increased volume; rather, it is due to where and how the remnant structure's shape is deformed, which affects (e.g.) the robot's posture and mass distribution, its points of contact with the ground, and the storage and release of elastic strain energy, during locomotion.
 
 
-\subsection{The found techniques of recovery.}
+\subsection*{The found techniques of recovery.}
 
 
-We found that the optimizer discovered diverse recovery strategies through shape change (Figs.~\ref{fig:splay}-\ref{fig:flipper}), whereas controller readaptation often converged on the same strategy.
+We found that the optimizer discovered diverse recovery strategies through shape change (Figs.~\ref{fig5:splay}-\ref{fig5:flipper}), whereas controller readaptation often converged on the same strategy.
 For example, with all four legs removed due to damage, the robot is reduced to a cuboid, and the only viable locomotion technique found by controller readaptation was crawling.
 During postdamage optimization, many of these robots evolved crawling by peristalsis or in a manner that resembles the serpentine crawling of snakes \cite{alexander2003principles}.
 
@@ -61,7 +61,7 @@ Deforming the structure, even in a random manner, tends to produce greater frict
 
 Nevertheless, crawling is inefficient because of drag.
 Here, in many damage cases, behavioral competence was recovered through shape changes that partially or completely (but, due to material constraints, never perfectly) regenerated missing legs.
-Notably, when all four legs were amputated, recovery strongly converged on the solution of regeneration, and the resulting designs were some of the fastest overall~(Fig.~\ref{fig:teaser}).
+Notably, when all four legs were amputated, recovery strongly converged on the solution of regeneration, and the resulting designs were some of the fastest overall~(Fig.~\ref{fig5:teaser}).
 Note that the objective function does not assume or directly select for legged locomotion.
 
 
@@ -79,21 +79,21 @@ global changes, in addition to local repairs, can sometimes streamline recovery.
 
 
 When damage was distributed across a wider portion of the body, a diversity of solutions were discovered.
-For example, after the amputation of a quarter of the robot's body, the robot occasionally splayed out its pelvis to form a straighter and faster shape~(Fig.~\ref{fig:splay}).
+For example, after the amputation of a quarter of the robot's body, the robot occasionally splayed out its pelvis to form a straighter and faster shape~(Fig.~\ref{fig5:splay}).
 And, after the amputation of three legs, some robots once again grew replacements, but, because of other changes (e.g.,~a greatly expanded back),
-the remaining ``genuine'' leg needed to be partially contracted and tucked inward for balance~(Fig.~\ref{fig:tucker}).
+the remaining ``genuine'' leg needed to be partially contracted and tucked inward for balance~(Fig.~\ref{fig5:tucker}).
 
 \input{Chapter05/3E_fig_splay.tex}
 
 In the case where half of the robot's body is removed, the undeformed structure falls under gravity onto its side; one local optima was thus to crawl ``facedown''.
 A better strategy was found in which the robot could remain upright by using the two remaining limbs as forelegs and expanding the stump to form a wide hind leg.
-An equally proficient strategy was observed in which the robot diminished one or both of its legs, expanded its spine, and moved longitudinally~(Fig.~\ref{fig:scruncher}).
+An equally proficient strategy was observed in which the robot diminished one or both of its legs, expanded its spine, and moved longitudinally~(Fig.~\ref{fig5:scruncher}).
 
 \input{Chapter05/3F_fig_scruncher.tex}
 
 
 There were many successful variations on this theme,
-but one of the best designs in this case did the exact opposite: The robot expanded its remaining limbs to their maximum volume, contracted its spine, and flipped over (once) to walk longitudinally with the added momentum generated from large, swaying front and back limbs~(Fig.~\ref{fig:flipper}).
+but one of the best designs in this case did the exact opposite: The robot expanded its remaining limbs to their maximum volume, contracted its spine, and flipped over (once) to walk longitudinally with the added momentum generated from large, swaying front and back limbs~(Fig.~\ref{fig5:flipper}).
 
 
 \input{Chapter05/3C_fig_flipper.tex}
@@ -104,10 +104,10 @@ Yet, while this case removes 71\% of the original volume it is significantly \te
 Insult is thus a matter of kind, not degree.
 
 
-\subsection{The transferal of recovery strategies to reality.}
+\subsection*{The transferal of recovery strategies to reality.}
 
 
-To investigate the potential for directly transferring recovery strategies from simulation to reality, we aimed to transfer the overall shapes that are pictured in Figs.~\ref{fig:teaser} and~\ref{fig:tucker}. 
+To investigate the potential for directly transferring recovery strategies from simulation to reality, we aimed to transfer the overall shapes that are pictured in Figs.~\ref{fig5:teaser} and~\ref{fig5:tucker}. 
 In these particular cases, the optimizer found shapes with contiguous sections of voxels actuated to similar levels. 
 Thus, we here examine the one-actuator case, in which the voxels with the largest rest volumes|the top layer of ($6\times6=36$) voxels and the two corner voxels just below the top layer, on each corner of the torso (8 in total)|were connected to the same air inlet. 
 Voxels not hooked into the air line were punctured to allow for passive deflation and contraction of the robot, mimicking the simulated robot's ability to contract voxels by decreasing the rest lengths~$b_i$. 
@@ -116,17 +116,17 @@ Voxels not hooked into the air line were punctured to allow for passive deflatio
 
 \input{Chapter05/3D_fig_tucker.tex}
 
-The purple robot adequately expands the top layer of voxels in both cases (Figs.~\ref{fig:teaser}j and~\ref{fig:tucker}j), but fails to reach the overall target shapes drawn in Figs.~\ref{fig:teaser}e and~\ref{fig:tucker}e. 
+The purple robot adequately expands the top layer of voxels in both cases (Figs.~\ref{fig5:teaser}j and~\ref{fig5:tucker}j), but fails to reach the overall target shapes drawn in Figs.~\ref{fig5:teaser}e and~\ref{fig5:tucker}e. 
 Although further increasing pressure did indeed lead to larger deformations,
 the outer voxels inflate farther than interior ones, limiting the maximum viable actuation pressure. 
-The thinner voxel walls of the blue robot exacerbated this issue~\mbox{(Fig.~\ref{fig:tucker}k-o)}, 
+The thinner voxel walls of the blue robot exacerbated this issue~\mbox{(Fig.~\ref{fig5:tucker}k-o)}, 
 but their increased flexibility enabled a more faithful transferal of overall surface curvature.
 Another limitation we discovered was friction.
-Fully realizing the target shape in Fig.~\ref{fig:tucker}e requires the robot to drag its leg inward across the floor, tucking it under its body; but the silicone leg often stuck to the surface, preventing the prescribed maneuver in reality.
+Fully realizing the target shape in Fig.~\ref{fig5:tucker}e requires the robot to drag its leg inward across the floor, tucking it under its body; but the silicone leg often stuck to the surface, preventing the prescribed maneuver in reality.
 
 
 The silicone design and 1-axis rotational molding technique are still quite promising. 
-Even when inflated at high enough pressures to make the outer voxels approximately spherical (Fig.~\ref{fig:tucker}o), the voxels did not rupture. 
+Even when inflated at high enough pressures to make the outer voxels approximately spherical (Fig.~\ref{fig5:tucker}o), the voxels did not rupture. 
 To achieve more consistent expansion of interior and exterior voxels, the later should be inflated at a lower pressure than the former.
 By incorporating strain sensors \cite{white_low-cost_2017} and closed-loop control in future, the robot could correct for this variation on the fly.
 By actuating different voxels at different pressures, and enabling active contraction in addition to expansion, a much wider range of simulated shapes could be attained in reality. 

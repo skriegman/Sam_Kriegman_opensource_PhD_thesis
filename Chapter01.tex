@@ -986,26 +986,6 @@ the designer predicted to be relevant for the problem at hand.
 
 
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.7\linewidth]{fig/pask.png}
-    \captionof{figure}{%
-    \label{fig:ear}
-    Electricity flows through an aqueous solution of iron salts, depositing low resistance metallic threads and influencing the subsequent flow of the current and metal
-    (\citet{pask1960natural}).
-    }
-\end{figure}
-\begin{figure}
-    \centering
-    \includegraphics[width=0.65\linewidth]{fig/threads.png}
-    \captionof{figure}{%
-    \label{fig:threads}
-    Dendritic threads of metal grow toward an electrode in iron-sulfate solution (\citet{pask1961approach}).
-    }
-\end{figure}
-
-
-
 % \newpage
 \section{A Protean Machine?}
 
@@ -1042,9 +1022,6 @@ The basic electrochemical system had been developed earlier in collaboration wit
 a member of Heinz von Foerster's laboratory at the University of Illinois
 (\cite{pask1961approach}, p.~107).
 }
-
-
-
 
 % recent perspectives:
 % \cite{bird2008gordon} 
@@ -1113,6 +1090,26 @@ The longer a tree had been stably growing, the slower it disintegrated when the 
 That is, the robustness of the tree was determined by the conditioning time:
 reinforcement learning was possible.
 
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.7\linewidth]{fig/pask.png}
+    \captionof{figure}{%
+    \label{fig:ear}
+    Electricity flows through an aqueous solution of iron salts, depositing low resistance metallic threads and influencing the subsequent flow of the current and metal
+    (\citet{pask1960natural}).
+    }
+\end{figure}
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.65\linewidth]{fig/threads.png}
+    \captionof{figure}{%
+    \label{fig:threads}
+    Dendritic threads of metal grow toward an electrode in iron-sulfate solution (\citet{pask1961approach}).
+    }
+\end{figure}
+
+
 A sensor electrode was dipped into the solution.
 The generated waveform of the electrical output could be conditioned by rewarding thread networks with an increase in current supply, which released an influx of free metal ions---the building blocks of threads.
 As a result, certain types of structures were allowed to survive and grow while those that did not act appropriately could be
@@ -1135,6 +1132,7 @@ then the system was rewarded with its metal ions.
 By rewarding structures whose
 output criteria correlated with specific input criteria (the buzzer sound), the system became better at recognising the buzzer.
 Importantly though, by changing the input criteria, say by using electromagnetic fields rather than vibration, the system could dynamically grow a new type of sensor.
+
 
 In proceedings of an Interdisciplinary Conference on Self-Organizing Systems 
 % (5 and 6 
@@ -1312,7 +1310,7 @@ than Thompson's FPGA and Bird's radio.
 For instance,
 modular robots have been reported that self-assembled, -disintegrated, and -replicated by changing the arrangement of a fixed set of blocks \cite{zykov2005robotics,romanishin20153d,li2019particle,white2005three};
 origami robots that self-folded
-\cite{hawkes2010programmable,felton2014method,miyashita2017robotic,gladman2016biomimetic};
+\cite{hawkes2010programmable,felton2014method,miyashita2017robotic,gladman2016biomimetic,kotikian2019untethered};
 soft robots that underwent plastic deformation or semipermanent elastic deformation
 \cite{shepherd2011multigait,shah2019morphing,shah2020gaining};
 and jamming robots that varied their material stiffness \cite{brown2010universal,narang2018transforming,steltz2009jsel}.
@@ -1365,7 +1363,9 @@ was thus well-specified by whatever displays or motors Pask happened to attach t
 
 In order to achieve epistemic autonomy,
 the system would also need to take control over the kinds 
-of effectors and
+of 
+motor organs,
+effectors, and
 % actions 
 configurations
 it has available to influence the world \cite{cariani1993evolve}.

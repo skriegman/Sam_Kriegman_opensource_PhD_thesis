@@ -1,12 +1,12 @@
 \section{Methods}
-\label{sec:methods}
+\label{sec6:methods}
 
 We evolved locomotive machines constructed from voxels with heterogeneous stiffness. 
 Like many organisms \citep{ruff2006s}, the robot's material stiffness progressively changes in response to mechanical loading incurred as the robot behaves.
 This ontogenetic change occurs independently at each voxel according to an evolved local rule.
 
 
-\subsection{Physical simulation.}
+\subsection*{Physical simulation.}
 
 The soft-matter physics engine \textit{Voxelyze} \citep{hiller2014dynamic} is used to calculate the movement of robots resulting from their interaction with a virtual 3D terrestrial environment.
 Each robot is simulated for 25 times the length of an expansion/contraction cycle (a total of five seconds). 
@@ -16,7 +16,7 @@ The displacement between the starting coordinates and the agent's final center o
 % For a more general purpose repository see \href{https://github.com/skriegman/evosoro}{\textcolor{blue}{\textbf{\texttt{github.com/skriegman/evosoro}}}}
 
 
-\subsection{Heavy materials.}
+\subsection*{Heavy materials.}
 
 % 1e6 -> 1e9 density
 % vol = length^3
@@ -33,7 +33,7 @@ Thus, a robot must carefully balance support with actuation.
 
 
 
-\subsection{Quad-CPPN encoding: $\mathbf{\mathbb{C}_1,\mathbb{C}_2,\mathbb{C}_3,\mathbb{C}_4}$
+\subsection*{Quad-CPPN encoding: $\mathbf{\mathbb{C}_1,\mathbb{C}_2,\mathbb{C}_3,\mathbb{C}_4}$
 }
 
 Following \cite{cheney2013unshackling}, robot physiology is genetically encoded by a Compositional Pattern Producing Network (CPPN) \citep{stanley2007cppn}, a scale-free mapping that biases search toward symmetrical and regular patterns which are known to facilitate locomotion.
@@ -45,12 +45,12 @@ We used four independent CPPNs to separately encode: Geometry, Stiffness, Develo
 
 
 
-\subsection{$\mathbf{\mathbb{C}_1}\;$ Geometry.}
+\subsection*{$\mathbf{\mathbb{C}_1}\;$ Geometry.}
 The geometry of a robot is specified by a bitstring that indicates whether material is present (1) or absent (0) at each lattice point in the workspace, as dictated by $\mathbb{C}_1$.
 The robot's geometric shape is taken to be the largest contiguous collection of present voxels.
 
 
-\subsection{$\mathbf{\mathbb{C}_2}\;$ Stiffness.}
+\subsection*{$\mathbf{\mathbb{C}_2}\;$ Stiffness.}
 Young's modulus is often used as an approximate measure of material stiffness.
 Robots are typically constructed of materials such as metals and hard plastics that have moduli in the order of $10^9 - 10^{12}$ pascals (Pa), whereas soft robots (and natural organisms) are often composed of materials with moduli in the order of
 $10^4 - 10^9$ Pa \citep{rus2015design}.
@@ -64,7 +64,7 @@ The robot's congenital stiffness is set at each voxel by $\mathbb{C}_2$, but may
 % ``Young's modulus is only defined for homogeneous, prismatic bars that are subject to axial loading and small deformations ($< 0.2\%$ elongation for metals) and thus has limited relevance to soft robots and other soft-matter technologies that have irregular (non-prismatic) shape and undergo large elastic or inelastic deformations. Nonetheless, Young’s modulus is a useful measure for comparing the rigidity of the materials that go into a soft robot.'' - Majidi \citep{majidi2014soft}
 
 
-\subsection{$\mathbf{\mathbb{C}_3}\;$ Development.}
+\subsection*{$\mathbf{\mathbb{C}_3}\;$ Development.}
 The robot's stiffness distribution $k$ 
 can change progressively during its lifetime $t$ in response to localized engineering stress $\sigma$ or pressure $p$.
 The rate of change $\alpha_i$ is specified at the $i^{\text{th}}$ voxel by $\mathbb{C}_3$, with possible values in $0\pm10$.
@@ -89,7 +89,7 @@ We compare three developmental variants.
 % \frac{dk_i}{dt}& \,=\, \frac{k_i^*-k_i^{\circ}}{dt}
 % \end{align}
 
-\subsection{$\mathbf{\mathbb{C}_4}\;$ Actuation.}
+\subsection*{$\mathbf{\mathbb{C}_4}\;$ Actuation.}
 % Following \cite{hiller2012automatic,cheney2013unshackling},
 Robots are `controlled by' volumetric actuation: a sinusoidal expansion/contraction of each voxel with a maximum amplitude of 50\% volumetric change.\footnote{The scare quotes are intended to highlight the fact that actuation policies no more dictate the movement of a robot than its geometry.}
 However, linear damping $\xi$ is implemented into the system such that the stiffest material does not actuate (Eq. \ref{eq:damp}). 
@@ -112,7 +112,7 @@ where:
 
 
 
-\subsection{Evolution.}
+\subsection*{Evolution.}
 
 We employed a standard evolutionary algorithm, Age-Fitness-Pareto Optimization \citep{Schmidt2011}, which uses the concept of Pareto dominance and an objective of age (in addition to fitness) intended to promote diversity among candidate designs. 
 
@@ -130,7 +130,7 @@ They are applied by first selecting which networks to mutate, with the possibili
 % Mutations to $\mathbb{C}_1$ are reapplied until valid or a maximum of 1500 attempts (this limit was almost never reached).
 
 
-\subsection{Hypothesis testing.}
+\subsection*{Hypothesis testing.}
 
 We use bootstrapping to construct hypothesis tests.
 All $P$-values are reported with Bonferroni correction for multiple (typically three) comparisons.

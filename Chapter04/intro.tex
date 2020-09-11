@@ -1,5 +1,6 @@
+
 \section{Introduction}
-\label{sec:intro}
+\label{sec4:intro}
 
 
 The shape of life changes on many different time scales.
@@ -43,21 +44,15 @@ This distinction is important as it grounds our hypotheses in the constraints an
 It also allows us to investigate how changes in morphology and control might differentially affect the direction or rate of evolutionary search.
 More specifically, it exposes the previously unknown phenomenon of differential canalization reported here.
 
-Inspired by Hinton and Nowlan, Floreano and Mondada \cite{floreano1996evolution} explored the interaction between learning and evolution in mobile robots with a fixed body plan but plastic neural control structure.
+Inspired by Hinton and Nowlan, Floreano and Mondada \cite{floreano1996plastic} explored the interaction between learning and evolution in mobile robots with a fixed body plan but plastic neural control structure.
 They noted that the acquisition of stable behavior in ontogeny did not correspond to stability (no further change) of individual synapses, but rather was regulated by continuously changing synapses which were dynamically stable.
 In other words, agents exploited this ontogenetic change for behavior, and this prevented its canalization.
 In this paper, we structure development in a way that restricts its exploitation for behavior and thus promotes the canalization of high performing static phenotypes.
-Also, the robot's body plan was fixed in Floreano and Mondada's experiments\cite{floreano1996evolution}, whereas in the work reported here, evolution and development may modify body plans.
+Also, the robot's body plan was fixed in Floreano and Mondada's experiments\cite{floreano1996plastic}, whereas in the work reported here, evolution and development may modify body plans.
 
 
-Several models that specifically address morphological development of embodied agents have been reported in the literature \cite{
-% dellaert1994toward,
-dellaert1996developmental,
-Eggenberger97,
-Bongard01,
-miller2004evolving,
-doursat2009organically
-}.
+Several models that specifically address morphological development of embodied agents have been reported in the literature
+\cite{dellaert1996developmental,Eggenberger97,Bongard01,miller2004evolving,doursat2009organically}.
 However, the relationship between morphological development and evolvability is seldom investigated in such models.
 Moreover, there are exceedingly few cases that considered postnatal change to the body plan of an agent (its resting structural form) as it behaves and interacts with the environment through physiological functioning (at a faster time scale).
 
@@ -71,11 +66,24 @@ More recently, Kriegman \textit{et al.} \cite{kriegman2017minimal} showed how de
 
 We are not aware of any cases reported in the literature to date in which a simulated robot's body and control are simultaneously allowed to change while it is behaving.
 In this paper, we investigate such change in the morphologies and controllers of soft robots as they are evolved for coordinated action in a simulated 3D environment.
-By morphology we mean the current state of a robot’s shape, which is slowly changed over the course of its lifetime by a developmental process.
+By morphology we mean the current state of a robot's shape, which is slowly changed over the course of its lifetime by a developmental process.
 We distinguish this from the controller, which sends propagating waves of actuation throughout the individual, which also affects the instantaneous shape of the robot but to a much smaller degree.
 We here refer to these two processes as `morphology' and `control'.
 As both processes change the shape, and thus behavior, of the robot, this distinction is somewhat arbitrary.
 However, the central claim of this paper, which is that some traits become canalized while others do not, is not reliant on this distinction.
+
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.8\linewidth]{Chapter04/Fig1}
+\caption{\label{fig:blueprint}\textbf{Modeling development.} An evolved soft robot changes its shape during its lifetime (postnatal development), from a walking quadruped into a rolling form. 
+Evolution dictates how a robot's morphology develops by setting each voxel's initial ($\ell_k$) and final ($\ell^*_k$) resting length.
+The length of a single voxel $k$ is plotted to illustrate its (slower) growth and (faster) actuation processes.
+Voxel color indicates the current length of that cell: the smallest voxels are blue, medium sized voxels are green, and the largest voxels are red.
+As robots develop and interact with a physically realistic environment, they generate heterogeneous behavior in terms of instantaneous velocity (bottom arrows).
+Soft robot evolution, development and physiological functioning can be seen in Supplementary \href{https://youtu.be/Ee2sU-AZWC4}{\color{blue}Video S1}.
+}
+\end{figure}
 
 
 We use soft robots because they provide many more degrees of morphological freedom compared to traditional robots composed of rigid links connected by rotary or linear actuators.

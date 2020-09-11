@@ -1,8 +1,8 @@
 \section*{Discussion}
-\label{sec:discussion}
+\label{sec4:discussion}
 
  
-In these experiments, the intersection of two time scales|slow linear development and rapid oscillatory actuation, as from a central pattern generator|generates positive and negative feedback in terms of instantaneous velocity: the robot speeds up and slows down during various points in its lifetime (Supplementary Fig. \hyperref[fig:S2]{S2}J).
+In these experiments, the intersection of two time scales|slow linear development and rapid oscillatory actuation, as from a central pattern generator|generates positive and negative feedback in terms of instantaneous velocity: the robot speeds up and slows down during various points in its lifetime (Supplementary Fig. \ref{fig:S2}J).% \hyperref[fig:S2]{S2}J).
 Prior to canalization, unless all of the phenotypes swept over by an individual in development keep the robot motionless, there will be intervals of relatively superior and inferior performance.
 Evolution can thus improve overall fitness in a descendant by lengthening the time intervals containing superior phenotypes and reducing the intervals of inferior phenotypes. However, this is only possible if such mutations exist.
 
@@ -30,19 +30,15 @@ This finding of differential canalization has important implications for the evo
 Computational and engineered systems generally maintain a fixed form as they behave and are evaluated.
 However, these systems are also extremely brittle when confronted with slight changes in their internal structure, such as damage, 
 or in their external environment such as moving onto a new terrain
-\cite{french1999catastrophic,
-carlson2005ugvs,
-bongard2006resilient}.
+\cite{french1999catastrophic,carlson2005ugvs,bongard2006resilient}.
 Indeed, a perennial problem in robotics and AI is finding general solutions which perform well in novel environments 
-\cite{koos2013transferability,
-nguyen2015deep
-}.
+\cite{koos2013transferability,nguyen2015deep}.
 Our results demonstrate how incorporating morphological development in the optimization of robots can reveal, through differential canalization, characters which are robust to internal changes.
 Robots that are robust to internal changes in their controllers may also be robust to external changes in their environment \cite{bongard2011morphological}.
 Thus, allowing robots to change their structure as they behave might facilitate evolutionary improvement of their descendants, even if these robots will be deployed with static phenotypes or in relatively unchanging environments.
 
 These results are particularly important for the nascent field of soft robotics in which engineers cannot as easily presuppose a robot's body plan and optimize controllers for it because designing such machines manually is unintuitive
-\cite{lipson2014challenges, pfeifer2012challenges}.
+\cite{lipson2014challenges,pfeifer2012challenges}.
 Our approach addresses this challenge, because differential canalization provides a mechanism whereby static yet robust soft robot morphologies may be automatically discovered using evolutionary algorithms for a given task environment.
 Furthermore, future soft robots could potentially alter their shape to best match the current task by selecting from previously trained and canalized forms.
 This change might occur pneumatically, as in Shepherd \textit{et al.} \cite{shepherd2011multigait}, or it could modulate other material properties such as stiffness (e.g.~using a muscular hydrostat).
