@@ -35,14 +35,6 @@ Living systems are more robust, diverse, complex, and supportive of human life t
 % \href{https://youtu.be/kCOKtmmNH90}{\textbf{\texttt{youtu.be/kCOKtmmNH90}}}
 
 
-\begin{figure}[t]
-\centering
-\includegraphics[width=\linewidth]{Chapter07/img/Fig1}
-\caption{\textbf{Designing and manufacturing reconfigurable organisms.} A behavioral goal (e.g., maximize displacement), along with structural building blocks (here, contractile (red) and passive (cyan) voxels), are supplied to an evolutionary algorithm. The algorithm evolves an initially random population and returns the best design that was found. The algorithm is rerun 99 times starting with different random populations, generating a diversity of performant designs \textit{in silico} (A). Performant designs are then filtered by their robustness to random phase-modulation of their contractile cells (B), constructed \textit{in vivo} using developing \textit{Xenopus} cardiomyocyte and epidermal cell progenitors (C-F), and placed on the surface of a petri dish where their behavior is observed and compared to the design's predicted behavior. Discrepancies between \textit{in silico} and \textit{in vivo} behavior are returned to the evolutionary algorithm in the form of constraints on the kinds of designs that can evolve during subsequent design-manufacture cycles (G). Concurrently, tissue layering and shaping techniques are modified such that realized living systems behave more like their virtual model.
-}
-\end{figure}
-
-
 \section{Introduction}
 
 Most modern technologies are constructed from synthetic rather than living materials because the former have proved easier to design, manufacture, and maintain; living systems exhibit robustness of structure and function and thus tend to resist adopting the new behaviors imposed on them. However, if living systems could be continuously and rapidly designed ab initio and deployed to serve novel functions, their innate ability to resist entropy may enable them to far surpass the useful lifetimes of our strongest yet static technologies. As examples of this resistance, embryonic development and regeneration reveal remarkable plasticity, enabling cells or whole organ systems to self-organize adaptive functionality despite drastic deformation (1, 2). Exploiting the computational capacity of cells to function in novel configurations suggests the possibility of creating synthetic morphology that achieves complex novel anatomies via the benefits of both emergence and guided self-assembly (3).
@@ -52,6 +44,36 @@ Currently, there are several methods underway to design and build bespoke living
 Meanwhile, advances in computational search and 3D printing have yielded scalable methods for designing and training machines in silico (9,10) and then manufacturing physical instances of them (11-13). Most of these approaches employ an evolutionary search method (14) that, unlike learning methods, enables the design of the machine's physical structure along with its behavior. These evolutionary design methods continually generate diverse solutions to a given problem, which proves useful as some designs can be instantiated physically better than others. Moreover, they are agnostic to the kind of artefact being designed and the function it should provide: the same evolutionary algorithm can be reconfigured to design drugs (15), autonomous machines (11, 13), metamaterials (16), or architecture (17). 
 
 Here, we demonstrate for the first time a scalable approach for designing novel living systems in silico using an evolutionary algorithm, and we show how the evolved designs can be rapidly manufactured using a cell-based construction toolkit. The approach is organized as a linear pipeline that takes as input a description of the biological building blocks to be used and the desired behavior the manufactured system should exhibit (Fig. 1). The pipeline continuously outputs performant living systems that embody that behavior in different ways. The resulting living systems are novel aggregates of cells that yield novel functions: above the cellular level, they bear little resemblance to existing organs or organisms.
+
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{Chapter07/img/Fig1}
+\caption{\textbf{Designing and manufacturing reconfigurable organisms.} A behavioral goal (e.g., maximize displacement), along with structural building blocks (here, contractile (red) and passive (cyan) voxels), are supplied to an evolutionary algorithm. The algorithm evolves an initially random population and returns the best design that was found. The algorithm is rerun 99 times starting with different random populations, generating a diversity of performant designs \textit{in silico} (A). Performant designs are then filtered by their robustness to random phase-modulation of their contractile cells (B), constructed \textit{in vivo} using developing \textit{Xenopus} cardiomyocyte and epidermal cell progenitors (C-F), and placed on the surface of a petri dish where their behavior is observed and compared to the design's predicted behavior. Discrepancies between \textit{in silico} and \textit{in vivo} behavior are returned to the evolutionary algorithm in the form of constraints on the kinds of designs that can evolve during subsequent design-manufacture cycles (G). Concurrently, tissue layering and shaping techniques are modified such that realized living systems behave more like their virtual model.
+}
+\end{figure}
+
+
+% Fig. 1.  Designing and manufacturing reconfigurable organisms. A behavioral goal (e.g., maximize displacement), along with structural building blocks (here, contractile (red) and passive (cyan) voxels), are supplied to an evolutionary algorithm. The algorithm evolves an initially random population and returns the best design that was found. The algorithm is rerun 99 times starting with different random populations, generating a diversity of performant designs in silico (A; Sect. S5). Performant designs are then filtered by their robustness to random phase-modulation of their contractile cells (B; Sect. S7), constructed in vivo using developing Xenopus cardiomyocyte and epidermal cell progenitors (C-F; Sect. S8), and placed on the surface of a petri dish where their behavior is observed and compared to the design's predicted behavior (Sect. S9). Discrepancies between in silico and in vivo behavior are returned to the evolutionary algorithm in the form of constraints on the kinds of designs that can evolve during subsequent design-manufacture cycles (G; Sect. S6). Concurrently, tissue layering and shaping techniques are modified such that realized living systems behave more like their virtual model (Sect. S8).
+
+
+
+% Fig. 2.  Designing reconfigurable organisms. For a given goal, 100 independent evolutionary trials were conducted in silico (A-C). Each colored line represents the velocity of the fastest-moving design within its clade. Each genome (D) dictates anatomy and behavior by determining where and how voxels are combined, and whether they are passive (cyan) or contractile (red; E). Genomes simulate a developmental process and are described in more detail in Sect. S4. The differing behavioral traces produced by a design (F) are a result of randomly perturbing the actuation of each contractile cell during each evaluation period. The behavioral traces all originate from the same position (blue) but diverge over time until their final destination (red). G: During one evaluation period, after settling under gravity for 1 sec, compressed and expanded contractile voxels are shown in red and green respectively. Because the genotype is scale-free, the anatomical resolution of any design can be increased (H) while preserving geometry (but not necessarily behavior). When all evolutionary trials complete, the most performant design from each trial is extracted (I). The robust design passed to the next stage of the pipeline moves, on average, more rapidly (red curve) than the average speed of the other 99 designs (gray curve).
+
+
+% Fig. 3.  Manufacturing reconfigurable organisms. (A) Aggregation of pluripotent blastula cells harvested from Xenopus laevis embryos. (B) Shaping results in three-dimensional representations of the evolved in silico designs. (C) Layering of cardiac progenitor cells results in contractile cardiomyocyte tissue at specific locations, visualized by red fluorescent lineage tracer. (D) Time-lapse imaging of self-locomotion in an aqueous environment. (E) Emergent behavior of debris aggregation by an individual within the environment and (F) by groups of biological representations over a 24h period (Sect. S10.4). Scale bars indicate 500 {$\mu$}m for A-E and 5 mm for F, respectively.
+
+
+
+% Fig. 4.  Transferal from silico to vivo. The first design selected for fabrication and specific hypothesis testing (A) was the most robust yet stable and energy-efficient configuration of passive (epidermis; green) and contractile (cardiac; red) tissues found by the evolutionary algorithm. The design was evaluated 25 times for 1 minute of simulation time, resulting in 25 movement trajectories (pink curves in C). Six reconfigurable organisms were built which embodied this design (e.g., B) (Sect. S9). Three were evaluated four times and the other three were evaluated five times for 10 minutes each (27 blue curves in C). The organisms' direction of movement matched the design's predicted direction of movement (p<0.01; details in Sect. S9). To determine whether the organisms' movement was a result of chance or due to the design's evolved geometry and tissue placement, geometry and tissue distribution was altered by rotating the design 180{$^{\circ}$} about its transverse plane (D) and evaluating it another 25 times in silico (pink curves in F). Each of the six organisms were likewise inverted (E): four were evaluated five times while the remaining two were only evaluated once (22 blue curves in F). Inverting the design significantly reduces its net displacement (p<0.001), as did inverting the organisms (p<0.0001).
+
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=0.9\linewidth]{Chapter07/img/F2.large.jpg}
+\caption{\textbf{Designing reconfigurable organisms.} For a given goal, 100 independent evolutionary trials were conducted in silico (A-C). Each colored line represents the velocity of the fastest-moving design within its clade. Each genome (D) dictates anatomy and behavior by determining where and how voxels are combined, and whether they are passive (cyan) or contractile (red; E). Genomes simulate a developmental process and are described in more detail in Sect. S4. The differing behavioral traces produced by a design (F) are a result of randomly perturbing the actuation of each contractile cell during each evaluation period. The behavioral traces all originate from the same position (blue) but diverge over time until their final destination (red). G: During one evaluation period, after settling under gravity for 1 sec, compressed and expanded contractile voxels are shown in red and green respectively. Because the genotype is scale-free, the anatomical resolution of any design can be increased (H) while preserving geometry (but not necessarily behavior). When all evolutionary trials complete, the most performant design from each trial is extracted (I). The robust design passed to the next stage of the pipeline moves, on average, more rapidly (red curve) than the average speed of the other 99 designs (gray curve).}
+\end{figure}
+
 
 \section{Results}
 
@@ -67,11 +89,36 @@ The final product of this procedure is a living, three-dimensional approximation
 After several organisms have been deployed and observed, it is likely that they exhibit varying amounts of the desired behavior. Common patterns among the successful systems are distilled down into constraints and supplied back to the evolutionary algorithm, which now evolves designs that are not just performant but also conform to the constraints (Sect. S6). This increases the success likelihood of subsequent design-to-deployment attempts.
 Reconfigurable organisms were evolved to exhibit four different behaviors: locomotion, object manipulation, object transport, and collective behavior (Sect. S10). To achieve this, the pipeline was employed four times. 
 
+
+
+
+
+\begin{figure}[!ht]
+\centering
+% \includegraphics[trim={100pt 100pt 100pt 100pt},clip,width=0.8\linewidth]{Chapter07/img/Fig3_converted_from_psd_by_Josh.pdf}
+\includegraphics[width=0.857\linewidth]{Chapter07/img/F3.large.jpg}
+\caption{\textbf{Manufacturing reconfigurable organisms.} (A) Aggregation of pluripotent blastula cells harvested from Xenopus laevis embryos. (B) Shaping results in three-dimensional representations of the evolved in silico designs. (C) Layering of cardiac progenitor cells results in contractile cardiomyocyte tissue at specific locations, visualized by red fluorescent lineage tracer. (D) Time-lapse imaging of self-locomotion in an aqueous environment. (E) Emergent behavior of debris aggregation by an individual within the environment and (F) by groups of biological representations over a 24h period (Sect. S10.4). Scale bars indicate 500 {$\mu$}m for A-E and 5 mm for F, respectively.}
+\end{figure}
+
+
+
+
 \subsection*{Locomotion.}  
 
 To obtain a diverse population of designs, 100 independent trials of the evolutionary algorithm were conducted (Fig. 2A-C), each starting from a different set of initial random designs. During each trial, designs were selected based on net displacement achieved during a 10 second period (with randomized, phase-modulated contraction, cycling at 2 Hz). Additional selection pressures were applied to maintain diversity by inducing competition within and between unique genetic lineages within each trial (19), yielding unique ecological dynamics (Sect. S5). The most fit designs at the end of each trial were extracted (Fig. 1A) and passed through the robustness and build filters (Fig. S4). During this filtering process, buildable and scalable designs that retain rapid locomotion during random perturbations are selected for manufacture (Figs. 3 and S6). 
 
 Cilia, which produce locomotion through metachronal waves (the generation of sequential and directional propagating waves, as opposed to synchronized beating), were not modeled in silico and were suppressed in vivo through embryonic Notch ICD mRNA microinjection (20). Thus, any displacement results from contractile cardiac muscle tissue that pushes against the surface of the dish. This simplifies the simulation and its comparison to the realized organism. Trajectories of deciliated designs are compared in silico and in vivo, in two orientations (upright and inverted 180{$^{\circ}$} about the transverse plane) thus isolating the impact of the designed morphology on the difference between predicted and realized behavior. For at least one design, the data suggest that the desired behavior successfully transferred when it was upright but not when inverted (Fig. 4). More specifically, the upright organisms' direction of movement matched that of the in silico design under random perturbations (p<0.01; details in Sect. S9), and inverting the design significantly reduced its net displacement both in silico (p<0.001) and in vivo (p<0.0001). This suggests that successful transference did not result by chance but rather due to the design itself. 
+
+
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\linewidth]{Chapter07/img/F4.large.jpg}
+\caption{\textbf{Transferal from silico to vivo.} The first design selected for fabrication and specific hypothesis testing (A) was the most robust yet stable and energy-efficient configuration of passive (epidermis; green) and contractile (cardiac; red) tissues found by the evolutionary algorithm. The design was evaluated 25 times for 1 minute of simulation time, resulting in 25 movement trajectories (pink curves in C). Six reconfigurable organisms were built which embodied this design (e.g., B) (Sect. S9). Three were evaluated four times and the other three were evaluated five times for 10 minutes each (27 blue curves in C). The organisms' direction of movement matched the design's predicted direction of movement (p<0.01; details in Sect. S9). To determine whether the organisms' movement was a result of chance or due to the design's evolved geometry and tissue placement, geometry and tissue distribution was altered by rotating the design 180{$^{\circ}$} about its transverse plane (D) and evaluating it another 25 times in silico (pink curves in F). Each of the six organisms were likewise inverted (E): four were evaluated five times while the remaining two were only evaluated once (22 blue curves in F). Inverting the design significantly reduces its net displacement (p<0.001), as did inverting the organisms (p<0.0001).}
+\end{figure}
+
+
+
 
 \subsection*{Object manipulation.}  
 
@@ -173,21 +220,6 @@ All samples were imaged live in 0.75x MMR at 20{$^{\circ}$}C using a Nikon SMZ-1
 % C. Waldner, M. Roose, G.U. Ryffel, Red fluorescent Xenopus laevis: a new tool for grafting analysis. BMC developmental biology, 9, 37 (2009).
 % C.W. Beck, J.M. Slack, A developmental pathway controlling outgrowth of the Xenopus tail bud. Development, 126, 1611-1620 (1999).
 
-
-
-
-Fig. 1.  Designing and manufacturing reconfigurable organisms. A behavioral goal (e.g., maximize displacement), along with structural building blocks (here, contractile (red) and passive (cyan) voxels), are supplied to an evolutionary algorithm. The algorithm evolves an initially random population and returns the best design that was found. The algorithm is rerun 99 times starting with different random populations, generating a diversity of performant designs in silico (A; Sect. S5). Performant designs are then filtered by their robustness to random phase-modulation of their contractile cells (B; Sect. S7), constructed in vivo using developing Xenopus cardiomyocyte and epidermal cell progenitors (C-F; Sect. S8), and placed on the surface of a petri dish where their behavior is observed and compared to the design's predicted behavior (Sect. S9). Discrepancies between in silico and in vivo behavior are returned to the evolutionary algorithm in the form of constraints on the kinds of designs that can evolve during subsequent design-manufacture cycles (G; Sect. S6). Concurrently, tissue layering and shaping techniques are modified such that realized living systems behave more like their virtual model (Sect. S8).
-
-
-
-Fig. 2.  Designing reconfigurable organisms. For a given goal, 100 independent evolutionary trials were conducted in silico (A-C). Each colored line represents the velocity of the fastest-moving design within its clade. Each genome (D) dictates anatomy and behavior by determining where and how voxels are combined, and whether they are passive (cyan) or contractile (red; E). Genomes simulate a developmental process and are described in more detail in Sect. S4. The differing behavioral traces produced by a design (F) are a result of randomly perturbing the actuation of each contractile cell during each evaluation period. The behavioral traces all originate from the same position (blue) but diverge over time until their final destination (red). G: During one evaluation period, after settling under gravity for 1 sec, compressed and expanded contractile voxels are shown in red and green respectively. Because the genotype is scale-free, the anatomical resolution of any design can be increased (H) while preserving geometry (but not necessarily behavior). When all evolutionary trials complete, the most performant design from each trial is extracted (I). The robust design passed to the next stage of the pipeline moves, on average, more rapidly (red curve) than the average speed of the other 99 designs (gray curve).
-
-
-Fig. 3.  Manufacturing reconfigurable organisms. (A) Aggregation of pluripotent blastula cells harvested from Xenopus laevis embryos. (B) Shaping results in three-dimensional representations of the evolved in silico designs. (C) Layering of cardiac progenitor cells results in contractile cardiomyocyte tissue at specific locations, visualized by red fluorescent lineage tracer. (D) Time-lapse imaging of self-locomotion in an aqueous environment. (E) Emergent behavior of debris aggregation by an individual within the environment and (F) by groups of biological representations over a 24h period (Sect. S10.4). Scale bars indicate 500 {$\mu$}m for A-E and 5 mm for F, respectively.
-
-
-
-Fig. 4.  Transferal from silico to vivo. The first design selected for fabrication and specific hypothesis testing (A) was the most robust yet stable and energy-efficient configuration of passive (epidermis; green) and contractile (cardiac; red) tissues found by the evolutionary algorithm. The design was evaluated 25 times for 1 minute of simulation time, resulting in 25 movement trajectories (pink curves in C). Six reconfigurable organisms were built which embodied this design (e.g., B) (Sect. S9). Three were evaluated four times and the other three were evaluated five times for 10 minutes each (27 blue curves in C). The organisms' direction of movement matched the design's predicted direction of movement (p<0.01; details in Sect. S9). To determine whether the organisms' movement was a result of chance or due to the design's evolved geometry and tissue placement, geometry and tissue distribution was altered by rotating the design 180{$^{\circ}$} about its transverse plane (D) and evaluating it another 25 times in silico (pink curves in F). Each of the six organisms were likewise inverted (E): four were evaluated five times while the remaining two were only evaluated once (22 blue curves in F). Inverting the design significantly reduces its net displacement (p<0.001), as did inverting the organisms (p<0.0001).
 
 
 
