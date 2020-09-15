@@ -115,8 +115,10 @@ Seven key benefits were uncovered and scrutinized:
     % This exposed the previously unknown phenomenon of differential canalization reported here.
     I refer to this as \textit{differential canalization}.
     
-    \item Protean body plans foster ``zero-shot'' generalization (on the very first try, without adjustment) to fabrication errors (chapter 5).
-    The amount of generalization in manually-canalized machines was found to depend on the kinds of interoceptive signals used to guide their morphological change during optimization.
+    \item Protean body plans foster ``zero-shot'' generalization \cite{socher2013zero} (on the very first try, without adjustment) to 
+    previously-unseen static morphologies
+    (chapter 5).
+    The amount of generalization in was found to depend on the kinds of interoceptive signals used to guide their morphological change during optimization.
     
     \item Protean body plans amplify robustness to damage (chapter 6).
     This is because a sufficiently deformable body can in some cases morph to ``resonate'' with an existing control policy---tuned prior to damage---to regenerate behavioral competence.
@@ -209,7 +211,7 @@ Later, when more exact concepts have been developed (e.g.~how physics is simulat
     Time is of course relative to an observer---and there are nested observers.
     Here-and-now is minutes for a squirrel burying acorns, seconds for a dog chasing the squirrel, milliseconds for a racing heart, microseconds for its gated ion channels, pico- or femtoseconds for its vibrating molecular bonds.
     We can denote these finer timescales $\theta_1, \theta_2, \ldots$
-    but that won't be strictly necessary for the purposes of this thesis.
+    but that will not be strictly necessary for the purposes of this thesis.
     
     $T$ and $t$ are sufficient to describe a basic synchronous evolutionary algorithm in time.
     For the entire $n$-th generation of evolution, $T=n$ as a population of designs (robot phenotypes)
@@ -239,8 +241,8 @@ Later, when more exact concepts have been developed (e.g.~how physics is simulat
         % All of the other variables due to the robot's body or environment that are varied by $\mathbf{\Pi}$, fall into $\mathbf{\Pi'}$: they are ``out of control''.
         Traditionally, a robot's structure, shape and material properties are not varied by $\mathbf{\Pi}$: they are ``out of control''.
         They are, from the perspective of $\mathbf{\Pi}$, part of the environment.
-        This body/policy 
-        dissection is ubiquitous in robotics, and often useful for analyzing and predicting behavior.
+        This Cartesian body/policy
+        dissection is ubiquitous in AI, and sometimes useful for predicting behavior.
         }
     \end{minipage}
     \end{figure}
@@ -339,7 +341,7 @@ Later, when more exact concepts have been developed (e.g.~how physics is simulat
     
     For a protean machine that can intentionally change both shape and configuration, the distinction between the two becomes somewhat arbitrary.
     Are they not both simply ``actuation''?
-    This distinction is most secure in terms of the time scales on which processes of shape change 
+    This distinction is perhaps most secure in terms of the time scales on which processes of shape change 
     % (development) 
     and configuration change 
     % (behavior) 
@@ -500,8 +502,7 @@ An evolved simulated robot (left) and its 3D printed equivalent (right) \cite{li
 }
 \end{figure}
 
-Although Sims, Ventrella, Lipson and Pollack, and many, many others \cite{ventrella1998designing,lichtensteiger1999evolving,ray2001aesthetically,bongard2003evolving,hornby2002creating,komosinski2001comparison,komosinski2003framsticks,hotz2004asymmetric,vaughan2004evolution,shim2006evolving,bongard2006resilient,chaumont2007evolving,bongard2010utility,auerbach2010evolving,auerbach2010dynamic,lehman2011evolving,hiller2012automatic,cheney2013unshackling,cheney2014electro,lessin2013open,auerbach2014environmental,cheney2015tight,brodbeck2015morphological,lessin2015soft,cellucci20171d,cheney2018scalable,rosser2019sim2real} used an Evolutionary Algorithm (EA),
-% \cite{fogel1998evolutionary}),
+Although Sims, Ventrella, Lipson and Pollack, and many, many others \cite{ventrella1998designing,lichtensteiger1999evolving,ray2001aesthetically,bongard2003evolving,hornby2002creating,komosinski2001comparison,komosinski2003framsticks,hotz2004asymmetric,vaughan2004evolution,shim2006evolving,bongard2006resilient,chaumont2007evolving,bongard2010utility,auerbach2010evolving,auerbach2010dynamic,lehman2011evolving,hiller2012automatic,cheney2013unshackling,cheney2014electro,lessin2013open,auerbach2014environmental,cheney2015tight,brodbeck2015morphological,lessin2015soft,cellucci20171d,cheney2018scalable,rosser2019sim2real} used an Evolutionary Algorithm (EA) to design simulated and/or physical robots,
 evolutionary robotics is independent of the specific procedure used to automatically generate and test designs.%
 \footnote{%
 Evolutionary robotics can be evolutionary robotics without an Evolutionary Algorithm because
@@ -526,7 +527,7 @@ Evolutionary Algorithms \cite{fogel1998evolutionary,cliff1993explorations,florea
 First, EAs require a population of agents (candidate designs) spread out on the fitness landscape,%
 \footnote{%
 A ``fitness landscape'' is a metaphorical terrain
-used to conceptualize multidimensional design space in terms of more familiar notions of topographical space.
+used to conceptualize multidimensional design space in terms of more familiar notions of 2D or 3D topographical space.
 Design variants are mapped to coordinates on the horizontal axis (Fig.~\ref{fig:baldwin2d}) or plane (Fig.~\ref{fig:baldwin3d}).
 The elevation of this landscape is fitness (higher is better).
 Unlike a phase-space or field, which describes the tendency of state transitions in ontogeny, a fitness landscape describes changes in fitness due to changes in design.
@@ -549,7 +550,7 @@ Evolution has no such foresight.
 % \vspace{1em}
 
 \begin{algorithm}
-\caption{\textbf{Evolution.}}\label{alg:evo}
+\caption{\hspace{-4pt}\textbf{: Evolution.}}\label{alg:evo}
 % \vspace{-8pt}
 % \noindent\rule{\textwidth}{0.5pt}
 \begin{algorithmic}[1]
@@ -668,17 +669,19 @@ Depending on the size of the network, thousands or millions (or hundreds of bill
 Certain aspects of robot behavior are generated by the precise orchestration of its parts.
 When more parts are added from design revisions or subtracted from wear and tear, 
 the mapping from sensors to motors---the control policy ($\Pi$ in Fig.~\ref{fig:policy})---could be rendered more or less obsolete for the current task environment \cite{bongard2006resilient,cully2015robots}.
-Other aspects of behavior are generated by virtue of embodiment and the laws of physics alone, such as rolling down a declined plane, and the swing phase of human walking.
+
+Other aspects of behavior are generated by virtue of embodiment and the laws of physics alone, such as rolling down a declined plane, and the swing phase of human walking \cite{Collins1082}.
 From the controller's perspective, such behaviors, or aspects thereof, are passive: the body and environment provide them ``for free'' ($\Pi'$ in Fig.~\ref{fig:policy}).
 The control system need not spend any of its valuable resources orchestrating this behavior from scratch; instead, it may exploit these passive dynamics, gently guiding them when necessary, to render useful work \cite{vaughan2004evolution}.
-However, if control is predicated on certain body-environment interactions occurring automatically, 
-and the body or environment changes,
-the controller will once again need to 
-learn to orchestrate entirely new interactions.
+However, if control is predicated on particular body-environment interactions occurring automatically, 
+and the body or environment change and disrupt this interplay,
+the controller will need to carefully redistribute its computational resources to steer these additional aspects of behavior while maintaining other aspects with less computational oversight.
+% Vaughn's work shows that passive dynamics can be a scaffold, not a disruptive phenomenon.
+% Because now the controller does need to control this interaction, that no longer happens for free
 
-The behavioral consequences of physical mutations or damage are particularly harsh when morphology is ontogenetically-static, because any change to behavior manifests instantly and permanently from deployment.
-It is usually easier to learn/evolve a totally new controller/robot than to adjust an existing morphologically-static system \cite{cheney2016difficulty}.
-Thus, much work has attempted to reduce the behavioral repercussions of design modifications \cite{cheney2018scalable}.
+The behavioral consequences of physical mutations or damage are particularly harsh when morphology is ontogenetically-static, because any change to behavior manifests instantly and permanently from deployment or time of damage.
+It is usually easier to achieve acceptable levels of fitness by holding the body plan fixed throughout optimization and focus solely on learning better controllers for the given body, regardless of the body's fitness potential \cite{cheney2016difficulty}.
+Thus, much work has attempted to reduce the behavioral repercussions of morphological mutations \cite{cheney2018scalable}.
 A natural way
 to reduce the behavioral impact of a mutation 
 is to spread that impact across a period of time: development.
@@ -760,14 +763,14 @@ Proximity to the great design determines the speed and reliability with which it
 When picturing Hinton and Nolwan's idealization as a single column of high fitness in the middle of an abstract 1D design space (Fig.~\ref{fig:baldwin2d}), it can be difficult to imagine how evolution moves through a real, multidimensional search space. 
 So at the risk of being redundant, 
 I have included a second depiction of the Baldwin effect (Fig.~\ref{fig:baldwin3d}) in which the vertical axis is again fitness, but in which the horizontal axes directly map onto continuous parameters of the design.
-Development unfolds on a line in this space, with the vast majority of possible trajectories missing the good trait combination.%
+Development unfolds on a line in this space, with the vast majority of possible trajectories missing the good trait combination (the red spike of high fitness in Fig.~\ref{fig:baldwin3d}).%
 \footnote{%
 There are typically many such (potentially Baldwinifiable) local optima, and so there is also evolution: a population spread out on the landscape, not just a single developmental robot.%
 } 
 Let's call the good one ($x^*,y^*$).
 Evolution discretely samples the space by setting the initial conditions ($x_0,y_0$) and how development may unfold across the landscape (curvature and length of the line) in time (acceleration along the curve) until death ($x_{\tau},y_{\tau}$).
 Once found, successful developmental trajectories can become canalized by evolution such that the good trait combination becomes increasingly likely in future descendants.
-In the limit the line of development shrinks until $(x_0,y_0) = (x_{\tau},y_{\tau}) = (x^*,y^*)$.
+In the limit, the line of development shrinks until $(x_0,y_0) = (x_{\tau},y_{\tau}) = (x^*,y^*)$.
 
 % Note that it is also possible for a continuum of highly-fit variations on a design to exist on a manifold that is isolated from the surrounding search space.
 
@@ -932,6 +935,7 @@ loss of a single leg to injury.
 % to coordinate their fixed parts the currently has.
 But they do not have the requisite variety to recover from deeper mechanical damage, such as the removal of all limbs or being chopped into a hundred smaller pieces.
 
+
 It's not just that they can't re-generate structure, motors or sensors.
 It's that they can't generate these
 body parts
@@ -984,7 +988,7 @@ the designer predicted to be relevant for the problem at hand.
 
 
 
-% \newpage
+\newpage
 \section{A Protean Machine?}
 
 \begin{changemargin}{4em}{4em} 
