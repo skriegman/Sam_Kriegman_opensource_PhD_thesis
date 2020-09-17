@@ -502,7 +502,7 @@ An evolved simulated robot (left) and its 3D printed equivalent (right) \cite{li
 }
 \end{figure}
 
-Although Sims, Ventrella, Lipson and Pollack, and many, many others \cite{ventrella1998designing,lichtensteiger1999evolving,ray2001aesthetically,bongard2003evolving,hornby2002creating,komosinski2001comparison,komosinski2003framsticks,hotz2004asymmetric,vaughan2004evolution,shim2006evolving,bongard2006resilient,chaumont2007evolving,bongard2010utility,auerbach2010evolving,auerbach2010dynamic,lehman2011evolving,hiller2012automatic,cheney2013unshackling,cheney2014electro,lessin2013open,auerbach2014environmental,cheney2015tight,brodbeck2015morphological,lessin2015soft,cellucci20171d,cheney2018scalable,rosser2019sim2real} used an Evolutionary Algorithm (EA) to design simulated and/or physical robots,
+Although Sims, Ventrella, Lipson and Pollack, and many, many others \cite{ventrella1998designing,lichtensteiger1999evolving,ray2001aesthetically,bongard2003evolving,hornby2002creating,komosinski2001comparison,komosinski2003framsticks,hotz2004asymmetric,vaughan2004evolution,paul2006design,shim2006evolving,bongard2006resilient,chaumont2007evolving,bongard2010utility,auerbach2010evolving,auerbach2010dynamic,lehman2011evolving,hiller2012automatic,cheney2013unshackling,cheney2014electro,lessin2013open,auerbach2014environmental,cheney2015tight,brodbeck2015morphological,lessin2015soft,cellucci20171d,cheney2018scalable,rosser2019sim2real} used an Evolutionary Algorithm (EA) to design simulated and/or physical robots,
 evolutionary robotics is independent of the specific procedure used to automatically generate and test designs.%
 \footnote{%
 Evolutionary robotics can be evolutionary robotics without an Evolutionary Algorithm because
@@ -607,11 +607,8 @@ However, there has not been much of a march of progress for evolved robots eithe
 Despite vast increases in computational power since 1994
 and major advances in additive manufacturing after 2000,
 evolutionary robotics has floundered in a sea of Sims-like virtual creatures (Fig.~\ref{fig:sims}) and Lipsonian machines (Fig.~\ref{fig:lipson}).
-Apart from the work documented in this thesis,
-there have only been three examples  \cite{hiller2012automatic,brodbeck2015morphological,cellucci20171d} of evolved physical
-robots published since \citet{lipson2000automatic}.
-% primordial crawlers.
-% (This thesis contributes a few more.)
+In the two decades after \citet{lipson2000automatic},
+very few \cite{hornby2003generative,paul2006design,hiller2012automatic,faina2013edhmor,brodbeck2015morphological,cellucci20171d} have endeavored to evolve physical robots.
 Even in silico,
 free from most real world constraints,
 scant progress has been made scaling the complexity and competence
@@ -1007,7 +1004,7 @@ I was leaning out of the window, while Gordon studied the cell.
 
 
 \noindent
-There is a Cartesian bias in modern AI of manually presupposing a body plan and then building (ever deeper, hierarchical and non-linear) mappings between its fixed percepts (sensors) and fixed action space (motors) \cite{lecun2015deep}.
+There is a Cartesian bias in modern AI of presupposing a body plan and then building (ever deeper, hierarchical and non-linear) mappings between its fixed percepts (sensors) and fixed action space (motors) \cite{lecun2015deep}.
 Increasingly protean machines can,
 as we will see,
 increasingly determine their own categories of perception and action, 
@@ -1261,6 +1258,13 @@ processing. But that would require the overthrow of yet another paradigm.
 % \cite{chen2020classification}
 
 % \noindent
+
+By virtue of greater and greater morphological autonomy, increasingly protean machines can possess greater and greater robustness, agency and epistemic autonomy.
+However, optimizing a system whose sensor/motor modalities are continuously forming and reforming poses several ill-defined intellectual and technical problems.
+If the current paradigm of Cartesian AI is to be overthrown in favor of a more Paskian approach,
+additional empirical studies will need to be undertaken to more precisely articulate these problems and their potential solutions.
+This section traces such work in literature from \citet{pask1958physical} to modern embodied machines and beyond.
+
 After \citet{pask1958physical},
 two artificial systems were reported in the literature that evolved de novo sensitivity using hardware that was reconfigurable in situ.
 Both were conceived and built at the University of Sussex.
