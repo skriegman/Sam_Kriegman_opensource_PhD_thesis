@@ -236,7 +236,7 @@ Later, when more exact concepts have been developed (e.g.~how physics is simulat
         \centering
         \includegraphics[width=\linewidth]{fig/sensor-policy-motor.pdf}
         \caption{\label{fig:policy}\textbf{Functional decomposition of state.} A set of sensors {\rm\textbf{S}} are input to a policy $\mathbf{\Pi}$ which controls a set of motors {\rm\textbf{M}}.
-        Motors influence the environment $\mathbf{\Pi'}$, sensors record the repercussions.
+        Motors influence the environment $\mathbf{\Pi'}$, sensors record the repercussions of actions.
         % Some attributes of the robot can be purposefully varied by the robot in reaction to its sensor readings: they are in $\mathbf{\Pi}$. 
         % All of the other variables due to the robot's body or environment that are varied by $\mathbf{\Pi}$, fall into $\mathbf{\Pi'}$: they are ``out of control''.
         Traditionally, a robot's structure, shape and material properties are not varied by $\mathbf{\Pi}$: they are ``out of control''.
@@ -507,9 +507,7 @@ evolutionary robotics is independent of the specific procedure used to automatic
 \footnote{%
 Evolutionary robotics can be evolutionary robotics without an Evolutionary Algorithm because
 any design process inevitability involves an evolutionary process of generate-and-test \cite{dennett1975law} on one spatiotemporal scale or another.
-% It may be useful to call a particular strand of evolved robots something else.
-% Deep Development, for instance,
-% if a deep neural network is trained to learn how to seed the development of robots.
+% It may be useful to call a particular strand of evolved robots something else
 }
 EAs happen to be particularly useful in this domain because, apart from being exceedingly simple and parallelizable (Algorithm~\ref{alg:evo}),
 % The benefit of evolutionary algorithms is that 
@@ -590,7 +588,7 @@ configuration changes.
 % behavior
 
 
-Despite not using an Evolutionary Algorithm, this too is evolutionary robotics.
+Despite not using a certified Evolutionary Algorithm, this too is evolutionary robotics.
 Indeed, the line between RL and EAs 
 is becoming so thin, the two are almost indistinguishable.
 There are EAs that act more like a single agent learning than a population evolving \cite{salimans2017evolution}.
@@ -655,7 +653,7 @@ One reason that evolving robots
 % at scale
 has proven so challenging is the very fact that robots are embodied and situated.
 Local structural revisions, such as adding a fifth rotor to a functioning quadcopter, tend to have global behavioral repercussions.
-Thus, it is usually challenging to find a series of small adjustments that result in increasingly better design. 
+It is usually difficult to find a series of small adjustments that result in increasingly better design. 
 This property makes physical artifacts much more difficult to optimize than disembodied systems such as deep neural networks, which tend to preserve their behavior in the face of sweeping global revisions.\footnote{%
 The most common method for training artificial neural nets is backpropagation of error, which
 estimates the gradient with respect to each weight of the network.
@@ -672,12 +670,12 @@ From the controller's perspective, such behaviors, or aspects thereof, are passi
 The control system need not spend any of its valuable resources orchestrating this behavior from scratch; instead, it may exploit these passive dynamics, gently guiding them when necessary, to render useful work \cite{vaughan2004evolution}.
 However, if control is predicated on particular body-environment interactions occurring automatically, 
 and the body or environment change and disrupt this interplay,
-the controller will need to carefully redistribute its computational resources to steer these additional aspects of behavior while maintaining other aspects with less computational oversight.
+the controller will need to carefully redistribute its computational resources to steer these additional interactions while maintaining other aspects of behavior with less computational oversight.
 % Vaughn's work shows that passive dynamics can be a scaffold, not a disruptive phenomenon.
 % Because now the controller does need to control this interaction, that no longer happens for free
 
 The behavioral consequences of physical mutations or damage are particularly harsh when morphology is ontogenetically-static, because any change to behavior manifests instantly and permanently from deployment or time of damage.
-It is usually easier to achieve acceptable levels of fitness by holding the body plan fixed throughout optimization and focus solely on learning better controllers for the given body, regardless of the body's fitness potential \cite{cheney2016difficulty}.
+It is usually easier to achieve acceptable levels of fitness by holding the body plan fixed throughout optimization and focusing solely on learning better controllers for the given body, regardless of the body's fitness potential \cite{cheney2016difficulty}.
 Thus, much work has attempted to reduce the behavioral repercussions of morphological mutations \cite{cheney2018scalable}.
 A natural way
 to reduce the behavioral impact of a mutation 
