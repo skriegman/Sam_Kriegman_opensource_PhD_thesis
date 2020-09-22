@@ -1,49 +1,5 @@
 
 
-
-% \chapter[Structure]{\href{https://ieeexplore.ieee.org/abstract/document/9116004}{\color{blue}Structure}}
-
-% \textbf{Appeared as:}\\
-% S.~Kriegman et al.,
-% Scalable sim-to-real transfer of soft robot designs,
-% \textit{Proceedings of the IEEE International Conference on Soft Robotics (RoboSoft)} (2020).
-
-
-% \chapter[Shape]{\href{https://dl.acm.org/doi/abs/10.1145/3071178.3071296}{\color{blue}Shape}}
-
-% \textbf{Appeared as:}\\
-% S.~Kriegman, et al., A minimal developmental model can increase evolvability in soft robots. \textit{Proceedings of the Genetic and Evolutionary Computation Conference} (2017).
-
-
-% \chapter[Shape and Configuration]{\href{https://www.nature.com/articles/s41598-018-31868-7}{\color{blue}Shape and Configuration}}
-
-% \textbf{Appeared as:}\\
-% S.~Kriegman, et al., How morphological development can guide evolution. \textit{Scientific reports} \textbf{8}, 13934 (2018).
-
-
-% \chapter[Material, Structure, Configuration]{\href{https://arxiv.org/abs/1804.02257}{\color{blue}Material, Structure, Configuration}}
-
-% \textbf{Appeared as:}\\
-% S.~Kriegman et al., Interoceptive robustness through environment-mediated morphological development. \textit{Proceedings of the Genetic and Evolutionary Computation Conference} (2018).
-
-
-% \chapter[Structure, Shape, Configuration]{\href{http://www.roboticsproceedings.org/rss15/p28.html}{\color{blue}Structure, Shape, Configuration}}
-
-% \textbf{Appeared as:}\\
-% S.~Kriegman et al., Automated shapeshifting for function recovery in damaged robots. \textit{Proceedings of Robotics: Science and Systems} (2019).
-
-
-% \chapter[Xenobots: Material, Structure, Shape, Configuration]{\href{https://www.pnas.org/content/117/4/1853}{\color{blue}Xenobots: \\ {\LARGE Material, Structure, Shape, Configuration}}}
-
-% \textbf{Appeared as:}\\
-% S.~Kriegman et al., A scalable pipeline for designing reconfigurable organisms. 
-% \textit{Proceedings of the National Academy of Sciences (PNAS)} (2020).
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
 \chapter{Argument}
 
 
@@ -159,15 +115,15 @@ at Sussex University in the 1990s), protean machines remain a neglected research
 To overcome some of the conceptual challenges that arise when designing protean machines,
 this thesis demonstrated
 a variety of automated design tools built up over the past 25 years in the field of evolutionary robotics, and added a few new ones along the way.
-To overcome some of the operational concerns that emerge when building robots from synthetic materials,
+To overcome some of the operational concerns that emerge when building robots from artificial materials, 
 an algorithmic pipeline was introduced for the 
 automated design of completely biological machines,
 which are popularly referred to as ``xenobots''.
 
 
 Prior to the work presented here,
-there had only been four cases of evolved physical robots reported in the literature
-\cite{lipson2000automatic,hiller2012automatic,brodbeck2015morphological,cellucci20171d}.
+very few cases of evolved physical robots had been reported in the literature
+\cite{hornby2003generative,paul2006design,hiller2012automatic,faina2013edhmor,brodbeck2015morphological,cellucci20171d}.
 In each instance, structure and configuration patterns were evolved, but the robot could not change its body plan during operation.
 % configuration alternatives.
 The first experiment reported here likewise evolved ontogenetically static structures which were manufactured in reality (chapter 2).
@@ -462,7 +418,8 @@ In doing so we realized a machine that recovered more function than an otherwise
 
 Because the robot had ill-specified shape,
 it could deform to construct its new effectors, surface contact geometries, and novel mechanisms for the storage/release of elastic strain energy.
-The robot automatically found shapes that maintained forward locomotion in the face of unexpected structural changes.
+Using a simple evolutionary algorithm, 
+the robot automatically generated and tested body shapes until it found shapes that maintained forward locomotion in the face of unexpected structural changes.
 
 We found that, especially in the case of ``deep insult'', such as removal of all four of the robot's legs, the damaged machine evolves shape changes that not only recover the original level of function (locomotion) as before, but can in fact surpass the original level of performance (speed).
 This suggests that shape change, instead of control readaptation, may be a better method to recover function after damage in some cases.
@@ -631,14 +588,14 @@ Thus, by virtue of structure and distribution of material (tissue types), new ki
 \subsection{Future Work}
 
 
-The first computer-designed organisms were called reconfigurable organisms (Fig.~\ref{fig:synthbio}) because their configuration spaces could be changed by combining together different living materials (cells) into different structures.
-This is a hat tip to reconfigurable modular robots which are free to attach/detach during assembly and sometimes behavior, thus blurring the line between structure and configuration  \cite{pathak2019learning}.
+The first computer-designed organisms were called reconfigurable organisms (Fig.~\ref{fig:synthbio}) because their configuration spaces were changed by combining together different cells into novel structures.
+This is a hat tip to reconfigurable modular robots in which robot modules are free to attach/detach during assembly and sometimes behavior, thus blurring the line between structure and configuration  \cite{pathak2019learning}.
 Xenobots are a particular kind of reconfigurable organism.
 If we made a batch of reconfigurable organisms out of cells taken from early embryos of the
 African elephant (\textit{Loxodonta})
 instead of the African clawed frog (\textit{Xenopus laevis})
 then they would be called ``loxobots'' not ``xenobots''.
-There is also the possibility of chimeras (mixtures of species) and biohybrids (mixtures of living and synthetic materials).
+There is also the possibility of chimeras (mixtures of species) and biohybrids (mixtures of living and artificial materials).
 
 
 Reconfigurable organisms are assembled according to a blueprint which could be computer-designed or human-designed.
@@ -677,7 +634,7 @@ expedite the acquisition of performant robust behaviors,
 even if the system is later deployed with a realtively static morphology.
 The penultimate chapter described the first organisms to evolve in computer simulations, instead of physically on Earth.
 By building novel multicellular organisms without genetic engineering, we have learned a great deal about the phenotypic plasticity inherent in development but missing in conventional robots.
-Ultimately, this knowledge will be put to work developing useful protean technologies composed of living systems, synthetic materials, or admixtures of both.
+Ultimately, this knowledge will be put to work developing useful protean technologies composed of living systems, artificial materials, or admixtures of both.
 
 
 
