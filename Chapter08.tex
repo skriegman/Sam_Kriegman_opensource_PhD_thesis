@@ -56,7 +56,7 @@ as they
 moved through their environments.
 The intersection of these 
 % ill-specified 
-traits across different timescales generated positive and negative feedback in terms of instantaneous velocity: 
+traits across different timescales generated positive and negative interference in terms of instantaneous velocity: 
 robots sped up (synergy across developing traits) and slowed down (interference between traits) during various points in their lifetime.
 Unless all of the phenotypes swept over by an individual in development keep the robot motionless, there will be intervals of relatively superior and inferior performance.
 Evolution can thus improve overall fitness in a descendant by lengthening the time intervals containing superior phenotypes and reducing the intervals of inferior phenotypes. 
@@ -339,10 +339,12 @@ By doing so we realized robots that were equally fit but more robust to extreme 
 
 
 \begin{itemize}
-    \item \textit{Material} [ill-specified]: dense voxels with evolved initial elasticity (Young's modulus between $10^4$ and $10^{10}$ MPa), and evolved rate of ontogenetic softening/stiffening in response to engineering stress / pressure.
-    \item \textit{Structure}: evolved number and placement within a 10-by-10-by-10 workspace.
+    \item \textit{Material}: dense voxels with evolved initial elasticity (Young's modulus between $10^4$ and $10^{10}$ MPa), and evolved rate of ontogenetic softening/stiffening in response to engineering stress / pressure.
+    % The material is thus ill-specified: 
+    % its properties depend on evolved developmental reactions to the current environment.
+    \item \textit{Structure}: evolved number and placement of voxels within a 10-by-10-by-10 voxel workspace.
     \item \textit{Shape} [fixed]: cubes.
-    \item \textit{Configuration}: voxel length oscillation phase shifted from a central pattern generator (sine wave with frequency 5 Hz).
+    \item \textit{Configuration}: voxel length oscillation phase shifted relative to a central pattern generator with a phase offset of zero (sine wave with frequency 5 Hz).
 \end{itemize}
 
 
@@ -398,9 +400,13 @@ for the first time, a robot automatically recovered from unanticipated damage by
 
 \begin{itemize}
     \item \textit{Material} [fixed]: pneumatically-actuated, hollow silicone voxels.
-    \item \textit{Structure} [outdated specification]: various amputations from quadrupedal form.
-    \item \textit{Shape} [ill-specified]: learned resting pressure for each damage case.
-    \item \textit{Configuration} [evolved for quadruped]: pressure oscillation phase shifted from a central pattern generator (sine wave with frequency 5 Hz).
+    \item \textit{Structure}: 
+    % [progressively amputated]
+    various amputations from quadrupedal form.
+    \item \textit{Shape}: learned resting pressure for each damage case.
+    % The overall size and local surface curvature of the robot depends on its automatically determined distribution of voxel resting volumes
+    % and is constrained by non-intuitive interference between neighbors that in one voxel expand and in another contract.
+    \item \textit{Configuration}: pressure oscillation phase shifted from a central pattern generator (sine wave with frequency 5 Hz).
 \end{itemize}
 
 
@@ -451,11 +457,11 @@ This yields a continuous flow of synthetic living organisms or ``biobots'' that 
 \subsubsection*{Realization}
 
 \begin{itemize}
-    \item \textit{Material} [ill-specified]: initially pluripotent stem cells, later fated to become specific epidermal and cardiomyocyte cell lineages.
-    \item \textit{Structure} [ill-specified]: evolved placement and distribution of cell types.
-    \item \textit{Shape} [ill-specified]: cells compact together and conspire to self-heal lacerations in their collective structure (mechanism currently unknown; it's possible the tissue simply zippers shut through the action of cadherins, gap junctions, and tight junctions on neighboring cells).
+    \item \textit{Material}: initially pluripotent stem cells, later fated to become specific epidermal and cardiomyocyte cell lineages.
+    \item \textit{Structure}: evolved placement and distribution of cell types.
+    \item \textit{Shape}: cells compact together and conspire to self-heal lacerations in their collective structure (mechanism currently unknown; it's possible the tissue simply zippers shut through the action of cadherins, gap junctions, and tight junctions on neighboring cells).
     
-    \item \textit{Configuration} [ill-specified]: contraction/relaxation of cardiomyocytes (temporal coordination in novel structures is currently unknown).
+    \item \textit{Configuration}: contraction/relaxation of cardiomyocytes (temporal coordination in novel structures is currently unknown).
 \end{itemize}
 
 
@@ -589,7 +595,7 @@ Thus, by virtue of structure and distribution of material (tissue types), new ki
 
 
 The first computer-designed organisms were called reconfigurable organisms (Fig.~\ref{fig:synthbio}) because their configuration spaces were changed by combining together different cells into novel structures.
-This is a hat tip to reconfigurable modular robots in which robot modules are free to attach/detach during assembly and sometimes behavior, thus blurring the line between structure and configuration  \cite{pathak2019learning}.
+This is a reference to reconfigurable modular robots in which robot modules are free to attach/detach during assembly and sometimes behavior, thus blurring the line between structure and configuration  \cite{pathak2019learning}.
 Xenobots are a particular kind of reconfigurable organism.
 If we made a batch of reconfigurable organisms out of cells taken from early embryos of the
 African elephant (\textit{Loxodonta})
@@ -598,14 +604,16 @@ then they would be called ``loxobots'' not ``xenobots''.
 There is also the possibility of chimeras (mixtures of species) and biohybrids (mixtures of living and artificial materials).
 
 
-Reconfigurable organisms are assembled according to a blueprint which could be computer-designed or human-designed.
+Reconfigurable organisms are assembled according to a blueprint which could be computer-generated or human-generated.
 The blueprint tells a microsurgeon or 3D bioprinter, at some resolution of detail, precisely where all the tissues should go in relation to each other.
 But there are other ways computers could design bespoke organisms.
 Rather than a blueprint of a specific target form, 
 a computer-designed recipe could indicate how and when to apply various biochemical/biomechanical/bioelectrical manipulations so as to deflect development toward a target form and/or function.
 With constant feedback from silico to vivo and back,
 the pipeline would learn to influence the cells' self-assembly instead of imposing sometimes unbuildable constraints on their structure.
-These auto-ontogenetic computer-designed organisms would thus relax the build filter described in chapter 7, and could in theory produce any structure or organ seen in nature (hands, eyes, noses, brains) and others yet to be discovered by evolution on Earth.
+These 
+% auto-ontogenetic 
+self-reconfigurable computer-designed organisms would thus obviate the need for the build filter described in chapter 7, and could in theory produce any structure or organ seen in nature (hands, eyes, noses, brains) and others yet to be discovered by evolution on Earth.
 % capable of supporting increasingly protean machines and organisms.
 
 
@@ -631,7 +639,7 @@ The results suggest that the evolution of development can
 fortify autonomous machines against entropy,
 and
 expedite the acquisition of performant robust behaviors,
-even if the system is later deployed with a realtively static morphology.
+even if the system is later deployed with a relatively static morphology.
 The penultimate chapter described the first organisms to evolve in computer simulations, instead of physically on Earth.
 By building novel multicellular organisms without genetic engineering, we have learned a great deal about the phenotypic plasticity inherent in development but missing in conventional robots.
 Ultimately, this knowledge will be put to work developing useful protean technologies composed of living systems, artificial materials, or admixtures of both.

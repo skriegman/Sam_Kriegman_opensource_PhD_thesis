@@ -704,7 +704,7 @@ However, the search space of possible robot designs tends not to be smooth in re
 Some great designs, we may suppose, are only of value when perfect or nearly so; changing them by even a single bit is all but certain to entirely break their functionality.
 In other words, there is no gradient---no sequence of mutations---leading toward these great designs.
 In such a space, a near miss is as good as a mile, and evolution can be no better than random search.
-However, as Hinton and Nowlan \cite{hinton1987learning} so neatly demonstrated: development can (under the right conditions) smooth the search space that evolution operates in, thereby creating a gradient toward increasingly better mutations (Fig.~\ref{fig:baldwin2d}).
+However, as Hinton and Nowlan \cite{hinton1987learning} so neatly demonstrated: development can, under certain conditions, smooth the search space that evolution operates in, thereby creating a gradient toward increasingly better mutations (Fig.~\ref{fig:baldwin2d}).
 
 
 \begin{figure}[t]
@@ -743,8 +743,8 @@ Indeed, one of the first experiments to explore the interaction between evolutio
 
 \begin{figure}[t]
 \centering
-\includegraphics[trim={40pt 20pt 30pt 25pt},clip,width=0.49\linewidth]{fig/baldwin_rugged.pdf}
-\includegraphics[trim={40pt 20pt 30pt 25pt},clip,width=0.49\linewidth]{fig/baldwin_smooth.pdf}
+\includegraphics[trim={40pt 20pt 30pt 0pt},clip,width=0.49\linewidth]{fig/baldwin_rugged.pdf}
+\includegraphics[trim={40pt 20pt 30pt 0pt},clip,width=0.49\linewidth]{fig/baldwin_smooth.pdf}
 \caption{\label{fig:baldwin3d}\textbf{Two sides of the same space.} 
 In each plot, points on the horizontal axes directly map onto a 2D continuous design space.
 For example, $x$ could encode the initial elastic modulus of a bipedal robot's two limbs, and $y$ might then indicate their initial placement along the circumference of its spherical trunk.
@@ -767,10 +767,16 @@ Development unfolds on a line in this space, with the vast majority of possible 
 \footnote{%
 There are typically many such (potentially Baldwinifiable) local optima, and so there is also evolution: a population spread out on the landscape, not just a single developmental robot.%
 } 
-Let's call the good one ($x^*,y^*$).
-Evolution discretely samples the space by setting the initial conditions ($x_0,y_0$) and how development may unfold across the landscape (curvature and length of the line) in time (acceleration along the curve) until death ($x_{\tau},y_{\tau}$).
+% Let's call the good one ($x^*,y^*$).
+Evolution discretely samples the space by setting the initial conditions 
+% ($x_0,y_0$)
+(starting point)
+and how development may unfold across the landscape (curvature and length of the line) in time (acceleration along the curve) until death. 
+% ($x_{\tau},y_{\tau}$).
 Once found, successful developmental trajectories can become canalized by evolution such that the good trait combination becomes increasingly likely in future descendants.
-In the limit, the line of development shrinks until $(x_0,y_0) = (x_{\tau},y_{\tau}) = (x^*,y^*)$.
+In the limit, the line of development shrinks 
+% until $(x_0,y_0) = (x_{\tau},y_{\tau}) = (x^*,y^*)$.
+to a point: the initial conditions.
 
 % Note that it is also possible for a continuum of highly-fit variations on a design to exist on a manifold that is isolated from the surrounding search space.
 
@@ -925,7 +931,7 @@ from which such machines can recover.
 
 These two studies were intended as proofs of concept---%
 basic science
-that will undoubtedly be refined with additional R\&D.
+that will undoubtedly be refined with additional research and development.
 % They will likely find themselves onboard future robot expedition teams within the depths of Europa's subterranean sea.
 % That these particular machines could barely cope with even the slightest tribological changes in terrain (\citet{bongard2006resilient} needed a pane of plexiglass between their robot and the carpet to enable locomotion) can be resolved by better static hardware.
 In the meantime, they seem to have spelled out the limitations of clever software trapped inside non-protean machines.
@@ -933,7 +939,7 @@ Such
 behaviorally-plastic yet morphologically-static robots can recover masterfully from certain shallow insults, such as the
 loss of a single leg to injury.
 % to coordinate their fixed parts the currently has.
-But they do not have the requisite variety to recover from deeper mechanical damage, such as the removal of all limbs or being chopped into a hundred smaller pieces.
+But they do not have the requisite variety to recover from deeper mechanical damage, such as the removal of all limbs or being cut into a hundred smaller pieces.
 
 
 % It's not just that they can't re-generate structure, motors or sensors.
@@ -1017,7 +1023,8 @@ as we will see,
 increasingly determine their own categories of perception and action, 
 and thus
 position themselves at a
-continually greater distance from the bias, intuition and cognitive limits of their human designer (or human meta-designer).
+continually greater distance from the bias, intuition and cognitive limits of their human designer.
+% \footnote{In the case of evolutionary robotics the designer crafts the algorithm that automatically designs robots.}
 What follows is the story of the first, and some would argue the only truly protean artificial machine.
 
 
@@ -1324,7 +1331,7 @@ modular robots have been reported that self-assembled, -disintegrated, and -repl
 origami robots that self-folded
 \cite{hawkes2010programmable,felton2014method,miyashita2017robotic,gladman2016biomimetic,kotikian2019untethered};
 soft robots that underwent plastic deformation or semipermanent elastic deformation
-\cite{shepherd2011multigait,shah2019morphing,shah2020gaining};
+\cite{shepherd2011multigait,shah2019morphing,shah2020gaining,shah2020shape};
 and jamming robots that varied their material stiffness \cite{brown2010universal,narang2018transforming,steltz2009jsel}.
 Among these platforms are marvelous feats of creativity and engineering.
 However, they lacked ontogenetic morphological autonomy relative to a human operator.

@@ -36,7 +36,7 @@ Thus, a robot must carefully balance support with actuation.
 \subsection*{Quad-CPPN encoding: $\mathbf{\mathbb{C}_1,\mathbb{C}_2,\mathbb{C}_3,\mathbb{C}_4}$
 }
 
-Following \cite{cheney2013unshackling}, robot physiology is genetically encoded by a Compositional Pattern Producing Network (CPPN) \citep{stanley2007cppn}, a scale-free mapping that biases search toward symmetrical and regular patterns which are known to facilitate locomotion.
+Following \cite{cheney2013unshackling}, robot physiology is genetically encoded by a Compositional Pattern Producing Network (CPPN) \citep{stanley2007compositional}, a scale-free mapping that biases search toward symmetrical and regular patterns which are known to facilitate locomotion.
 
 
 Each point on a 10$\times$10$\times$10 lattice is queried by its cartesian coordinates in 3D space and its radial distance from the lattice center.
@@ -114,7 +114,7 @@ where:
 
 \subsection*{Evolution.}
 
-We employed a standard evolutionary algorithm, Age-Fitness-Pareto Optimization \citep{Schmidt2011}, which uses the concept of Pareto dominance and an objective of age (in addition to fitness) intended to promote diversity among candidate designs. 
+We employed a standard evolutionary algorithm, Age-Fitness-Pareto Optimization \citep{schmidt2011age}, which uses the concept of Pareto dominance and an objective of age (in addition to fitness) intended to promote diversity among candidate designs. 
 
 We performed twenty independent evolutionary trials with different random seeds (1-20); in each trial, a population of 24 robots was evolved for five thousand generations.
 Every generation, the population is first doubled by creating modified copies of each individual in the population. 
