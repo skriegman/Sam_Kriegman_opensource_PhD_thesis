@@ -123,7 +123,7 @@ We track $y(t)$ and $Q(t)$ 100 times per second. Since robots are evaluated for 
 \subsection*{A direct encoding.}
 
 
-This paper differs from previous evolutionary robotics work that used Voxelyze \cite{Cheney:2013:UEE:2463372.2463404, cheney2014evolved, Cheney:2015:ESR:2739480.2754662} in that we evolve the volumes of a fixed collection of voxels, rather than the presence/absence of voxels in a bounding region. 
+This paper differs from previous evolutionary robotics work that used Voxelyze \cite{cheney2013unshackling, cheney2014electro, Cheney:2015:ESR:2739480.2754662} in that we evolve the volumes of a fixed collection of voxels, rather than the presence/absence of voxels in a bounding region. 
 Another difference is that 
 we do not employ the CPPN-NEAT evolutionary algorithm \cite{stanley2007compositional}, 
 but instead use a direct encoding with bilateral symmetry about the $y$ axis.
@@ -131,7 +131,7 @@ A comparison of encodings in our scenario is beyond the scope of this paper.
 However we noticed that the range of evolved morphologies here, under our particular settings, was much smaller than that of previous work which used voxels as building blocks,
 and that it is easier to reach extreme volumes for individual voxels using a direct encoding. 
 
-Apart from the difference in encoding, this work is by in large consistent with this previous work. We use the same physical environment as Cheney et al. \cite{Cheney:2013:UEE:2463372.2463404}: a wide-open flat plain. The material properties of our voxels are also consistent with the `muscle' voxel type from the palette in this work;  
+Apart from the difference in encoding, this work is by in large consistent with this previous work. We use the same physical environment as Cheney et al. \cite{cheney2013unshackling}: a wide-open flat plain. The material properties of our voxels are also consistent with the `muscle' voxel type from the palette in this work;  
 although these voxels had a fixed resting volume of one ($s_k=1$ for all $k$).
 % Our developmental mechanism is strongly based on Corucci et al. \cite{corucci2016material}, which used volumetric deformation in a closed-loop pointing task.
 
