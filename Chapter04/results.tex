@@ -115,7 +115,7 @@ Ballistic development is therefore beneficial for search but does not provide a 
 
 
 To investigate this apparent search advantage, we trace development and fitness across the 30 lineages which produced a `run champion': the robot with highest fitness at the termination of a given evolutionary trial (Supplementary Fig. \ref{fig:S1}).% \hyperref[fig:S1]{S1}). 
-We measure the amount of ballistic change in each robot|its `ballistic plasticity'|by a statistic we call the \textit{developmental window}.
+We measure the amount of ballistic change in each robot---its `ballistic plasticity'---by a statistic we call the \textit{developmental window}.
 The developmental window is defined separately for morphology (Equation \ref{eq-WL}) and control (Equation \ref{eq-WPhi}) as the absolute difference in starting and final values summed across the robot and divided by the total amount of possible development, such that 0 and 1 indicate no and maximal developmental change, respectively.
 Evo robots by definition have development windows of zero, as do Evo-Devo robots that have had development manually removed.
 An Evo-Devo robot with a small developmental window has thus become \textit{canalized} \cite{waddington1942canalization}.
@@ -148,7 +148,7 @@ However, despite the fact that morphological development tends to be canalized i
 
 
 To test the sensitivity of the evolved morphologies to changes in their control policies, we applied a random series of control mutations to the Evo and Evo-Devo run champions from each evolutionary trial.
-For each run champion, we perform 1000 subsequent random controller mutations that build upon each other in series (a Brownian trajectory in the space of controllers)|and repeat this process ten times for each run champion, each with a unique random seed.
+For each run champion, we perform 1000 subsequent random controller mutations that build upon each other in series (a Brownian trajectory in the space of controllers)---and repeat this process ten times for each run champion, each with a unique random seed.
 It was found that optimized Evo-Devo robots tend to possess body plans that are much more robust to control mutations than those of Evo robots (Fig. \ref{fig-random-walks}A).
 The first control mutation to optimized Evo robots tends to immediately render them immobile, whereas optimized Evo-Devo robots tend to retain most of their functionality even after 1000 successive random changes to their controllers.
 Within Evo-Devo designs, the functionality of the 25 fast designs are minimally affected by changes to their control, whereas the five slow designs also tend to break after the first control mutation (Fig. \ref{fig-random-walks}B). 
